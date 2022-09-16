@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using ECommerce.Application.Common.Interfaces;
 using ECommerce.Domain.Entities;
 using ECommerce.Domain.Entities.Common;
 using ECommerce.Domain.Entities.Identity;
@@ -13,20 +14,20 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ECommerce.Infrastructure.Persistence
 {
-    public class ApplicationDbContext : IdentityDbContext<AppUser>
+    public class ApplicationDbContext : IdentityDbContext<AppUser>, IApplicationDbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
             
         }
 
-        public DbSet<ProductType> ProductTypes { get; set; }
-        public DbSet<ProductBranch> ProductBranches { get; set; }
-        public DbSet<Product> Products { get; set; }
-        public DbSet<Customer> Customers { get; set; }
-        public DbSet<SalesOrder> SalesOrders { get; set; }
-        public DbSet<DeliveryMethod> DeliveryMethods { get; set; }
-        public DbSet<SalesOrderItem> SalesOrderItems { get; set; }
+        public DbSet<ProductType> ProductTypes => Set<ProductType>();
+        public DbSet<ProductBranch> ProductBranches => Set<ProductBranch>();
+        public DbSet<Product> Products => Set<Product>();
+        public DbSet<Customer> Customers => Set<Customer>();
+        public DbSet<SalesOrder> SalesOrders => Set<SalesOrder>();
+        public DbSet<DeliveryMethod> DeliveryMethods => Set<DeliveryMethod>();
+        public DbSet<SalesOrderItem> SalesOrderItems => Set<SalesOrderItem>();
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

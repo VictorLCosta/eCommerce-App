@@ -11,7 +11,7 @@ namespace ECommerce.Infrastructure.Persistence
     {
         public ApplicationDbContext CreateDbContext(string[] args)
         {
-            var connectionString = "Data Source=Persistence/ecommerce.db";
+            var connectionString = "Data Source=Persistence/Data/ecommerce.db";
             
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
             optionsBuilder.UseSqlite(connectionString);
