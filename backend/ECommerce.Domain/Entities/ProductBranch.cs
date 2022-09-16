@@ -17,5 +17,7 @@ namespace ECommerce.Domain.Entities
         public string Email { get; set; }
 
         public string ContactPerson { get; set; }
+
+        public ICollection<Product> Products { get; set; }
     }
 }
