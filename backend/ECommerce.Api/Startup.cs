@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ECommerce.CrossCutting.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,11 +26,13 @@ namespace Api
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddApplicationDependencies(_config);
+            services.AddInfrastructureDependencies(_config);
 
             services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Api", Version = "v1" });
+
+            services.AddSwaggerGen(opt => {
+                opt.SwaggerDoc("v1", new OpenApiInfo { Title = "Api", Version = "v1" });
             });
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -38,7 +41,10 @@ namespace Api
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Api v1"));
+                app.UseSwaggerUI(c => {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Api v1");
+                    c.RoutePrefix = "swagger";
+                });
             }
 
             app.UseHttpsRedirection();
