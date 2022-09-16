@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ECommerce.Application.Common.Interfaces;
+using ECommerce.Application.Common.Interfaces.Repositories;
+using ECommerce.Infrastructure.Persistence.Repositories;
 
 namespace ECommerce.Infrastructure.Persistence
 {
@@ -14,6 +16,13 @@ namespace ECommerce.Infrastructure.Persistence
         {
             _context = context;
         }
+
+        #region Repositories
+
+        private IProductRepository productRepository;
+        public IProductRepository ProductRepository => productRepository ?? new ProductRepository(_context);
+
+        #endregion
 
         public async Task<bool> Complete()
             => await _context.SaveChangesAsync() > 0;
