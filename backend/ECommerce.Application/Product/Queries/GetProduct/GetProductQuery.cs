@@ -9,13 +9,16 @@ using ECommerce.Application.Common.Models;
 using ECommerce.Domain.DTOs.Product;
 using MediatR;
 
-namespace ECommerce.Application.Product
+namespace ECommerce.Application.Product.Queries.GetProduct
 {
-    public class List
+    public class GetProductQuery
     {
-        public class Query : IRequest<Result<List<ProductDto>>> {}
+        public class Query : IRequest<Result<ProductDto>>
+        {
+            public Guid Id { get; set; }
+        }
 
-        public class Handler : IRequestHandler<Query, Result<List<ProductDto>>>
+        public class Handler : IRequestHandler<Query, Result<ProductDto>>
         {
             private readonly IUnitOfWork _uow;
             private readonly IMapper _mapper;
@@ -26,13 +29,11 @@ namespace ECommerce.Application.Product
                 _mapper = mapper;
             }
 
-            public async Task<Result<List<ProductDto>>> Handle(Query request, CancellationToken cancellationToken)
+            public async Task<Result<ProductDto>> Handle(Query request, CancellationToken cancellationToken)
             {
-                var list = await _uow.ProductRepository.GetAll();
+                var product = await _uow.ProductRepository.Get(request.Id);
 
-                var products = _mapper.Map<List<ProductDto>>(list.ToList());
-
-                return Result<List<ProductDto>>.Success(products);
+                return Result<ProductDto>.Success(_mapper.Map<ProductDto>(product));
             }
         }
     }

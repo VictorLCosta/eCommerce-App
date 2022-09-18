@@ -19,6 +19,9 @@ namespace ECommerce.CrossCutting.AutoMapper
                 .ForMember(x => x.BranchName, opt => opt.MapFrom(src => src.Branch.Name))
                 .ReverseMap();
 
+            CreateMap<Product, CreateProductDto>()
+                .ReverseMap();
+
             CreateMap<ProductBranch, ProductBranchDto>()
                 .ReverseMap();
 
