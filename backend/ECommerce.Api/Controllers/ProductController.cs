@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ECommerce.Application.Product.Commands.CreateProduct;
-using ECommerce.Application.Product.Queries;
 using ECommerce.Application.Product.Queries.GetProduct;
+using ECommerce.Application.Product.Queries.GetProductList;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerce.Api.Controllers

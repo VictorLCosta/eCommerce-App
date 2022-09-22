@@ -1,9 +1,13 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using ECommerce.Application.Common.Mappings;
 using ECommerce.Domain.Entities.ValueObjects;
 
-namespace ECommerce.Domain.DTOs.Product
+namespace ECommerce.Application.Product.Queries.GetProductList
 {
-    public class ProductDto
+    public class ProductBriefDto : IMapFrom<ECommerce.Domain.Entities.Product>
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

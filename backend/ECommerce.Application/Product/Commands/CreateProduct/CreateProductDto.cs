@@ -2,10 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ECommerce.Application.Common.Mappings;
 
-namespace ECommerce.Domain.DTOs.Product
+namespace ECommerce.Application.Product.Commands.CreateProduct
 {
-    public class CreateProductDto
+    public class CreateProductDto : IMapFrom<ECommerce.Domain.Entities.Product>
     {
         public string Name { get; set; }
         public string Code { get; set; }

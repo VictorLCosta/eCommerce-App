@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ECommerce.Api.Middlewares;
-using ECommerce.CrossCutting.DependencyInjection;
+using ECommerce.Application;
+using ECommerce.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,7 +29,7 @@ namespace Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddApplicationDependencies(_config);
-            services.AddInfrastructureDependencies(_config);
+            services.AddInfraDependencies(_config);
 
             services.AddControllers();
 

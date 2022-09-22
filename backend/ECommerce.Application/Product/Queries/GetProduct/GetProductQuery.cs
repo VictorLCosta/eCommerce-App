@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using AutoMapper;
 using ECommerce.Application.Common.Interfaces;
 using ECommerce.Application.Common.Models;
-using ECommerce.Domain.DTOs.Product;
 using MediatR;
 
 namespace ECommerce.Application.Product.Queries.GetProduct

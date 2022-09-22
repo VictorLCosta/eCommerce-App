@@ -11,12 +11,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-
-namespace ECommerce.CrossCutting.DependencyInjection
+namespace ECommerce.Infrastructure
 {
-    public static class ConfigureInfrastructure
+    public static class ConfigureServices
     {
-        public static IServiceCollection AddInfrastructureDependencies(this IServiceCollection services, IConfiguration config)
+        public static IServiceCollection AddInfraDependencies(this IServiceCollection services, IConfiguration config)
         {
             var connectionString = config.GetConnectionString("DefaultConnection");
 
