@@ -51,12 +51,5 @@ namespace ECommerce.Application.Common.Mappings
                 }
             }
         }
-
-        /*
-            CreateMap<Product, ProductDto>()
-                .ForMember(x => x.BranchName, opt => opt.MapFrom(src => src.Branch.Name))
-                .ForMember(x => x.BranchName, opt => opt.MapFrom(src => src.Branch.Name))
-                .ReverseMap();
-        */
     }
 }
