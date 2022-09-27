@@ -28,9 +28,9 @@ namespace ECommerce.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(CreateProductCommand.Command command)
+        public async Task<IActionResult> Post(CreateProductDto product)
         {
-            var result = await Mediator.Send(command);
+            var result = await Mediator.Send(new CreateProductCommand.Command { Product = product });
 
             return HandleResult(result);
         }
