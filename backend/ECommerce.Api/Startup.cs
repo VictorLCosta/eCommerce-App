@@ -4,7 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using ECommerce.Api.Middlewares;
 using ECommerce.Application;
+using ECommerce.Application.Product.Commands.CreateProduct;
 using ECommerce.Infrastructure;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,7 +33,10 @@ namespace Api
             services.AddApplicationDependencies(_config);
             services.AddInfraDependencies(_config);
 
-            services.AddControllers();
+            services.AddControllers()
+                .AddFluentValidation(config => {
+                    config.RegisterValidatorsFromAssemblyContaining<CreateProductCommand>();
+                });
 
             services.AddSwaggerGen(opt => {
                 opt.SwaggerDoc("v1", new OpenApiInfo { Title = "Api", Version = "v1" });

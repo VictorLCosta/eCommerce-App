@@ -7,6 +7,7 @@ using AutoMapper;
 using ECommerce.Application.Common.Interfaces;
 using ECommerce.Application.Common.Models;
 using ECommerce.Domain.Entities.ValueObjects;
+using FluentValidation;
 using MediatR;
 
 namespace ECommerce.Application.Product.Commands.CreateProduct
@@ -16,6 +17,14 @@ namespace ECommerce.Application.Product.Commands.CreateProduct
         public class Command : IRequest<Result<Unit>>
         {
             public CreateProductDto Product { get; set; }
+        }
+
+        public class CommandValidator : AbstractValidator<Command>
+        {
+            public CommandValidator()
+            {
+                RuleFor(x => x.Product).SetValidator(new CreateProductCommandValidator());
+            }
         }
 
         public class Handler : IRequestHandler<Command, Result<Unit>>
