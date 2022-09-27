@@ -9,5 +9,10 @@
     <PackageReference Include="NWebsec.AspNetCore.Middleware" Version="3.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ECommerce.Application\Application.csproj" />
+    <ProjectReference Include="..\ECommerce.Infrastructure\Infrastructure.csproj" />
+  </ItemGroup>
   
 </Project>

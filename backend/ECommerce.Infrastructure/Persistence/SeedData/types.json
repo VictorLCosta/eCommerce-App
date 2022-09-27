@@ -1,0 +1,32 @@
+[
+    {
+        "Id": "e13fd4d5-2441-4c24-ad0e-e2fb99017e4b",
+        "Name": "Shoes",
+        "Description": "Aliqua ullamco magna ea sunt adipisicing Lorem eiusmod labore consectetur do tempor sunt aute labore."
+    },
+    {
+        "Id": "fcba7405-d001-49fc-a4fb-78ae3d850380",
+        "Name": "Fashion Accessories",
+        "Description": "Laborum laboris labore ullamco Lorem."
+    },
+    {
+        "Id": "f93c7155-fd4c-4d92-95d5-7435c89d1d6a",
+        "Name": "Sports",
+        "Description": "Commodo ea non commodo proident excepteur ad pariatur Lorem do aliquip minim laborum veniam."
+    },
+    {
+        "Id": "3cd4fc98-35dc-4dd0-8b85-3701eb1c2428",
+        "Name": "Automobiles",
+        "Description": "Deserunt mollit voluptate adipisicing ad velit occaecat id do ut consectetur culpa dolor."
+    },
+    {
+        "Id": "c41933eb-a07f-44e5-9767-2b0ca1c87ee2",
+        "Name": "Eletronics",
+        "Description": "Consectetur tempor dolore ea cupidatat eu nostrud sit ullamco exercitation minim nulla amet velit irure."
+    },
+    {
+        "Id": "ad16ad30-68a5-4143-a71c-8f2a9b81436b",
+        "Name": "Kit bags",
+        "Description": "Incididunt esse fugiat velit ipsum eiusmod ut labore."
+    }
+]

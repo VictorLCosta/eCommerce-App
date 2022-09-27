@@ -1,0 +1,57 @@
+[
+    {
+        "Id": "a78a2eb3-047f-4487-93f8-3aa556ca5e04",
+        "Name": "Nova Chevrolet Oficial",
+        "Description": "Fusce consequat. Nulla nisl. Nunc nisl.",
+        "City": "Maúa",
+        "State": "São Paulo",
+        "ZipCode": "423159",
+        "Phone": "+86 (734) 941-6944",
+        "Email": "mtaber0@reverbnation.com",
+        "ContactPerson": "Mickie"
+    },
+    {
+        "Id": "b5c093dc-5d0d-4d2c-bfd6-a29bf0dd0549",
+        "Name": "Ironatti Fitness",
+        "Description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
+        "City": "Sofrino",
+        "State": "Pushkinsky",
+        "ZipCode": "403159",
+        "Phone": "+7 (847) 757-1055",
+        "Email": "msives1@bigcartel.com",
+        "ContactPerson": "Meggy"
+    },
+    {
+        "Id": "77157fd6-a2b7-42ea-9551-6ec46188b01b",
+        "Name": "BLDRS Eletro",
+        "Description": "Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.\n\nMaecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.\n\nCurabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
+        "City": "Almenara",
+        "State": "Minas Gerais",
+        "ZipCode": "39900-000",
+        "Phone": "+55 (598) 526-0559",
+        "Email": "dcurnow2@lycos.com",
+        "ContactPerson": "Rogério"
+    },
+    {
+        "Id": "82e29cd2-b5b4-4bf5-99a5-e204006014cd",
+        "Name": "RP Modas",
+        "Description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
+        "City": "Chãos",
+        "State": "Viseu",
+        "ZipCode": "4690-805",
+        "Phone": "+351 (899) 537-1687",
+        "Email": "mkerwen3@pinterest.com",
+        "ContactPerson": "Helena"
+    },
+    {
+        "Id": "534a6638-0b50-4973-a001-d2830217fa55",
+        "Name": "Chilli Beans Rio",
+        "Description": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.\n\nInteger tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\n\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
+        "City": "Niterói",
+        "State": "Rio de Janeiro",
+        "ZipCode": null,
+        "Phone": "+51 (685) 283-4882",
+        "Email": "kdoxey4@washington.edu",
+        "ContactPerson": "Karia"
+    }
+]

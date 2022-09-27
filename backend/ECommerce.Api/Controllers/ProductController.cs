@@ -22,7 +22,7 @@ namespace ECommerce.Api.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(Guid id)
         {
-            var product = await Mediator.Send(new GetProductQuery.Query());
+            var product = await Mediator.Send(new GetProductQuery.Query { Id = id });
 
             return HandleResult(product);
         }

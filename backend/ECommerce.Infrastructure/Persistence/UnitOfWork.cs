@@ -19,8 +19,7 @@ namespace ECommerce.Infrastructure.Persistence
 
         #region Repositories
 
-        private IProductRepository productRepository;
-        public IProductRepository ProductRepository => productRepository ?? new ProductRepository(_context);
+        public IProductRepository ProductRepository => new ProductRepository(_context);
 
         #endregion
 
