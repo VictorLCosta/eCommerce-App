@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using ECommerce.Application.Common.Interfaces;
-using ECommerce.Domain.Entities.Common;
+using ECommerce.Domain.Common;
 using Microsoft.EntityFrameworkCore;
 
 namespace ECommerce.Infrastructure.Persistence.Repositories
@@ -74,7 +74,7 @@ namespace ECommerce.Infrastructure.Persistence.Repositories
                 entity.CreatedAt = result.CreatedAt;
 
                 _context.Entry(result).State = EntityState.Detached;
-                _context.Entry(entity).State = EntityState.Modified;
+                _context.Set<T>().Update(entity);
             }
             catch (System.Exception)
             {

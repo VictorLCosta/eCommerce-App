@@ -8,9 +8,6 @@ namespace ECommerce.Application.Product.Commands.UpdateProduct
         {
             RuleFor(x => x.Id)
                 .NotEmpty();
-
-            RuleFor(x => x.Currency)
-                .IsInEnum();
         }
     }
 }

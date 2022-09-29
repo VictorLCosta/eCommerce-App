@@ -1,7 +1,7 @@
 using System;
 using AutoMapper;
 using ECommerce.Application.Common.Mappings;
-using ECommerce.Domain.Entities.ValueObjects;
+using ECommerce.Domain.ValueObjects;
 
 namespace ECommerce.Application.Product.Queries.GetProduct
 {

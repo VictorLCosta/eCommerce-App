@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using ECommerce.Application.Common.Interfaces;
 using ECommerce.Application.Common.Models;
-using ECommerce.Domain.Entities.ValueObjects;
+using ECommerce.Domain.ValueObjects;
 using FluentValidation;
 using MediatR;
 
@@ -42,7 +42,8 @@ namespace ECommerce.Application.Product.Commands.UpdateProduct
             {
                 var product = _mapper.Map<ECommerce.Domain.Entities.Product>(request.Product);
 
-                product.DefaultPrice = Money.Real(request.Product.DefaultPrice);
+                var currency = Currency.FromCode(request.Product.Currency);
+                product.DefaultPrice = new Money(currency, request.Product.DefaultPrice);
 
                 await _uow.ProductRepository.UpdateAsync(product);
 

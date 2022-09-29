@@ -22,17 +22,16 @@ namespace ECommerce.Infrastructure.Persistence.EntityConfig
                 .HasForeignKey(x => x.TypeId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            builder
-                .OwnsOne(x => x.DefaultPrice)
-                .Property(x => x.Amount)
-                .HasColumnName("DefaultPrice_Amount")
-                .IsRequired(true);
+            builder.OwnsOne(x => x.DefaultPrice, b => 
+            {
+                b.Property(e => e.Amount).HasColumnName("DefaultPrice");
+                b.OwnsOne(e => e.Currency, bc => 
+                {
+                    bc.Property(e => e.Name).HasColumnName("CurrencyName").HasMaxLength(25);
+                    bc.Property(e => e.Symbol).HasColumnName("CurrencySymbol").HasMaxLength(25);
+                });
+            });
 
-            builder
-                .OwnsOne(x => x.DefaultPrice)
-                .Property(x => x.Currency)
-                .HasColumnName("DefaultPrice_Currency")
-                .IsRequired(true);
         }
     }
 }

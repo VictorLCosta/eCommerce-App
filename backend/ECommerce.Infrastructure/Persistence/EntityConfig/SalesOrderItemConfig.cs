@@ -8,17 +8,15 @@ namespace ECommerce.Infrastructure.Persistence.EntityConfig
     {
         public void Configure(EntityTypeBuilder<SalesOrderItem> builder)
         {
-            builder
-                .OwnsOne(x => x.Price)
-                .Property(x => x.Amount)
-                .HasColumnName("Price_Amount")
-                .IsRequired(true);
-
-            builder
-                .OwnsOne(x => x.Price)
-                .Property(x => x.Currency)
-                .HasColumnName("Price_Currency")
-                .IsRequired(true);
+            builder.OwnsOne(x => x.Price, b => 
+            {
+                b.Property(e => e.Amount).HasColumnName("Price");
+                b.OwnsOne(e => e.Currency, bc => 
+                {
+                    bc.Property(e => e.Name).HasColumnName("CurrencyName").HasMaxLength(25);
+                    bc.Property(e => e.Symbol).HasColumnName("CurrencySymbol").HasMaxLength(25);
+                });
+            });
         }
     }
 }

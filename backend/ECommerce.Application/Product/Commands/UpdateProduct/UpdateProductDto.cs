@@ -1,7 +1,6 @@
 using System;
 using AutoMapper;
 using ECommerce.Application.Common.Mappings;
-using ECommerce.Domain.Enums;
 
 namespace ECommerce.Application.Product.Commands.UpdateProduct
 {
@@ -12,7 +11,7 @@ namespace ECommerce.Application.Product.Commands.UpdateProduct
         public string Code { get; set; }
         public string Description { get; set; }
         public string PictureUrl { get; set; }
-        public Currency Currency { get; set; }
+        public string Currency { get; set; }
         public decimal DefaultPrice { get; set; }
 
         public Guid BranchId { get; set; }
@@ -22,6 +21,7 @@ namespace ECommerce.Application.Product.Commands.UpdateProduct
         public void Mapping(Profile profile)
         {
             profile.CreateMap<UpdateProductDto, ECommerce.Domain.Entities.Product>()
+                .ForMember(x => x.DefaultPrice, opt => opt.Ignore())
                 .ReverseMap();
         }
     }

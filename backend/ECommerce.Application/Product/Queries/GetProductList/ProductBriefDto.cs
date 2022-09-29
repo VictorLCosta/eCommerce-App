@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using ECommerce.Application.Common.Mappings;
-using ECommerce.Domain.Entities.ValueObjects;
+using ECommerce.Domain.ValueObjects;
 
 namespace ECommerce.Application.Product.Queries.GetProductList
 {

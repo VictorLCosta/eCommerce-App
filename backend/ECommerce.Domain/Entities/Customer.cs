@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ECommerce.Domain.Entities.Common;
+using ECommerce.Domain.Common;
 using ECommerce.Domain.Entities.Identity;
 
 namespace ECommerce.Domain.Entities

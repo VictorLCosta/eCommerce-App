@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ECommerce.Domain.Entities.Common;
-using ECommerce.Domain.Entities.ValueObjects;
+using ECommerce.Domain.Common;
+using ECommerce.Domain.ValueObjects;
 using ECommerce.Domain.Enums;
 
 namespace ECommerce.Domain.Entities

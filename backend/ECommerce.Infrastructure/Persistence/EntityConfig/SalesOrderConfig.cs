@@ -23,17 +23,15 @@ namespace ECommerce.Infrastructure.Persistence.EntityConfig
                 .HasForeignKey(x => x.SalesOrderId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            builder
-                .OwnsOne(x => x.Subtotal)
-                .Property(x => x.Amount)
-                .HasColumnName("Subtotal_Amount")
-                .IsRequired(true);
-
-            builder
-                .OwnsOne(x => x.Subtotal)
-                .Property(x => x.Currency)
-                .HasColumnName("Subtotal_Currency")
-                .IsRequired(true);
+            builder.OwnsOne(x => x.Subtotal, b => 
+            {
+                b.Property(e => e.Amount).HasColumnName("Subtotal");
+                b.OwnsOne(e => e.Currency, bc => 
+                {
+                    bc.Property(e => e.Name).HasColumnName("CurrencyName").HasMaxLength(25);
+                    bc.Property(e => e.Symbol).HasColumnName("CurrencySymbol").HasMaxLength(25);
+                });
+            });
         }
     }
 }

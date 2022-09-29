@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ECommerce.Domain.Entities.Common
+namespace ECommerce.Domain.Common
 {
     public abstract class ValueObject
     {

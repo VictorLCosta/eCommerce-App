@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 using FluentValidation;
 
 namespace ECommerce.Application.Product.Commands.CreateProduct
@@ -10,8 +7,11 @@ namespace ECommerce.Application.Product.Commands.CreateProduct
     {
         public CreateProductCommandValidator()
         {
-            RuleFor(x => x.Name).NotEmpty();
-            RuleFor(x => x.Price).NotEmpty();
+            RuleFor(x => x.Name)
+                .NotEmpty();
+
+            RuleFor(x => x.DefaultPrice)
+                .NotEmpty();
         }
     }
 }
