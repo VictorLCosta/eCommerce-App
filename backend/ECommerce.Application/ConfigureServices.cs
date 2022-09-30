@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using ECommerce.Application.Common.Behaviours;
 using ECommerce.Application.Product.Queries.GetProductList;
 using MediatR;
 using Microsoft.Extensions.Configuration;
@@ -16,6 +17,9 @@ namespace ECommerce.Application
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddMediatR(typeof(GetProductListQuery.Handler).Assembly);
+
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>));
 
             return services;
         }
