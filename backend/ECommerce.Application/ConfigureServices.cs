@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using ECommerce.Application.Common.Behaviours;
 using ECommerce.Application.Product.Queries.GetProductList;
+using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,8 +18,8 @@ namespace ECommerce.Application
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddMediatR(typeof(GetProductListQuery.Handler).Assembly);
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
-            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>));
 
             return services;

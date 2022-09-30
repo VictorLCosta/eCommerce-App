@@ -29,6 +29,7 @@ namespace ECommerce.Api
             services.AddInfraDependencies(_config);
             services.AddWebDependencies(_config);
         }
+        
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseMiddleware<ExceptionMiddleware>();

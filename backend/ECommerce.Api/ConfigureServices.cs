@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ECommerce.Api.Filter;
 using ECommerce.Application.Product.Commands.CreateProduct;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
@@ -31,7 +32,9 @@ namespace ECommerce.Api
             services.Configure<ApiBehaviorOptions>(options =>
                 options.SuppressModelStateInvalidFilter = true);
 
-            services.AddControllers().AddFluentValidation(config => {
+            services.AddControllers(opt => 
+                opt.Filters.Add<ValidationErrorFilter>()
+            ).AddFluentValidation(config => {
                 config.RegisterValidatorsFromAssemblyContaining<CreateProductCommand>();
             });
 
