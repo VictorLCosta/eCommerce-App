@@ -1,7 +1,10 @@
+import Header from "./layouts/header/Header";
+
 function App() {
 	return (
 		<div className="App">
-			Alimante
+			<Header />
+			Aware
 		</div>
 	);
 }

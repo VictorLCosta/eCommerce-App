@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;900&display=swap');
+
+:root {
+    --cultured: hsl(225, 20%, 96%);
+
+    /*
+        Typography
+    */
+
+    --ff-vietnam: "Be Vietnam Pro", sans-serif;
+
+    /*
+        Trasitions
+    */
+
+    --transition: 0.25s ease;
+    --cubic-out: cubic-bezier(0.45, 0.85, 0.5, 1);
+    --cubic-in: cubic-bezier(0.5, 0, 0.50, 0.95);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: var(--ff-vietnam);
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--cultured);
+}
+
+a,
+img,
+span,
+button { display: block; }
+
+img { height: auto; }
+
+ul {
+    list-style: none;
+}
+
+button {
+    background: none;
+    font: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+input {
+    display: block;
+    width: 100%;
+    font: inherit;
+}
+
+input::placeholder {
+    font: inherit;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: hsl(0%, 0%, 95%);
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsl(0%, 0%, 80%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: hsl(0%, 0%, 70%);
+}
