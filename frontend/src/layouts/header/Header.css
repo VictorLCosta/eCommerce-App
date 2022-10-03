@@ -1,3 +1,23 @@
 header {
-    background-color: red;
+    padding-inline: 20px;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+}
+
+.header-top .header-social-container {
+    display: flex;
+}
+
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-main .header-logo {
+    font-size: 4rem;
 }
