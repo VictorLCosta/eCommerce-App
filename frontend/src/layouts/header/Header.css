@@ -1,5 +1,7 @@
 header {
     padding-inline: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .header-top {
@@ -20,4 +22,5 @@ header {
 
 .header-main .header-logo {
     font-size: 4rem;
+    font-weight: 400;
 }
