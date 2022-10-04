@@ -42,6 +42,16 @@ namespace ECommerce.Api
                 opt.SwaggerDoc("v1", new OpenApiInfo { Title = "Api", Version = "v1" });
             });
 
+            services.AddCors(opt => 
+                opt.AddDefaultPolicy(policy => {
+                    policy
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials()
+                        .WithOrigins("http://localhost:3000");
+                })
+            );
+
             return services;
         }
     }

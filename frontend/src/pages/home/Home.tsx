@@ -5,17 +5,17 @@ const Home = () => {
     const { productStore: { loadProducts, productRegistry } } = useStore()
 
     useEffect(() => {
-        if (productRegistry.size <= 1) loadProducts()
+        if (productRegistry.size <= 1) loadProducts();
     }, [productRegistry.size, loadProducts])
 
     return (
-        <>
-            {productRegistry.forEach(product => (
-                <span>
-                    adsad
-                </span>
+        <ul>
+            {Array.from(productRegistry.values()).map(product => (
+                <li>
+                    {product.name}
+                </li>
             ))}
-        </>
+        </ul>
     )
 }
 
