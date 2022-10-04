@@ -1,4 +1,5 @@
 import axios, { AxiosResponse } from "axios";
+import { ProductBriefDto } from './../models/product';
 
 axios.defaults.baseURL = "https://localhost:5001/api"
 
@@ -12,7 +13,7 @@ const requests = {
 }
 
 const Products = {
-    list: () => requests.get("/product"),
+    list: () => requests.get<ProductBriefDto[]>("/product"),
     details: (id: string) => requests.get(`/product/${id}`),
 }
 

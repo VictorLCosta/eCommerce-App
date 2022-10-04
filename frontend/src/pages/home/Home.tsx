@@ -1,8 +1,21 @@
+import { useStore } from "../../stores/store"
+import { useEffect } from "react"
+
 const Home = () => {
+    const { productStore: { loadProducts, productRegistry } } = useStore()
+
+    useEffect(() => {
+        if (productRegistry.size <= 1) loadProducts()
+    }, [productRegistry.size, loadProducts])
+
     return (
-        <h1>
-            Home
-        </h1>
+        <>
+            {productRegistry.forEach(product => (
+                <span>
+                    adsad
+                </span>
+            ))}
+        </>
     )
 }
 
