@@ -9,13 +9,16 @@ const Home = () => {
     }, [productRegistry.size, loadProducts])
 
     return (
-        <ul>
-            {Array.from(productRegistry.values()).map(product => (
-                <li>
-                    {product.name}
+        <div>
+            asdasdsadsadsadsa
+        </div>
+        /*<ul>
+            {Array.from(productRegistry.values()).map((product, i) => (
+                <li key={i}>
+                    aaaaaaa
                 </li>
             ))}
-        </ul>
+        </ul>*/
     )
 }
 

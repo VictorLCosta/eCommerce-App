@@ -1,13 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;900&display=swap');
 
 :root {
+    --white: hsl(0, 100%, 100%);;
     --cultured: hsl(225, 20%, 96%);
+    --cultured2: hsl(0, 0%, 93%);
+    --sonic-silver: hsl(0, 0%, 47%);
+    --onyx: hsl(0, 0%, 27%);
+    --salmon-pink: hsl(353, 100%, 78%);
+    --eerie-black: hsl(214, 10%, 13%);
+    --black-08: hsla(0, 0%, 0%, 0.06);
+    --black-12: hsla(0, 0%, 0%, 0.12);
 
     /*
         Typography
     */
 
     --ff-vietnam: "Be Vietnam Pro", sans-serif;
+
+    --weight-300: 300;
+    --weight-400: 400;
+    --weight-500: 500;
+    --weight-600: 600;
+    --weight-700: 700;
+
+    /*
+        Border Radius
+    */
+
+    --border-radius-md: 10px;
+    --border-radius-sm: 5px;
+
+    /*
+        Shadows
+    */
+
+   --shadow-1: 0 12px 20px hsla(210, 10%, 23%, 0.07);
+   --shadow-2: 0 2px 10px hsla(0, 0%, 0%, 0.04);
+   --shadow-3: 0 2px 20px var(--black_08);
 
     /*
         Trasitions
@@ -36,6 +65,7 @@ html {
 }
 
 body {
+    padding-block-start: 160px;
     background-color: var(--cultured);
 }
 
