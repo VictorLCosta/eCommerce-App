@@ -3,6 +3,7 @@ import { Container } from "@mui/material";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Details from "./pages/details/Details";
+import MobileBottomMenu from "./layouts/mobile-footer/MobileBottomMenu";
 
 function App() {
 	return (
@@ -14,6 +15,7 @@ function App() {
 					<Route path="details" element={<Details/>} />
 				</Routes>
 			</Container>
+			<MobileBottomMenu />
 		</div>
 	);
 }

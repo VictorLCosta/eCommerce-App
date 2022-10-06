@@ -1,0 +1,28 @@
+.mobile-bottom-menu {
+    display: none;
+}
+
+.mobile-bottom-menu svg {
+    font-size: 2.5rem;
+    color: var(--eerie-black);
+}
+
+.mobile-bottom-menu span.MuiBadge-badge {
+    background: var(--salmon-pink);
+}
+
+@media (max-width: 1200px) {
+    
+    .mobile-bottom-menu {
+        position: fixed;
+        bottom: 0; right: 0; left: 0;
+        padding: 2.5rem 9%;
+        background: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        box-shadow: var(--shadow-top)
+    }
+
+}
