@@ -6,13 +6,17 @@ import {
     GridViewOutlined 
 } from '@mui/icons-material'
 import { Badge, IconButton } from '@mui/material'
+import { observer } from 'mobx-react-lite'
 import { Link } from 'react-router-dom'
+import { useStore } from '../../stores/store'
 import './MobileBottomMenu.css'
 
 const MobileBottomMenu = () => {
+    const { commonStore: { toggleDesktopMenuVisibility } } = useStore();
+
     return (
         <div className='mobile-bottom-menu'>
-            <IconButton>
+            <IconButton onClick={() => toggleDesktopMenuVisibility()}>
                 <MenuOutlined />
             </IconButton>
 
@@ -41,4 +45,4 @@ const MobileBottomMenu = () => {
     )
 }
 
-export default MobileBottomMenu
+export default observer(MobileBottomMenu)

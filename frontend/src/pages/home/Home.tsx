@@ -1,5 +1,6 @@
 import { useStore } from "../../stores/store"
 import { useEffect } from "react"
+import { observer } from "mobx-react-lite"
 
 const Home = () => {
     const { productStore: { loadProducts, productRegistry } } = useStore()
@@ -9,17 +10,14 @@ const Home = () => {
     }, [productRegistry.size, loadProducts])
 
     return (
-        <div>
-            asdasdsadsadsadsa
-        </div>
-        /*<ul>
+        <ul>
             {Array.from(productRegistry.values()).map((product, i) => (
                 <li key={i}>
-                    aaaaaaa
+                    {product.name}
                 </li>
             ))}
-        </ul>*/
+        </ul>
     )
 }
 
-export default Home
+export default observer(Home)

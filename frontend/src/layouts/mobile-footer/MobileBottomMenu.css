@@ -26,3 +26,11 @@
     }
 
 }
+
+@media (max-width: 480px) {
+    
+    .mobile-bottom-menu {
+        padding: 1.5rem 9%;
+    }
+
+}
