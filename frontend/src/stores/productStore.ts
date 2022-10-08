@@ -10,6 +10,10 @@ export default class ProductStore {
         makeAutoObservable(this)
     }
 
+    get productList() {
+        return Array.from(this.productRegistry.values())
+    }
+
     loadProducts = async () => {
         try {
             var result = await agent.Products.list()
