@@ -13,10 +13,10 @@ const ProductDashboard = () => {
 
     return (
         <Grid container spacing={2}>
-            <Grid item xs={4}>
+            <Grid item xs={3}>
                 <ProductFilters />
             </Grid>
-            <Grid item xs={8}>
+            <Grid item xs={9}>
                 <ProductList />
             </Grid>
         </Grid>

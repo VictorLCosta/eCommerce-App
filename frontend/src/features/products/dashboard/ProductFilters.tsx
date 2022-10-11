@@ -1,8 +1,10 @@
+import { Paper } from "@mui/material"
+
 const ProductFilters = () => {
     return (
-        <div>
-            
-        </div>
+        <Paper variant="outlined">
+            asdasdasdas
+        </Paper>
     )
 }
 
