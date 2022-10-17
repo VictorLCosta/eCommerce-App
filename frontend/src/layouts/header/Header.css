@@ -111,7 +111,7 @@ header {
     color: var(--onyx);
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
 
     .header-main {
         display: flex;

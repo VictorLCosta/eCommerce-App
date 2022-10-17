@@ -7,13 +7,13 @@ const ProductList = () => {
     const { productStore: { productList } } = useStore()
 
     return (
-        <Grid container spacing={2}>
+        <>
             {productList.map((product, i) => (
-                <Grid item xs={6} md={3} key={i}>
+                <Grid item key={i} justifyContent="center">
                     <ProductListCard product={product} />
                 </Grid>
             ))}
-        </Grid>
+        </>
     )
 }
 

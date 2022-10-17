@@ -5,7 +5,7 @@ import ProductFilters from "./ProductFilters";
 import ProductList from "./ProductList";
 
 const ProductDashboard = () => {
-    const { productStore: { loadProducts, productRegistry } } = useStore()
+    const { productStore: { loadProducts, productRegistry } } = useStore();
 
     useEffect(() => {
         if (productRegistry.size <= 1) loadProducts();
@@ -13,10 +13,10 @@ const ProductDashboard = () => {
 
     return (
         <Grid container spacing={2}>
-            <Grid item xs={3}>
+            <Grid item sm={0} md={2} lg={3}>
                 <ProductFilters />
             </Grid>
-            <Grid item xs={9}>
+            <Grid container item justifyContent={'center'} sm={12} md={10} lg={9} spacing={2}>
                 <ProductList />
             </Grid>
         </Grid>

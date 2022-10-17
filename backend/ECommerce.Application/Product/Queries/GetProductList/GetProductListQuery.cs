@@ -7,6 +7,7 @@ using AutoMapper;
 using ECommerce.Application.Common.Interfaces;
 using ECommerce.Application.Common.Models;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace ECommerce.Application.Product.Queries.GetProductList
 {
@@ -27,7 +28,10 @@ namespace ECommerce.Application.Product.Queries.GetProductList
 
             public async Task<Result<List<ProductBriefDto>>> Handle(Query request, CancellationToken cancellationToken)
             {
-                var list = await _uow.ProductRepository.GetAll();
+                var list = await _uow.ProductRepository
+                    .AsQueryable()
+                    .Include(x => x.Branch)
+                    .ToListAsync();
 
                 var products = _mapper.Map<List<ProductBriefDto>>(list.ToList());
 

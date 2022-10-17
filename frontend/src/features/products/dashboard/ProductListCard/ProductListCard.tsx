@@ -1,4 +1,5 @@
 import { AddShoppingCartOutlined, FavoriteBorderOutlined, RemoveRedEyeOutlined } from '@mui/icons-material';
+import { Chip } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { ProductBriefDto } from '../../../../models/product';
 import './ProductListCard.css';
@@ -27,9 +28,22 @@ const ProductListCard = ({ product }: Props) => {
                 </span>
             </div>
             <div className='card-content'>
-                {product.name.substring(0, 30) + '...'}
                 <div className='price'>
                     {product.priceLabel}
+                </div>
+                <div className="name">
+                    {product.name.substring(0, 30)}
+                </div>
+                <div>
+                    {product.localSeller ? (
+                        <Chip label="local seller" size="small" color="primary" variant="outlined" />
+                    ) : (
+                        null
+                    )}
+                </div>
+                <div className="details">
+                    <span className="location">{product.branchCity}</span>
+                    <span className="sales">{product.salesNumber} vendidos</span>
                 </div>
             </div>
         </div>

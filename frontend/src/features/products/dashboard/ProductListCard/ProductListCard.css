@@ -1,13 +1,16 @@
 .product-card {
     position: relative;
     background: var(--white);
-    max-width: 20rem;
+    width: 20rem;
     overflow: hidden;
-    height: auto;
+    height: 30rem;
     cursor: pointer;
-    border: 1px solid var(--cultured);
     border-radius: var(--border-radius-md);
     transition: var(--transition);
+}
+
+.product-card:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .product-card:hover img {
@@ -59,12 +62,36 @@
 }
 
 .product-card .card-content {
+    position: relative;
     padding: 1.5rem;
-    font-size: 1.3rem;
 }
 
 .product-card .card-content .price {
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #FF8F9C;
+}
+
+.product-card .card-content .name {
+    font-size: 2rem;
+}
+
+.product-card .card-content .details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+
+    .product-card {
+        width: 30rem;
+        height: 40rem;
+    }
+
+    .product-card .card-showcase {
+        height: 20rem;
+    }
+
 }

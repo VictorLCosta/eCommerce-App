@@ -5,6 +5,9 @@ export interface ProductBriefDto {
     name: string;
     pictureUrl: string;
     priceLabel: string;
+    localSeller: boolean;
+    branchCity: string;
+    salesNumber: number;
 }
 
 export interface Product {
