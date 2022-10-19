@@ -1,0 +1,21 @@
+.showcase-badge {
+    position: absolute;
+    top: 1rem; left: 1.5rem;
+    color: var(--white);
+    background: var(--eerie-black);
+    font-weight: 500;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    border-radius: var(--border-radius-sm);
+    cursor: default;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.showcase-badge.angle {
+    transform: rotate(-45deg);
+    top: 1.2rem; left: -4.8rem;
+    font-size: 11px;
+    width: 15rem;
+    padding: .8rem 1rem;
+}

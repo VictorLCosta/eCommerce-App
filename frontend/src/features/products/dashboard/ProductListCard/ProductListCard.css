@@ -57,12 +57,11 @@
 }
 
 .product-card .card-icons .card-icon:hover {
-    background: var(--onyx);
+    background: var(--black-12);
     color: var(--white);
 }
 
 .product-card .card-content {
-    position: relative;
     padding: 1.5rem;
 }
 
@@ -74,13 +73,26 @@
 }
 
 .product-card .card-content .name {
-    font-size: 2rem;
+    font-size: 1.6rem;
+    line-height: 1.6;
 }
 
 .product-card .card-content .details {
+    position: absolute;
+    bottom: 0; left: 0px; right: 0px;
+    padding: 1rem 1.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-size: 1.2rem;
+}
+
+.product-card .card-content .details .location {
+    color: var(--sonic-silver);
+}
+
+.product-card .card-content .details .sales {
+    color: var(--onyx);
 }
 
 @media (max-width: 768px) {
@@ -92,6 +104,10 @@
 
     .product-card .card-showcase {
         height: 20rem;
+    }
+
+    .product-card .card-content .details {
+        font-size: 1.4rem;
     }
 
 }

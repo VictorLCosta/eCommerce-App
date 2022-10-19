@@ -9,7 +9,7 @@
     --salmon-pink: hsl(353, 100%, 78%);
     --eerie-black: hsl(214, 10%, 13%);
     --black-08: hsla(0, 0%, 0%, 0.06);
-    --black-12: hsla(0, 0%, 0%, 0.12);
+    --black-12: hsl(0, 0%, 12%);
 
     /*
         Typography
