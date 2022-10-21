@@ -6,6 +6,8 @@ I spent some time writing one full stack project using ASP.NET Core and React wi
 
 ## Project structure
 
+The project was structured in two main folders: backend and frontend.
+
 ## Backend
 
 This project is built using ASP.NET Core 5. You can cd into API directory and say **dotnet restore** and then **dotnet watch run**.
@@ -25,6 +27,7 @@ This project is built using ASP.NET Core 5. You can cd into API directory and sa
 - SignalR
 - EntityFramework Core
 - Identity
+- Redis Distributed Cache
 
 ## Frontend
 
@@ -39,3 +42,7 @@ This project was generated with [Create React App](https://github.com/facebook/c
 - Formik
 - MobX
 - Axios
+
+### Mobile UX
+
+This project is completely mobile friendly. I used specific components of Material UI to facilitate the construction of the interface, but I tried to customize the appearance and not depend so much on the components. Therefore, it took a lot of time writing CSS that although tiring, it was a lot of fun to practice.
