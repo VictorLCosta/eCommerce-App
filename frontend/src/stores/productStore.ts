@@ -1,10 +1,11 @@
-import { makeAutoObservable } from "mobx";
+import { makeAutoObservable, runInAction } from "mobx";
 import { Product, ProductBriefDto } from './../models/product';
 import agent from "../lib/fetch";
 
 export default class ProductStore {
-    productRegistry = new Map<string, ProductBriefDto>()
-    currentProduct: Product | null = null
+    productRegistry = new Map<string, ProductBriefDto>();
+    currentProduct: Product | undefined = undefined;
+    loading = false;
 
     constructor() {
         makeAutoObservable(this)
@@ -25,7 +26,29 @@ export default class ProductStore {
         }
     }
 
+    loadProduct = async (id: string) => {
+        this.loading = true;
+        try {
+
+            let product = await agent.Products.details(id);
+            runInAction(() => {
+                this.currentProduct = product;
+                this.loading = false;  
+            })
+
+            return product;
+
+        } catch (error) {
+            console.error(error)
+            this.loading = false
+        }
+    }
+
     setProduct = (product: ProductBriefDto) => {
         this.productRegistry.set(product.id, product)
+    }
+
+    clearCurrentProduct = () => {
+        this.currentProduct = undefined;
     }
 }

@@ -2,7 +2,7 @@ import Header from "./layouts/header/Header";
 import { Container } from "@mui/material";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-import Details from "./pages/Details";
+import ProductDetails from "./pages/ProductDetails";
 import MobileBottomMenu from "./layouts/mobile-footer/MobileBottomMenu";
 import DesktopMenu from "./layouts/desktop-menu/DesktopMenu";
 import Overlay from "./layouts/overlay/Overlay";
@@ -16,7 +16,7 @@ function App() {
 			<Container>
 				<Routes>
 					<Route index element={<Home/>} />
-					<Route path="details" element={<Details/>} />
+					<Route path="/products/:id" element={<ProductDetails/>} />
 				</Routes>
 			</Container>
 			<MobileBottomMenu />

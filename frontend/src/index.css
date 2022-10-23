@@ -67,6 +67,7 @@ html {
 
 body {
     padding-block-start: 170px;
+    padding-block-end: 30px;
     background-color: var(--cultured);
 }
 
@@ -112,4 +113,14 @@ input::placeholder {
 
 ::-webkit-scrollbar-thumb:hover {
     background: hsl(0%, 0%, 70%);
+}
+
+
+
+@media (max-width: 768px) {
+
+    body {
+        padding-block-end: 120px;
+    }
+
 }

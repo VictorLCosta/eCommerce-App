@@ -21,7 +21,7 @@ const ProductListCard = ({ product }: Props) => {
                 <span className='card-icon'>
                     <FavoriteBorderOutlined />
                 </span>
-                <Link to={`/product/${product.id}`}>
+                <Link to={`/products/${product.id}`}>
                     <span className='card-icon'>
                         <RemoveRedEyeOutlined />
                     </span>
