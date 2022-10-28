@@ -5,6 +5,7 @@ import agent from "../lib/fetch";
 export default class ProductStore {
     productRegistry = new Map<string, ProductBriefDto>();
     currentProduct: Product | undefined = undefined;
+    loadingInitial = false;
     loading = false;
 
     constructor() {
@@ -16,12 +17,15 @@ export default class ProductStore {
     }
 
     loadProducts = async () => {
+        this.loadingInitial = true;
         try {
             var result = await agent.Products.list()
             result.forEach(product => {
                 this.setProduct(product)
             })
+            this.loadingInitial = false;
         } catch (error) {
+            this.loadingInitial = false;
             console.error(error)
         }
     }

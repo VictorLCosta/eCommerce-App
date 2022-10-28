@@ -1,4 +1,5 @@
 import { Grid } from "@mui/material"
+import { observer } from "mobx-react-lite";
 import { useEffect } from "react";
 import { useStore } from "../../../stores/store";
 import ProductFilters from "./ProductFilters";
@@ -23,4 +24,4 @@ const ProductDashboard = () => {
     )
 }
 
-export default ProductDashboard
+export default observer(ProductDashboard)

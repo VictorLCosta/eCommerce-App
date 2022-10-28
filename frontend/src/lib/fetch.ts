@@ -1,7 +1,18 @@
 import axios, { AxiosResponse } from "axios";
 import { Product, ProductBriefDto } from './../models/product';
 
+const sleep = (delay: number) => {
+    return new Promise((resolve) => {
+        setTimeout(resolve, delay)
+    })
+}
+
 axios.defaults.baseURL = "https://localhost:5001/api"
+
+axios.interceptors.response.use(async resp => {
+    await sleep(1000);
+    return resp;
+})
 
 const responseBody = <T> (response: AxiosResponse<T>) => response.data
 
