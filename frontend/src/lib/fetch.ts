@@ -1,4 +1,5 @@
 import axios, { AxiosResponse } from "axios";
+import { ProductBranch } from "../models/productBranch";
 import { Product, ProductBriefDto } from './../models/product';
 
 const sleep = (delay: number) => {
@@ -28,8 +29,13 @@ const Products = {
     details: (id: string) => requests.get<Product>(`/product/${id}`),
 }
 
+const ProductBranches = {
+    get: (id: string) => requests.get<ProductBranch>(`/branch/${id}`)
+}
+
 const agent = {
-    Products
+    Products,
+    ProductBranches
 }
 
 export default agent

@@ -32,7 +32,7 @@ const ProductDetails = () => {
                     </Grid>
                 </Grid>
                 <Grid item lg={12} container>
-                    <ProductBranchInfo />
+                    <ProductBranchInfo branchId={currentProduct?.branchId} />
                 </Grid>
                 <Grid item lg={12} rowSpacing={1} columnSpacing={2} container>
                     <Grid item xs={12} sm={12} md={12} lg={10}>
