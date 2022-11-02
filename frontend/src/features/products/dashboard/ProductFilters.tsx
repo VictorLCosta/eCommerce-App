@@ -1,47 +1,22 @@
-import { FilterAltOutlined } from '@mui/icons-material';
-import { LoadingButton } from '@mui/lab';
-import { Divider, ListItemText, MenuItem, MenuList, Typography } from '@mui/material';
-import { styled } from '@mui/material/styles'
-
-const Main = styled("div")(props => ({
-    position: 'sticky',
-    display: 'block',
-    width: '100%',
-    background: 'var(--white)',
-    border: '1px solid var(--white)',
-    borderRadius: 'var(--border-radius-sm)',
-    padding: '1.5rem',
-    [props.theme.breakpoints.down(768)]: {
-        display: 'none'
-    },
-    [props.theme.breakpoints.down(1024)]: {
-        display: 'none'
-    }
-}));
+import { Button, Divider, Header, Icon, Segment, Sticky } from 'semantic-ui-react';
 
 const ProductFilters = () => {
     return (
-        <Main>
+        <Sticky offset={165}>
+            <Segment>
+                <Header as={'h1'}>
+                    <Icon name='filter' size='small' />
+                    <Header.Content>Filters</Header.Content>
+                </Header>
 
-            <Typography variant='h4' mb={2}>
-                <FilterAltOutlined /> Filters
-            </Typography>
+                <Divider />
 
-            <MenuList>
-                Ainda não sei o que colocar aqui :)
-            </MenuList>
+                <Button basic fluid color='blue' style={{ fontSize: '1.4rem' }}>
+                    Clear filters
+                </Button>
 
-            <Divider sx={{ marginBottom: '2rem' }} />
-
-            <LoadingButton
-                loadingPosition="start"
-                variant="outlined"
-                sx={{ width: '100%', fontSize: '1.2rem' }}
-            >
-                Clear filters
-            </LoadingButton>
-
-        </Main>
+            </Segment>
+        </Sticky>
     )
 }
 

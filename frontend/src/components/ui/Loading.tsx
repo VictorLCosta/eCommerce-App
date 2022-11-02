@@ -1,13 +1,15 @@
-import { Backdrop, CircularProgress } from "@mui/material"
+import { Dimmer, Loader } from "semantic-ui-react"
 
-const Loading = () => {
+interface Props {
+    content?: string,
+    inverted?: boolean
+}
+
+const Loading = ({ content, inverted }: Props) => {
     return (
-        <Backdrop
-            sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-            open={true}
-        >
-            <CircularProgress color="inherit" />
-        </Backdrop>
+        <Dimmer active={true} inverted={inverted}>
+            <Loader content={content} size="big" />
+        </Dimmer>
     )
 }
 

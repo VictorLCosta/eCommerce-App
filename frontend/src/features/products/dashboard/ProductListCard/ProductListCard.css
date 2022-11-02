@@ -33,7 +33,7 @@
     opacity: 0;
     position: absolute;
     top: 0; right: -20px;
-    transform: translateY(22%);
+    transform: translateY(17%);
     transition: var(--transition);
     cursor: pointer;
 }
@@ -44,7 +44,7 @@
 }
 
 .product-card .card-icons .card-icon {
-    padding: .5rem .65rem;
+    padding: .70rem;
     background: var(--white);
     color: var(--onyx);
     border-radius: var(--border-radius-sm);
@@ -54,6 +54,7 @@
 
 .product-card .card-icons .card-icon svg {
     font-size: 2rem;
+    vertical-align: middle;
 }
 
 .product-card .card-icons .card-icon:hover {
@@ -68,14 +69,23 @@
 .product-card .card-content .price {
     margin-bottom: 1rem;
     font-size: 1.5rem;
-    font-weight: 500;
-    color: #FF8F9C;
+    font-weight: 700;
+    color: var(--salmon-pink);
 }
 
 .product-card .card-content .name {
     font-size: 1.6rem;
-    line-height: 1.6;
+    line-height: 1.5;
     cursor: pointer;
+}
+
+.product-card .card-content .name a {
+    color: var(--onyx);
+    transition: var(--transition);
+}
+
+.product-card .card-content .name:hover a {
+    color: var(--eerie-black);
 }
 
 .product-card .card-content .details {
@@ -96,7 +106,8 @@
     color: var(--onyx);
 }
 
-@media (max-width: 768px) {
+
+@media (min-width: 769px) and (max-width: 1024px) {
 
     .product-card {
         width: 30rem;
@@ -109,6 +120,44 @@
 
     .product-card .card-content .details {
         font-size: 1.4rem;
+    }
+
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+
+    .product-card {
+        width: 30rem;
+        height: 40rem;
+    }
+
+    .product-card .card-showcase {
+        height: 25rem;
+    }
+
+    .product-card .card-content .details {
+        font-size: 1.4rem;
+    }
+
+}
+
+@media (max-width: 640px) {
+
+    .product-card {
+        width: 30rem;
+        height: 40rem;
+    }
+
+    .product-card .card-showcase {
+        height: 20rem;
+    }
+
+    .product-card .card-icons {
+        transform: translateY(28%);
+    }
+
+    .product-card .card-icons .card-icon svg {
+        font-size: 2.5rem;
     }
 
 }

@@ -57,16 +57,15 @@
     outline: none;
     text-decoration: none;
     box-sizing: border-box;
-    font-family: var(--ff-vietnam);
 }
 
 html {
     scroll-behavior: smooth;
+    font-family: var(--ff-vietnam);
     font-size: 62.5%;
 }
 
 body {
-    padding-block-start: 170px;
     padding-block-end: 30px;
     background-color: var(--cultured);
 }
@@ -113,6 +112,18 @@ input::placeholder {
 
 ::-webkit-scrollbar-thumb:hover {
     background: hsl(0%, 0%, 70%);
+}
+
+.buy-now-btn {
+    background: var(--salmon-pink) !important;
+    color: var(--white) !important;
+    text-transform: uppercase !important;
+    transition: var(--transition) !important;
+    border-radius: var(--border-radius-md) !important;
+}
+
+.buy-now-btn:hover {
+    background: var(--eerie-black) !important;
 }
 
 

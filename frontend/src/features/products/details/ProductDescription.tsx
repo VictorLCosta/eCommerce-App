@@ -1,4 +1,4 @@
-import { Paper, Skeleton, Typography } from "@mui/material"
+import { Header, Placeholder, Segment } from "semantic-ui-react"
 import { Product } from "../../../models/product"
 
 interface Props {
@@ -6,24 +6,25 @@ interface Props {
 }
 
 const ProductDescription = ({ product }: Props) => {
-    const style = {
-        width: '100%',
-        padding: '1.5rem',
-        fontSize: '1.5rem'
-    }
-
     return (
-        <Paper sx={style}>
-            <Typography variant="h4" marginBottom='1.5rem'>
+        <Segment padded>
+            <Header as={'h1'} block>
                 Product Description
-            </Typography>
+            </Header>
             
             {product ? (
-                    <p>{product.description}</p>
+                <p style={{fontSize: '1.5rem'}}>{product.description}</p>
             ) : (
-                    <Skeleton />
+                <Placeholder fluid>
+                    <Placeholder.Paragraph>
+                        <Placeholder.Line />
+                        <Placeholder.Line />
+                        <Placeholder.Line />
+                        <Placeholder.Line />
+                    </Placeholder.Paragraph>
+                </Placeholder>
             )}
-        </Paper>
+        </Segment>
     )
 }
 

@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Grid } from "semantic-ui-react";
 import { useParams } from "react-router-dom"
 import { useStore } from './../stores/store';
 import { useEffect } from 'react';
@@ -22,29 +22,30 @@ const ProductDetails = () => {
 
     return (
         <>
-            <Grid container spacing={2}>
-                <Grid item lg={12} rowSpacing={1} columnSpacing={3} container>
-                    <Grid item xs={12} sm={12} md={12} lg={5}>
-                        <ProductGallery imageUrl={currentProduct?.pictureUrl} />
-                    </Grid>
-                    <Grid item xs={12} sm={12} md={12} lg={7} >
-                        <ProductInfo product={currentProduct} />
-                    </Grid>
-                </Grid>
-                <Grid item lg={12} container>
+            <Grid container stackable>
+
+                <Grid.Column computer={7}>
+                    <ProductGallery imageUrl={currentProduct?.pictureUrl} />
+                </Grid.Column>
+                <Grid.Column computer={9}>
+                    <ProductInfo product={currentProduct} />
+                </Grid.Column>
+
+                <Grid.Column computer={16}>
                     <ProductBranchInfo branchId={currentProduct?.branchId} />
-                </Grid>
-                <Grid item lg={12} rowSpacing={1} columnSpacing={2} container>
-                    <Grid item xs={12} sm={12} md={12} lg={10}>
-                        <ProductDescription product={currentProduct} />
-                    </Grid>
-                    <Grid item xs={12} sm={12} md={12} lg={2}>
-                        <ProductsFromBranch />
-                    </Grid>
-                    <Grid item xs={12} sm={12} md={12} lg={10}>
-                        <ProductReviews />
-                    </Grid>
-                </Grid>
+                </Grid.Column>
+
+
+                <Grid.Column computer={13}>
+                    <ProductDescription product={currentProduct} />
+                </Grid.Column>
+                <Grid.Column computer={3}>
+                    <ProductsFromBranch />
+                </Grid.Column>
+                <Grid.Column computer={13}>
+                    <ProductReviews />
+                </Grid.Column>
+
             </Grid>
         </>
     )

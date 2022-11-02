@@ -35,7 +35,9 @@ const ProductListCard = ({ product }: Props) => {
                     {product.priceLabel}
                 </div>
                 <div className="name">
-                    {product.name.substring(0, 30) + '...'}
+                    <Link to={`/products/${product.id}`}>
+                        {product.name.substring(0, 30) + '...'}
+                    </Link>
                 </div>
                 <div className="details">
                     <span className="location">{product.branchCity}</span>

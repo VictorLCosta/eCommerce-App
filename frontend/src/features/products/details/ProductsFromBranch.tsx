@@ -1,10 +1,10 @@
-import { Paper } from "@mui/material"
+import { Segment } from 'semantic-ui-react';
 
 const ProductsFromBranch = () => {
     return (
-        <Paper sx={{ width: '100%' }}>
+        <Segment>
             Another
-        </Paper>
+        </Segment>
     )
 }
 

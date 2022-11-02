@@ -1,8 +1,7 @@
-import { Grid, Paper } from "@mui/material"
 import { useStore } from './../../../stores/store';
 import { useEffect } from 'react';
-import ProductBranchInfoPlaceholder from "./placeholders/ProductBranchInfoPlaceholder";
 import { observer } from "mobx-react-lite";
+import { Placeholder, Segment, Grid } from "semantic-ui-react";
 
 interface Props {
     branchId?: string
@@ -14,28 +13,29 @@ const ProductBranchInfo = ({ branchId }: Props) => {
     useEffect(() => {
         if (branchId) loadBranch(branchId);
         return () => clearCurrentBranch();
-    }, [branchId, currentBranch, clearCurrentBranch])
+    }, [branchId, loadBranch, clearCurrentBranch])
 
     return (
-        <Paper 
+        <Segment 
             sx={{ 
                 width: '100%', 
                 padding: '1.5rem' 
             }}
         >
             {loading ? (
-                <ProductBranchInfoPlaceholder />
-            ) : (
-                <Grid container spacing={2}>
-                    <Grid container item>
-                        
-                    </Grid>
-                    <Grid container item>
+                <Placeholder>
+                    <Placeholder.Header image>
 
-                    </Grid>
+                    </Placeholder.Header>
+                </Placeholder>
+            ) : (
+                <Grid container>
+                    <Grid.Row>
+                        {currentBranch?.name}
+                    </Grid.Row>
                 </Grid> 
             )}
-        </Paper>
+        </Segment>
     )
 }
 

@@ -1,4 +1,4 @@
-import { Box, Skeleton } from "@mui/material"
+import { Placeholder } from "semantic-ui-react"
 
 interface Props {
     imageUrl?: string
@@ -11,12 +11,12 @@ const ProductGallery = ({imageUrl}: Props) => {
             {imageUrl ? (
                 <img style={{objectFit: 'cover', width: '100%', height: '50rem'}} src={imageUrl} />
             ) : (
-                <Skeleton variant="rectangular" width='100%' height='50rem' />
+                <Placeholder fluid>
+                    <Placeholder.Image square />
+                </Placeholder>
             )}
 
-            <Box>
-                
-            </Box>
+            
 
         </div>
     )

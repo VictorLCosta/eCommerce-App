@@ -1,4 +1,4 @@
-import { Box, Divider, Rating, Skeleton, Typography } from "@mui/material"
+import { Button, Header, Placeholder, Rating, Segment } from "semantic-ui-react"
 import { Product } from "../../../models/product"
 
 interface Props {
@@ -6,24 +6,53 @@ interface Props {
 }
 
 const ProductInfo = ({product}: Props) => {
-    return (
-        <div>
-            <Typography variant='h4' color={'var(--onyx)'} fontWeight={600}>
-                {product ? <>{product.name}</> : <Skeleton />}
-            </Typography>
-            <Box display={'flex'}>
-                <Box display={'flex'}>
-                    <Rating readOnly />
-                    <Divider orientation="vertical" />
-                </Box>
-                <Box>
+    const segmentStyle = {
+        border: 'none', 
+        boxShadow: 'none'
+    };
 
-                </Box>
-            </Box>
-            <Box mt={2} p={'1.5rem'} fontSize={'2rem'} fontWeight={600} bgcolor='var(--sonic-silver)' color={'var(--black_12)'}>
-                {`${product?.defaultPrice?.currency?.symbol} ${product?.defaultPrice?.amount}`}
-            </Box>            
-        </div>
+    return (
+        <Segment.Group style={segmentStyle}>
+            <Segment basic secondary>
+                {product ? (
+                    <Header as={'h1'} style={{ color: 'var(--onyx)' }}>{product.name}</Header>
+                ) : (
+                    <Placeholder fluid>
+                        <Placeholder.Header>
+                            <Placeholder.Line />
+                        </Placeholder.Header>
+                    </Placeholder>
+                )}
+            </Segment>
+            <Segment.Group horizontal size="big" style={segmentStyle}>
+                {product ? (
+                    <>
+                        <Segment compact>
+                            <Rating defaultRating={2} maxRating={5} />
+                        </Segment>
+                        <Segment compact>
+                            {Math.floor(Math.random() * (500 - 9 + 1) + 9)} avaliações
+                        </Segment>
+                        <Segment compact>
+                            {Math.floor(Math.random() * (2000 - 100 + 1) + 100)} vendidos
+                        </Segment>
+                    </>
+                ) : (
+                    <Placeholder>
+
+                    </Placeholder>
+                )}
+            </Segment.Group>
+
+            <Segment.Group horizontal style={segmentStyle}>
+                <Segment.Inline>
+                    <Button size="massive" basic color="pink" icon="cart plus" content="Add to cart" />
+                </Segment.Inline>
+                <Segment.Inline>
+                    <Button size="massive" className="buy-now-btn" content="Buy now" />
+                </Segment.Inline>
+            </Segment.Group>
+        </Segment.Group>
     )
 }
 

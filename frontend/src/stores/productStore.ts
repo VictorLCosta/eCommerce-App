@@ -17,15 +17,15 @@ export default class ProductStore {
     }
 
     loadProducts = async () => {
-        this.loadingInitial = true;
+        this.setLoadingIntital(true);
         try {
             var result = await agent.Products.list()
             result.forEach(product => {
                 this.setProduct(product)
             })
-            this.loadingInitial = false;
+            this.setLoadingIntital(false);
         } catch (error) {
-            this.loadingInitial = false;
+            this.setLoadingIntital(false);
             console.error(error)
         }
     }
@@ -50,6 +50,10 @@ export default class ProductStore {
 
     setProduct = (product: ProductBriefDto) => {
         this.productRegistry.set(product.id, product)
+    }
+
+    setLoadingIntital = (state: boolean) => {
+        this.loadingInitial = state;
     }
 
     clearCurrentProduct = () => {
