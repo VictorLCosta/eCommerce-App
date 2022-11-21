@@ -1,7 +1,7 @@
 export interface Money {
-    amount: number,
-    currency: {
-        name: string,
-        symbol: string
-    }
+	amount: number;
+	currency: {
+		name: string;
+		symbol: string;
+	};
 }

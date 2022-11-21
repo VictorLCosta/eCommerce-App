@@ -1,137 +1,137 @@
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;900&display=swap");
 
 :root {
-    --white: hsl(0, 100%, 100%);
-    --cultured: hsl(225, 20%, 96%);
-    --cultured2: hsl(0, 0%, 93%);
-    --sonic-silver: hsl(0, 0%, 47%);
-    --onyx: hsl(0, 0%, 27%);
-    --salmon-pink: hsl(353, 100%, 78%);
-    --eerie-black: hsl(214, 10%, 13%);
-    --black-08: hsla(0, 0%, 0%, 0.06);
-    --black-12: hsl(0, 0%, 12%);
+	--white: hsl(0, 100%, 100%);
+	--cultured: hsl(225, 20%, 96%);
+	--cultured2: hsl(0, 0%, 93%);
+	--sonic-silver: hsl(0, 0%, 47%);
+	--onyx: hsl(0, 0%, 27%);
+	--salmon-pink: hsl(353, 100%, 78%);
+	--eerie-black: hsl(214, 10%, 13%);
+	--black-08: hsla(0, 0%, 0%, 0.06);
+	--black-12: hsl(0, 0%, 12%);
 
-    /*
+	/*
         Typography
     */
 
-    --ff-vietnam: "Be Vietnam Pro", sans-serif;
+	--ff-vietnam: "Be Vietnam Pro", sans-serif;
 
-    --weight-300: 300;
-    --weight-400: 400;
-    --weight-500: 500;
-    --weight-600: 600;
-    --weight-700: 700;
+	--weight-300: 300;
+	--weight-400: 400;
+	--weight-500: 500;
+	--weight-600: 600;
+	--weight-700: 700;
 
-    /*
+	/*
         Border Radius
     */
 
-    --border-radius-md: 10px;
-    --border-radius-sm: 5px;
+	--border-radius-md: 10px;
+	--border-radius-sm: 5px;
 
-    /*
+	/*
         Shadows
     */
 
-   --shadow-1: 0 12px 20px hsla(210, 10%, 23%, 0.07);
-   --shadow-2: 0 2px 10px hsla(0, 0%, 0%, 0.04);
-   --shadow-3: 0 2px 20px var(--black_08);
-   --shadow-top: 0 -10px 20px var(--black_08);;
+	--shadow-1: 0 12px 20px hsla(210, 10%, 23%, 0.07);
+	--shadow-2: 0 2px 10px hsla(0, 0%, 0%, 0.04);
+	--shadow-3: 0 2px 20px var(--black_08);
+	--shadow-top: 0 -10px 20px var(--black_08);
 
-    /*
+	/*
         Trasitions
     */
 
-    --transition: 0.25s ease;
-    --cubic-out: cubic-bezier(0.45, 0.85, 0.5, 1);
-    --cubic-in: cubic-bezier(0.5, 0, 0.50, 0.95);
+	--transition: 0.25s ease;
+	--cubic-out: cubic-bezier(0.45, 0.85, 0.5, 1);
+	--cubic-in: cubic-bezier(0.5, 0, 0.5, 0.95);
 }
 
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    border: none;
-    outline: none;
-    text-decoration: none;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+	text-decoration: none;
+	box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
-    font-family: var(--ff-vietnam);
-    font-size: 62.5%;
+	scroll-behavior: smooth;
+	font-family: var(--ff-vietnam);
+	font-size: 62.5%;
 }
 
 body {
-    padding-block-end: 30px;
-    background-color: var(--cultured);
+	padding-block-end: 30px;
+	background-color: var(--cultured);
 }
 
 a,
 img,
 span,
-button { display: block; }
+button {
+	display: block;
+}
 
-img { height: auto; }
+img {
+	height: auto;
+}
 
 ul {
-    list-style: none;
+	list-style: none;
 }
 
 button {
-    background: none;
-    font: inherit;
-    border: none;
-    cursor: pointer;
+	background: none;
+	font: inherit;
+	border: none;
+	cursor: pointer;
 }
 
 input {
-    display: block;
-    width: 100%;
-    font: inherit;
+	display: block;
+	width: 100%;
+	font: inherit;
 }
 
 input::placeholder {
-    font: inherit;
+	font: inherit;
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
+	width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-    background: hsl(0%, 0%, 95%);
+	background: hsl(0%, 0%, 95%);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: hsl(0%, 0%, 80%);
+	background: hsl(0%, 0%, 80%);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: hsl(0%, 0%, 70%);
+	background: hsl(0%, 0%, 70%);
 }
 
 .buy-now-btn {
-    background: var(--salmon-pink) !important;
-    color: var(--white) !important;
-    text-transform: uppercase !important;
-    transition: var(--transition) !important;
-    border-radius: var(--border-radius-md) !important;
+	background: var(--salmon-pink) !important;
+	color: var(--white) !important;
+	text-transform: uppercase !important;
+	transition: var(--transition) !important;
+	border-radius: var(--border-radius-md) !important;
 }
 
 .buy-now-btn:hover {
-    background: var(--eerie-black) !important;
+	background: var(--eerie-black) !important;
 }
 
-
-
 @media (max-width: 768px) {
-
-    body {
-        padding-block-end: 120px;
-    }
-
+	body {
+		padding-block-end: 120px;
+	}
 }

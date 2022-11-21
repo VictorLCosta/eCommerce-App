@@ -1,22 +1,22 @@
-import { createContext, useContext } from "react"
+import { createContext, useContext } from "react";
 import BranchStore from "./branchStore";
 import CommonStore from "./commonStore";
-import ProductStore from './productStore';
+import ProductStore from "./productStore";
 
 interface Store {
-    productStore: ProductStore,
-    branchStore: BranchStore,
-    commonStore: CommonStore
+	productStore: ProductStore;
+	branchStore: BranchStore;
+	commonStore: CommonStore;
 }
 
 export const store: Store = {
-    productStore: new ProductStore(),
-    branchStore: new BranchStore(),
-    commonStore: new CommonStore()
-}
+	productStore: new ProductStore(),
+	branchStore: new BranchStore(),
+	commonStore: new CommonStore(),
+};
 
-export const StoreContext = createContext(store)
+export const StoreContext = createContext(store);
 
 export function useStore() {
-    return useContext(StoreContext)
+	return useContext(StoreContext);
 }

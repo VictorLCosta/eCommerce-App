@@ -1,23 +1,23 @@
-import { Money } from "./money";
+import type { Money } from "./money";
 
 export interface ProductBriefDto {
-    id: string;
-    name: string;
-    pictureUrl: string;
-    priceLabel: string;
-    localSeller: boolean;
-    branchCity: string;
-    salesNumber: number;
+	id: string;
+	name: string;
+	pictureUrl: string;
+	priceLabel: string;
+	localSeller: boolean;
+	branchCity: string;
+	salesNumber: number;
 }
 
 export interface Product {
-    id: string;
-    name: string;
-    code: string;
-    description: string;
-    pictureUrl: string;
-    defaultPrice: Money;
-    branchId: string;
-    branchName: string;
-    type: string;
+	id: string;
+	name: string;
+	code: string;
+	description: string;
+	pictureUrl: string;
+	defaultPrice: Money;
+	branchId: string;
+	branchName: string;
+	type: string;
 }

@@ -1,20 +1,22 @@
-import { Grid } from "semantic-ui-react"
-import { observer } from "mobx-react-lite"
-import { useStore } from "../../../stores/store"
-import ProductListCard from "./ProductListCard/ProductListCard"
+import { observer } from "mobx-react-lite";
+import { Grid } from "semantic-ui-react";
+import { useStore } from "../../../stores/store";
+import ProductListCard from "./ProductListCard/ProductListCard";
 
 const ProductList = () => {
-    const { productStore: { productList } } = useStore()
+	const {
+		productStore: { productList },
+	} = useStore();
 
-    return (
-        <Grid relaxed>
-            {productList.map((product, i) => (
-                <Grid.Column key={i} mobile={16} tablet={8} computer={4}>
-                    <ProductListCard product={product} />
-                </Grid.Column>
-            ))}
-        </Grid>
-    )
-}
+	return (
+		<Grid relaxed>
+			{productList.map((product, i) => (
+				<Grid.Column key={i} mobile={16} tablet={8} computer={4}>
+					<ProductListCard product={product} />
+				</Grid.Column>
+			))}
+		</Grid>
+	);
+};
 
-export default observer(ProductList)
+export default observer(ProductList);

@@ -1,10 +1,6 @@
-import { observer } from "mobx-react-lite"
-import ProductDashboard from "../features/products/dashboard/ProductsDashboard"
+import { observer } from "mobx-react-lite";
+import ProductDashboard from "../features/products/dashboard/ProductsDashboard";
 
-const Home = () => {
-    return (
-        <ProductDashboard />
-    )
-}
+const Home = () => <ProductDashboard />;
 
-export default observer(Home)
+export default observer(Home);

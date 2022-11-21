@@ -1,76 +1,77 @@
 .desktop-navigation-menu {
-    display: block;
-    background: var(--white);
-    position: fixed;
-    top: 0; left: 0;
-    width: 0px;
-    height: 100vh;
-    overflow: hidden;
-    z-index: 1000;
-    padding-block: 1.5rem;
+	display: block;
+	background: var(--white);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 0px;
+	height: 100vh;
+	overflow: hidden;
+	z-index: 1000;
+	padding-block: 1.5rem;
 
-    transition: .3s var(--cubic-in);
+	transition: 0.3s var(--cubic-in);
 }
 
 .desktop-navigation-menu.active {
-    width: 320px;
+	width: 320px;
 }
 
 .desktop-navigation-menu .menu-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1rem;
 }
 
 .desktop-navigation-menu .menu-header h1 {
-    font-size: 2.2rem;
-    font-weight: 600;
-    color: var(--salmon-pink);
+	font-size: 2.2rem;
+	font-weight: 600;
+	color: var(--salmon-pink);
 }
 
 .desktop-navigation-menu .menu-header svg {
-    color: var(--onyx);
-    font-size: 1.9rem;
-    font-weight: 600;
+	color: var(--onyx);
+	font-size: 1.9rem;
+	font-weight: 600;
 }
 
 .desktop-navigation-menu .menu-body {
-    padding-top: 2rem;
-    margin-bottom: 3rem;
+	padding-top: 2rem;
+	margin-bottom: 3rem;
 }
 
 .desktop-navigation-menu .menu-body * {
-    color: var(--onyx);
+	color: var(--onyx);
 }
 
 .desktop-navigation-menu .menu-body .home-link {
-    color: var(--onyx);
-    font-weight: 600;
+	color: var(--onyx);
+	font-weight: 600;
 }
 
 .desktop-navigation-menu .social-container {
-    display: flex;
-    justify-content: center;
-    gap: 0 1.5rem;
-    padding-block: 2rem;
+	display: flex;
+	justify-content: center;
+	gap: 0 1.5rem;
+	padding-block: 2rem;
 }
 
 .desktop-navigation-menu .social-container .social-link {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    padding: .5rem;
-    border-radius: 15%;
-    background: var(--cultured2);
-    transition: var(--transition);
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	padding: 0.5rem;
+	border-radius: 15%;
+	background: var(--cultured2);
+	transition: var(--transition);
 }
 
 .desktop-navigation-menu .social-container .social-link:hover {
-    background: var(--salmon-pink);
-    color: var(--white);
+	background: var(--salmon-pink);
+	color: var(--white);
 }
 
 .desktop-navigation-menu .social-container .social-link * {
-    font-size: 2rem;
+	font-size: 2rem;
 }

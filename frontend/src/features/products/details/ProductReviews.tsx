@@ -1,11 +1,5 @@
-import { Segment } from "semantic-ui-react"
+import { Segment } from "semantic-ui-react";
 
-const ProductReviews = () => {
-    return (
-        <Segment>
-            Reviews
-        </Segment>
-    )
-}
+const ProductReviews = () => <Segment>Reviews</Segment>;
 
-export default ProductReviews
+export default ProductReviews;

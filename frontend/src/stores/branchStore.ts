@@ -1,34 +1,32 @@
 import { makeAutoObservable, runInAction } from "mobx";
 import agent from "../lib/fetch";
-import { ProductBranch } from './../models/productBranch';
+import type { ProductBranch } from "./../models/productBranch";
 
 export default class BranchStore {
-    currentBranch: ProductBranch | undefined = undefined;
-    loading = false;
-    
-    constructor() {
-        makeAutoObservable(this)
-    }
+	currentBranch: ProductBranch | undefined = undefined;
+	loading = false;
 
-    loadBranch = async (id: string) => {
-        this.loading = true;
-        try {
+	constructor() {
+		makeAutoObservable(this);
+	}
 
-            let productBranch = await agent.ProductBranches.get(id);
-            runInAction(() => {
-                this.currentBranch = productBranch;
-                this.loading = false;  
-            })
+	loadBranch = async (id: string) => {
+		this.loading = true;
+		try {
+			const productBranch = await agent.ProductBranches.get(id);
+			runInAction(() => {
+				this.currentBranch = productBranch;
+				this.loading = false;
+			});
 
-            return productBranch;
-            
-        } catch (error) {
-            this.loading = false;
-            console.error(error);
-        }
-    }
+			return productBranch;
+		} catch (error) {
+			this.loading = false;
+			console.error(error);
+		}
+	};
 
-    clearCurrentBranch = () => {
-        this.currentBranch = undefined;
-    }
+	clearCurrentBranch = () => {
+		this.currentBranch = undefined;
+	};
 }

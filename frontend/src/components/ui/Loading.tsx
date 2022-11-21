@@ -1,16 +1,14 @@
-import { Dimmer, Loader } from "semantic-ui-react"
+import { Dimmer, Loader } from "semantic-ui-react";
 
 interface Props {
-    content?: string,
-    inverted?: boolean
+	content?: string;
+	inverted?: boolean;
 }
 
-const Loading = ({ content, inverted }: Props) => {
-    return (
-        <Dimmer active={true} inverted={inverted}>
-            <Loader content={content} size="big" />
-        </Dimmer>
-    )
-}
+const Loading = ({ content, inverted }: Props) => (
+	<Dimmer active={true} inverted={inverted}>
+		<Loader content={content} size="big" />
+	</Dimmer>
+);
 
-export default Loading
+export default Loading;

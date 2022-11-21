@@ -1,11 +1,5 @@
-import { Segment } from 'semantic-ui-react';
+import { Segment } from "semantic-ui-react";
 
-const ProductsFromBranch = () => {
-    return (
-        <Segment>
-            Another
-        </Segment>
-    )
-}
+const ProductsFromBranch = () => <Segment>Another</Segment>;
 
-export default ProductsFromBranch
+export default ProductsFromBranch;
