@@ -6,7 +6,7 @@ import { observer } from 'mobx-react-lite';
 
 import ProductGallery from "../features/products/details/ProductGallery";
 import ProductInfo from '../features/products/details/ProductInfo';
-import ProductBranchInfo from "../features/products/details/ProductBranchInfo";
+import ProductBranchInfo from "../features/products/details/ProductBranchInfo/ProductBranchInfo";
 import ProductDescription from "../features/products/details/ProductDescription";
 import ProductsFromBranch from "../features/products/details/ProductsFromBranch";
 import ProductReviews from './../features/products/details/ProductReviews';

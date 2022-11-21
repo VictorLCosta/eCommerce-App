@@ -1,0 +1,16 @@
+.branch-info {
+    display: flex;
+    column-gap: 2rem;
+}
+
+.branch-image-showcase {
+    width: 8rem;
+    height: 8rem;
+}
+
+.branch-image-showcase img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}

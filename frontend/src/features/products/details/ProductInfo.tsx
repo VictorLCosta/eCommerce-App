@@ -13,7 +13,7 @@ const ProductInfo = ({product}: Props) => {
 
     return (
         <Segment.Group style={segmentStyle}>
-            <Segment basic secondary>
+            <Segment secondary>
                 {product ? (
                     <Header as={'h1'} style={{ color: 'var(--onyx)' }}>{product.name}</Header>
                 ) : (
@@ -28,7 +28,7 @@ const ProductInfo = ({product}: Props) => {
                 {product ? (
                     <>
                         <Segment compact>
-                            <Rating defaultRating={2} maxRating={5} />
+                            <Rating defaultRating={2} maxRating={5} disabled />
                         </Segment>
                         <Segment compact>
                             {Math.floor(Math.random() * (500 - 9 + 1) + 9)} avaliações

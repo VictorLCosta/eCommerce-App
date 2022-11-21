@@ -49,6 +49,7 @@ This project was generated with [Create React App](https://github.com/facebook/c
 
 - React
 - Typescript
+- Semantic UI
 - Material UI
 - React Infinite Scroller
 - Formik
