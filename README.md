@@ -43,14 +43,13 @@ This project is built using ASP.NET Core 5. You can cd into API directory and sa
 
 ## Frontend
 
-This project was generated with [Create React App](https://github.com/facebook/create-react-app) command. You can cd into frontend folder and do **npm i** to install the packages then **npm start** to run the project.
+This project was generated with [Vite](https://vitejs.dev/guide/) command. You can cd into frontend folder and do **npm i** to install the packages then **npm run dev** to run the project.
 
 ### Frontend technologies
 
 - React
 - Typescript
-- Semantic UI
-- Material UI
+- ChakraUI
 - React Infinite Scroller
 - Formik
 - MobX
@@ -58,4 +57,4 @@ This project was generated with [Create React App](https://github.com/facebook/c
 
 ### Mobile UX
 
-This project is completely mobile friendly. I used specific components of Material UI to facilitate the construction of the interface, but I tried to customize the appearance and not depend so much on the components. Therefore, it took a lot of time writing CSS that although tiring, it was a lot of fun to practice.
+This project is completely mobile friendly. I used ChakraUI components to facilitate the construction of the interface, but I tried to customize the appearance and not depend so much on the components. Therefore, it took a lot of time writing CSS that although tiring, it was a lot of fun to practice.
