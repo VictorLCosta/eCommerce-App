@@ -1,9 +1,14 @@
-import Spinner from "./components/Elements/Spinner/Spinner";
+import { MdFacebook } from "react-icons/md";
+import { Icon } from "./components/Elements/Icon";
 
 function App() {
   return (
-    <div className="bg-black">
-      <Spinner size="lg" />
+    <div>
+      <Icon
+        icon={MdFacebook}
+        size="md"
+        classname="p-4 bg-cultured2 rounded-md"
+      />
     </div>
   );
 }

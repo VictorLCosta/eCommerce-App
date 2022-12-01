@@ -20,7 +20,7 @@ export type SpinnerProps = {
   className?: string;
 };
 
-export default function Spinner({
+export function Spinner({
   size = "md",
   variant = "light",
   className = "",

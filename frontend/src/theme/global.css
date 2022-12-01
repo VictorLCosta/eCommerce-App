@@ -21,8 +21,9 @@ html {
 a,
 img,
 span,
-button {
-	display: block;
+button,
+i.icon {
+	display: inline-block;
 }
 
 img {
