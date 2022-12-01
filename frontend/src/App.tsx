@@ -1,5 +1,11 @@
+import Spinner from "./components/Elements/Spinner/Spinner";
+
 function App() {
-  return <div>a</div>;
+  return (
+    <div className="bg-black">
+      <Spinner size="lg" />
+    </div>
+  );
 }
 
 export default App;
