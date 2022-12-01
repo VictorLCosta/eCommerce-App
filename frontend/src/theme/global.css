@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    border: none;
+	outline: none;
+	text-decoration: none;
+}
+
+html {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+a,
+img,
+span,
+button {
+	display: block;
+}
+
+img {
+	height: auto;
+}
+
+ul {
+	list-style: none;
+}
+
+button {
+	background: none;
+	font: inherit;
+	border: none;
+	cursor: pointer;
+}
+
+input {
+	display: block;
+	width: 100%;
+	font: inherit;
+}
+
+input::placeholder {
+	font: inherit;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: hsl(0%, 0%, 95%);
+}
+
+::-webkit-scrollbar-thumb {
+	background: hsl(0%, 0%, 80%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: hsl(0%, 0%, 70%);
+}

@@ -26,7 +26,10 @@
         "react-hooks"
     ],
     "rules": {
-        "arrow-body-style": ["error", "as-needed"],
+        "arrow-body-style": [
+            "error",
+            "as-needed"
+        ],
         "react/react-in-jsx-scope": [
             "off"
         ],
@@ -58,7 +61,13 @@
             "error",
             {
                 "prefer": "type-imports"
-            } 
+            }
+        ],
+        "prettier/prettier": [
+            "error",
+            {
+                "endOfLine": "auto"
+            }
         ],
         "react-hooks/exhaustive-deps": "error"
     }
