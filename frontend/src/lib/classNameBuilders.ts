@@ -1,4 +1,4 @@
-export const useKeyOnly = (val: boolean, key: string) => val && key;
+export const useKeyOnly = (val: boolean | undefined, key: string) => val && key;
 
 export const useValueAndKey = (val: boolean | string, key: string) =>
   val && val !== true && `${val} ${key}`;

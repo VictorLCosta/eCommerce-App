@@ -1,14 +1,15 @@
 import { MdFacebook } from "react-icons/md";
-import { Icon } from "./components/Elements/Icon";
+import { Button } from "./components/Elements/Button";
 
 function App() {
   return (
     <div>
-      <Icon
-        icon={MdFacebook}
-        size="md"
-        classname="p-4 bg-cultured2 rounded-md"
-      />
+      <Button size="xs" icon={MdFacebook} />
+      <Button size="sm" icon={MdFacebook} />
+      <Button size="md" icon={MdFacebook} content="teste" />
+      <Button size="lg" icon={MdFacebook} content="teste" />
+      <Button size="xl" icon={MdFacebook} content="teste" />
+      <Button size="2xl" icon={MdFacebook} content="Teste" />
     </div>
   );
 }
