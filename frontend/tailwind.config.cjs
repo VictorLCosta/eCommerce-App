@@ -20,6 +20,10 @@ module.exports = {
         "black-08": "hsla(0, 0%, 0%, 0.06)",
         "black-12": "hsl(0, 0%, 12%)",
       },
+      borderRadius: {
+        sm: "5px",
+        md: "10px"
+      }
     },
   },
   plugins: [],

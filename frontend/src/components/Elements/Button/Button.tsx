@@ -47,12 +47,12 @@ export function Button({
   const ref = createRef<HTMLButtonElement>();
   const hasChildren = !isNil(props.children);
   const classes = clsx(
-    "flex justify-center items-center relative min-w-[1em] overflow-hidden disabled:opacity-70 disabled:cursor-normal rounded-md font-medium focus:outline-none transition ease-in",
+    "flex justify-center items-center relative min-w-[1em] overflow-hidden disabled:opacity-70 disabled:cursor-normal rounded-sm font-medium focus:outline-none transition ease-in",
     sizes[size],
     variants[variant],
     className,
-    useKeyOnly(fluid, "w-full"),
-    useKeyOnly(circular, "rounded-full"),
+    useKeyOnly(fluid, "!w-full"),
+    useKeyOnly(circular, "!rounded-full"),
   );
 
   const computeButtonAriaRole = () => {
@@ -87,7 +87,7 @@ export function Button({
         </>
       );
 
-    return children;
+    return baseContent;
   }
 
   const loadingContainer = (
