@@ -1,58 +1,32 @@
 import { Form, Formik } from "formik";
-import { MdFacebook } from "react-icons/md";
 import * as Yup from "yup";
 import { Button } from "./components/Elements/Button";
-import TextField from "./components/Form/TextField";
+import SelectField from "./components/Form/SelectField";
 
 function App() {
   const validationSchema = Yup.object().shape({
-    name: Yup.string().required("Escreva saporra direito"),
-    lastname: Yup.string().required("Escreva saporra direito").min(8),
+    bands: Yup.string().required(),
   });
 
   return (
     <Formik
       enableReinitialize
-      initialValues={{ name: "Victor", lastname: "Lima", age: 0 }}
+      initialValues={{ names: "sonia" }}
       onSubmit={(values) => console.log(values)}
       validationSchema={validationSchema}
     >
-      {({ dirty, isSubmitting, isValid }) => (
-        <Form className="p-8 w-full" autoComplete="off">
-          {dirty && "ta sujo hein parça"}
-          <br />
-          <TextField
-            size="xs"
-            name="name"
-            placeholder="Teste..."
-            label="Maconha"
+      {({ handleSubmit }) => (
+        <Form onSubmit={handleSubmit} className="p-8 w-full" autoComplete="off">
+          <SelectField
+            name="names"
+            size="lg"
+            options={[
+              { label: "Victor", value: "victor" },
+              { label: "Sonia", value: "sonia" },
+              { label: "Ademir", value: "ademir" },
+            ]}
           />
-          <br />
-          <TextField
-            size="sm"
-            name="lastname"
-            placeholder="Teste..."
-            startIcon={MdFacebook}
-          />
-          <br />
-          <TextField
-            size="md"
-            name="assimass"
-            placeholder="Teste..."
-            endIcon={MdFacebook}
-          />
-          <br />
-          <TextField size="lg" name="assimas" placeholder="Teste..." />
-          <br />
-          <TextField size="xl" name="assima" placeholder="Teste..." />
-          <br />
-          <TextField size="2xl" name="age" placeholder="Teste..." />
-          <br />
-          <Button
-            content="Submit"
-            type="submit"
-            disabled={isSubmitting || !dirty || !isValid}
-          />
+          <Button type="submit" content="Bora" />
         </Form>
       )}
     </Formik>
