@@ -1,35 +1,35 @@
-import { Form, Formik } from "formik";
-import * as Yup from "yup";
-import { Button } from "./components/Elements/Button";
-import SelectField from "./components/Form/SelectField";
+import Image from "./components/Elements/Image/Image";
 
 function App() {
-  const validationSchema = Yup.object().shape({
-    bands: Yup.string().required(),
-  });
-
   return (
-    <Formik
-      enableReinitialize
-      initialValues={{ names: "sonia" }}
-      onSubmit={(values) => console.log(values)}
-      validationSchema={validationSchema}
-    >
-      {({ handleSubmit }) => (
-        <Form onSubmit={handleSubmit} className="p-8 w-full" autoComplete="off">
-          <SelectField
-            name="names"
-            size="lg"
-            options={[
-              { label: "Victor", value: "victor" },
-              { label: "Sonia", value: "sonia" },
-              { label: "Ademir", value: "ademir" },
-            ]}
-          />
-          <Button type="submit" content="Bora" />
-        </Form>
-      )}
-    </Formik>
+    <>
+      <Image
+        size="xs"
+        src="https://dummyimage.com/400x400/000/ffffff&text=Dummy+Image"
+      />
+      <Image
+        size="sm"
+        src="https://dummyimage.com/400x400/000/ffffff&text=Dummy+Image"
+      />
+      <Image
+        size="md"
+        src="https://dummyimage.com/400x400/000/ffffff&text=Dummy+Image"
+      />
+      <Image
+        size="lg"
+        src="https://dummyimage.com/400x400/000/ffffff&text=Dummy+Image"
+        avatar
+      />
+      <Image
+        size="xl"
+        src="https://dummyimage.com/400x400/000/ffffff&text=Dummy+Image"
+      />
+      <Image
+        size="2xl"
+        src="https://dummyimage.com/600x600/000/ffffff&text=Dummy+Image"
+        circular
+      />
+    </>
   );
 }
 
