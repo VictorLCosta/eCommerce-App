@@ -49,7 +49,7 @@ This project was generated with [Vite](https://vitejs.dev/guide/) command. You c
 
 - React
 - Typescript
-- ChakraUI
+- TailwindCSS
 - React Infinite Scroller
 - Formik
 - MobX
@@ -57,4 +57,4 @@ This project was generated with [Vite](https://vitejs.dev/guide/) command. You c
 
 ### Mobile UX
 
-This project is completely mobile friendly. I used ChakraUI components to facilitate the construction of the interface, but I tried to customize the appearance and not depend so much on the components. Therefore, it took a lot of time writing CSS that although tiring, it was a lot of fun to practice.
+This project is fully mobile friendly. I used classes from TailwindCSS to facilitate the construction of my custom components, as if it were a basic version of a UI Kit. So it took a lot of time writing CSS which, while tiring, was really fun to practice.
