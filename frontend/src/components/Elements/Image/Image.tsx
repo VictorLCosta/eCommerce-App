@@ -36,7 +36,7 @@ export default function Image({
   src,
 }: ImageProps) {
   const baseClasses = clsx(
-    "overflow-hidden flex justify-center items-center",
+    "relative overflow-hidden flex justify-center items-center",
     useKeyOnly(avatar, "!w-9 !h-9"),
     useKeyOnly(bordered, "!p-2 border border-solid border-gray-400"),
     useKeyOnly(circular, "!p-2"),
