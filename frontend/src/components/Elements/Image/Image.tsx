@@ -1,5 +1,6 @@
 import clsx from "clsx";
-import { useKeyOnly } from "../../../lib/classNameBuilders";
+
+import { useKeyOnly } from "@/lib/classNameBuilders";
 
 const sizes = {
   xs: "max-w-[80px]",

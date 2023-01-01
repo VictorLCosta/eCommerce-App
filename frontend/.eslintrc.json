@@ -11,7 +11,22 @@
         "plugin:@typescript-eslint/recommended",
         "plugin:prettier/recommended"
     ],
-    "overrides": [],
+    "overrides": [
+        {
+            "files": [
+                "**/*.ts?(x)"
+            ],
+            "rules": {
+                "import/extensions": [
+                    "error",
+                    "never",
+                    {
+                        "ignorePackages": true
+                    }
+                ]
+            }
+        }
+    ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": "latest",
@@ -30,9 +45,24 @@
             "error",
             "as-needed"
         ],
+        "react/prop-types": "off",
         "react/react-in-jsx-scope": [
             "off"
         ],
+        "no-restricted-imports": [
+            "error",
+            {
+                "patterns": [
+                    "@/features/*/*"
+                ]
+            }
+        ],
+        "import/extensions": ["error", "always", {
+            "js": "never",
+            "jsx": "never",
+            "ts": "never",
+            "tsx": "never"
+        }],
         "import/order": [
             "error",
             {
@@ -45,6 +75,7 @@
                     "object",
                     "type"
                 ],
+                "newlines-between": "always",
                 "pathGroups": [
                     {
                         "pattern": "@/**/**",
@@ -53,7 +84,8 @@
                     }
                 ],
                 "alphabetize": {
-                    "order": "asc"
+                    "order": "asc",
+                    "caseInsensitive": true
                 }
             }
         ],
