@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.7",
     "@types/lodash": "^4.14.191",
     "@types/node": "^18.11.18",
     "clsx": "^1.2.1",
