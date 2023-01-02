@@ -1,13 +1,10 @@
 import { clsx } from "clsx";
 import _ from "lodash";
 import { createRef } from "react";
-
-import { useKeyOnly } from "@/lib/classNameBuilders";
-import { isNil } from "@/utils/childrenUtils";
-
+import { useKeyOnly } from "../../../lib/classNameBuilders";
+import { isNil } from "../../../utils/childrenUtils";
 import { Icon } from "../Icon";
 import { Spinner } from "../Spinner";
-
 import type { IconType } from "react-icons/lib";
 
 const variants = {
