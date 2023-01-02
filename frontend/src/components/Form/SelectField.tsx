@@ -1,7 +1,8 @@
 import clsx from "clsx";
 import { useField } from "formik";
 import Select from "react-select";
-import { useKeyOnly } from "../../lib/classNameBuilders";
+
+import { useKeyOnly } from "@/lib/classNameBuilders";
 
 const sizes = {
   xs: "w-[20rem] !text-sm",
