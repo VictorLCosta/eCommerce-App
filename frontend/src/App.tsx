@@ -2,6 +2,7 @@ import { Form, Formik } from "formik";
 
 import { Button } from "./components/Elements/Button";
 import SelectField from "./components/Form/SelectField";
+import AppProvider from "./providers/AppProvider";
 
 const options = [
   { label: "Buzina", value: "Sergipe" },
@@ -10,18 +11,16 @@ const options = [
 
 function App() {
   return (
-    <Formik
-      initialValues={{ alicate: "Sergipe", alicatero: "Emo bombado" }}
-      onSubmit={(values) => console.log(values)}
-    >
-      {() => (
-        <Form className="p-4">
-          <SelectField options={options} name="alicate" />
-          <SelectField options={options} name="alicatero" size="md" />
-          <Button type="submit" content="Bora" />
-        </Form>
-      )}
-    </Formik>
+    <AppProvider>
+      <Formik
+        initialValues={{ alicate: "Sergipe", alicatero: "Emo bombado" }}
+        onSubmit={(values) => console.log(values)}
+      >
+        {() => {
+          throw new Error("Cu");
+        }}
+      </Formik>
+    </AppProvider>
   );
 }
 
