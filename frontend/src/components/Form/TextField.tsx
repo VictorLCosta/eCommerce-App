@@ -63,7 +63,7 @@ export default function TextField({
 
   const computeIcon = (icon?: IconType) => {
     if (loading) return <Spinner variant="dark" />;
-    if (icon) return <Icon icon={icon} classname="text-current" />;
+    if (icon) return <Icon icon={icon} className="text-current" />;
 
     return false;
   };

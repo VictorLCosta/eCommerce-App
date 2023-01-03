@@ -21,14 +21,14 @@ export type IconProps = {
   size?: keyof typeof sizes;
   color?: keyof typeof colors;
   disabled?: boolean;
-  classname?: string;
+  className?: string;
   icon: IconType;
 };
 
 export function Icon({
   size = "sm",
   color = "dark",
-  classname,
+  className,
   disabled,
   icon,
 }: IconProps) {
@@ -36,7 +36,7 @@ export function Icon({
     <i
       className={clsx(
         "icon",
-        classname,
+        className,
         colors[color],
         `${disabled ? "opacity-50 pointer-events-none" : "opacity-100"}`,
       )}
