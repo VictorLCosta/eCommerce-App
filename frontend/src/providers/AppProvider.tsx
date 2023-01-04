@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { HelmetProvider } from "react-helmet-async";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import { Spinner } from "@/components/Elements/Spinner";
 import ErrorFallback from "@/components/Error/ErrorFallback";
@@ -19,7 +20,9 @@ export default function AppProvider({ children }: AppProviderProps) {
       }
     >
       <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <HelmetProvider>{children}</HelmetProvider>
+        <HelmetProvider>
+          <Router>{children}</Router>
+        </HelmetProvider>
       </ErrorBoundary>
     </Suspense>
   );
