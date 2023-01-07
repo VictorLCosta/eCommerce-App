@@ -14,6 +14,7 @@ const variants = {
   primary: "bg-salmon-pink text-white enabled:hover:bg-onyx",
   secondary:
     "bg-cultured2 text-sonic-silver enabled:hover:bg-salmon-pink enabled:hover:text-white",
+  basic: "bg-transparente text-onyx",
   danger: "bg-red-600 text-white",
 };
 

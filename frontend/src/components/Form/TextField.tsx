@@ -74,11 +74,14 @@ export default function TextField({
         {startIcon && computeIcon(startIcon)}
         <input
           ref={inputRef}
-          className={
-            hasError
-              ? "!bg-red-100 placeholder:text-red-400 focus:placeholder:text-red-500"
-              : ""
-          }
+          className={`
+            w-full
+            ${
+              hasError
+                ? "!bg-red-100 placeholder:text-red-400 focus:placeholder:text-red-500"
+                : ""
+            }
+            `}
           disabled={disabled}
           placeholder={props.placeholder}
           id={props.id}
