@@ -27,7 +27,8 @@ module.exports = {
       boxShadow: {
         "1": "0 12px 20px hsla(210, 10%, 23%, 0.07)",
         "2": "0 2px 10px hsla(0, 0%, 0%, 0.04)",
-        "3": "0 2px 20px var(--black_08)"
+        "3": "0 2px 20px var(--black-08)",
+        top: "0 -10px 20px var(--black-08)",
       }
     },
   },
