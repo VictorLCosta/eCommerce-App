@@ -19,12 +19,12 @@ function MenuItem({ label }: { label: string }) {
 }
 
 export default function DesktopMenu() {
-  const [active, setActive] = useState(true);
+  const [active, setActive] = useState(false);
 
   return (
     <Transition
       as="nav"
-      className="block fixed top-0 left-0 z-50 h-screen max-w-sm w-full py-6 px-4 overflow-hidden bg-white"
+      className="block fixed top-0 left-0 z-[60] h-screen max-w-sm w-full py-6 px-4 overflow-hidden bg-white"
       show={active}
       enter="duration-75 transition-all ease-in-out"
       enterFrom="w-0"

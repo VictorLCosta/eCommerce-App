@@ -74,7 +74,7 @@ function SearchContainer() {
 
 export default function Header() {
   return (
-    <header className="sticky top-0 w-full z-50 bg-white shadow-3">
+    <header className="sticky top-0 w-full z-20 bg-white shadow-3">
       <div className="flex justify-between items-center border-t-transparent border-x-transparent border-b border-solid border-b-cultured2 py-3 px-[7%] max-sm:hidden">
         <ul className="flex gap-x-3">
           <li>
