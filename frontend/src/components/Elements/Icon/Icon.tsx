@@ -3,7 +3,7 @@ import { clsx } from "clsx";
 import type { IconType } from "react-icons/lib";
 
 const sizes = {
-  xs: 10,
+  xs: 15,
   sm: 20,
   md: 30,
   lg: 40,
