@@ -6,7 +6,7 @@ import { useState } from "react";
 
 import { useKeyOnly } from "@/lib/classNameBuilders";
 
-export default function Overlay() {
+export function Overlay() {
   const [active, setActive] = useState(true);
 
   const classes = clsx(

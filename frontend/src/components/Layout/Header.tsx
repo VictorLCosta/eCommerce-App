@@ -72,7 +72,7 @@ function SearchContainer() {
   );
 }
 
-export default function Header() {
+export function Header() {
   return (
     <header className="sticky top-0 w-full z-20 bg-white shadow-3">
       <div className="hidden justify-between items-center border-t-transparent border-x-transparent border-b border-solid border-b-cultured2 py-3 px-[7%] sm:flex">

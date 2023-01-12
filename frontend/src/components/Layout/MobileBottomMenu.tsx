@@ -8,7 +8,7 @@ import {
 import { Button } from "@/components/Elements/Button";
 import { Icon } from "@/components/Elements/Icon";
 
-export default function MobileBottomMenu() {
+export function MobileBottomMenu() {
   return (
     <div
       id="mobile-bottom-menu"

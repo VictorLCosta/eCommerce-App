@@ -1,6 +1,6 @@
-import DesktopMenu from "./DesktopMenu";
-import Header from "./Header";
-import MobileBottomMenu from "./MobileBottomMenu";
+import { DesktopMenu } from "./DesktopMenu";
+import { Header } from "./Header";
+import { MobileBottomMenu } from "./MobileBottomMenu";
 
 type MainLayoutProps = {
   children: React.ReactNode;

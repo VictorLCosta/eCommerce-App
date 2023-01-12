@@ -18,7 +18,7 @@ function MenuItem({ label }: { label: string }) {
   );
 }
 
-export default function DesktopMenu() {
+export function DesktopMenu() {
   const [active, setActive] = useState(false);
 
   return (

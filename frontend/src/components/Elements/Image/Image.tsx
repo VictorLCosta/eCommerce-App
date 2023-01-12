@@ -24,7 +24,7 @@ export type ImageProps = {
   src?: string;
 };
 
-export default function Image({
+export function Image({
   alt,
   avatar,
   bordered,
