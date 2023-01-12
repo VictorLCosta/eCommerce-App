@@ -12,7 +12,7 @@ export function MainLayout({ children }: MainLayoutProps) {
       <Header />
       <DesktopMenu />
       <MobileBottomMenu />
-      <main className="my-5 mx-36">{children}</main>
+      <main className="my-7 mx-12 sm:mx-36">{children}</main>
     </div>
   );
 }

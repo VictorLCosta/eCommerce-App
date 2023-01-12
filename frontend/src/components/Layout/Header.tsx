@@ -59,7 +59,7 @@ function SearchContainer() {
       onSubmit={(values) => console.log(values)}
     >
       {() => (
-        <Form className="w-3/6 max-sm:w-full">
+        <Form className="w-full sm:w-3/6">
           <TextField
             name="search"
             className="rounded-md"
@@ -75,7 +75,7 @@ function SearchContainer() {
 export default function Header() {
   return (
     <header className="sticky top-0 w-full z-20 bg-white shadow-3">
-      <div className="flex justify-between items-center border-t-transparent border-x-transparent border-b border-solid border-b-cultured2 py-3 px-[7%] max-sm:hidden">
+      <div className="hidden justify-between items-center border-t-transparent border-x-transparent border-b border-solid border-b-cultured2 py-3 px-[7%] sm:flex">
         <ul className="flex gap-x-3">
           <li>
             <Button icon={MdOutlineFacebook} size="xs" variant="secondary" />
@@ -94,8 +94,8 @@ export default function Header() {
         <TopHeaderActions />
       </div>
 
-      <div className="flex justify-between items-center py-10 px-[7%] max-sm:flex-col">
-        <h1 className="text-7xl text-eerie-black font-semibold max-sm:mb-8">
+      <div className="flex justify-between items-center flex-col py-10 px-[7%] sm:flex-row">
+        <h1 className="text-7xl text-eerie-black font-semibold mb-8 sm:mb-0">
           Aware
         </h1>
 

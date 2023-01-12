@@ -6,8 +6,7 @@ import {
 } from "react-icons/md";
 
 import { Button } from "@/components/Elements/Button";
-
-import { Icon } from "../Elements/Icon";
+import { Icon } from "@/components/Elements/Icon";
 
 export default function MobileBottomMenu() {
   return (
