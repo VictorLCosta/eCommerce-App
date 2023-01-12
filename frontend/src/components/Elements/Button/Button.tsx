@@ -1,5 +1,5 @@
 import { clsx } from "clsx";
-import _ from "lodash";
+import _ from "lodash"; // FIXME: Lodash bundle too heavy
 import { createRef } from "react";
 
 import { useKeyOnly } from "@/lib/classNameBuilders";
