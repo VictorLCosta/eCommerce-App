@@ -4,6 +4,9 @@ import type { AxiosError } from "axios";
 
 export const axios = Axios.create({
   baseURL: "https//:localhost:5001/api/",
+  headers: {
+    "Content-type": "application/json",
+  },
 });
 
 axios.interceptors.request.use();
