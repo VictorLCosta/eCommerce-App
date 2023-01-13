@@ -1,6 +1,6 @@
 import { Button } from "../Elements/Button";
 
-export default function ErrorFallback() {
+export function ErrorFallback() {
   return (
     <div
       className="text-red-500 w-screen h-screen flex flex-col justify-center items-center"
