@@ -6,7 +6,6 @@ import type {
   UseQueryOptions,
   UseMutationOptions,
 } from "react-query";
-import type { Promisable } from "type-fest";
 
 const queryConfig: DefaultOptions = {
   queries: {
@@ -18,8 +17,9 @@ const queryConfig: DefaultOptions = {
 
 export const queryClient = new QueryClient({ defaultOptions: queryConfig });
 
-export type ExtractFnReturnType<FnType extends (...args: any) => any> =
-  Promisable<ReturnType<FnType>>;
+export type ExtractFnReturnType<FnType extends (...args: any) => any> = Awaited<
+  ReturnType<FnType>
+>;
 
 export type QueryConfig<QueryFnType extends (...args: any) => any> = Omit<
   UseQueryOptions<ExtractFnReturnType<QueryFnType>>,
