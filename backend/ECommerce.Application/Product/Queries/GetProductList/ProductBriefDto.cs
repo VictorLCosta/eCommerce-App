@@ -15,13 +15,7 @@ namespace ECommerce.Application.Product.Queries.GetProductList
         public string BranchCity { get; set; }
         public double SalesNumber { get; set; }
 
-        [JsonIgnore]
         public Money DefaultPrice { get; set; }
-
-        public string PriceLabel 
-        { 
-            get { return DefaultPrice?.ToString(); } 
-        }
 
         public void Mapping(Profile profile)
         {
