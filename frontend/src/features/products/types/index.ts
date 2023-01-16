@@ -17,5 +17,5 @@ export type ProductBriefDto = {
   localSeller: boolean;
   branchCity: string;
   salesNumber: number;
-  priceLabel: string;
+  defaultPrice: Money;
 } & BaseEntity;
