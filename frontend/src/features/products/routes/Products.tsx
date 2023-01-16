@@ -1,3 +1,5 @@
+import { ProductsList } from "../components/ProductsList";
+
 export function Products() {
   return (
     <>
@@ -5,7 +7,7 @@ export function Products() {
         <span>Filters</span>
       </div>
       <div>
-        <span>Products</span>
+        <ProductsList />
       </div>
     </>
   );

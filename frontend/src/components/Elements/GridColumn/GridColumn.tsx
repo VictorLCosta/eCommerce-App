@@ -1,10 +1,10 @@
-interface GridColumnProps {
+export type GridColumnProps = {
   span: number;
   offset: number;
-  className: string;
+  className?: string;
   children: React.ReactNode;
   textAlign: "left" | "center" | "right";
-}
+};
 
 export function GridColumn({
   span,

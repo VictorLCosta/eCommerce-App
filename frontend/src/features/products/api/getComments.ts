@@ -3,9 +3,10 @@ import { useQuery } from "react-query";
 import { axios } from "@/lib/axios";
 import type { ExtractFnReturnType, QueryConfig } from "@/lib/react-query";
 
-import type { Product } from "../types";
+import type { ProductBriefDto } from "../types";
 
-export const getProducts = (): Promise<Product[]> => axios.get("/product");
+export const getProducts = (): Promise<ProductBriefDto[]> =>
+  axios.get("/product");
 
 type QueryFnType = typeof getProducts;
 

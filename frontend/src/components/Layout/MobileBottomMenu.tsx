@@ -12,7 +12,7 @@ export function MobileBottomMenu() {
   return (
     <div
       id="mobile-bottom-menu"
-      className="fixed bottom-0 w-full flex justify-between items-center py-10 px-[9%] shadow-top bg-white sm:hidden"
+      className="fixed bottom-0 w-full z-40 flex justify-between items-center py-10 px-[9%] shadow-top bg-white sm:hidden"
     >
       <Button size="xs" variant="basic">
         <Icon icon={MdOutlineMenu} />
