@@ -50,7 +50,7 @@ This project was generated with [Vite](https://vitejs.dev/guide/) command. You c
 - React
 - Typescript
 - TailwindCSS
-- React Infinite Scroller
+- React Query
 - Formik
 - MobX
 - Axios
