@@ -16,7 +16,7 @@ export function ProductCard({ product }: ProductCardProps) {
     <article className="group relative bg-white overflow-hidden rounded-md shadow-lg">
       <div className="relative">
         <Image src={product.pictureUrl} fluid />
-        <div className="absolute -right-20 opacity-0 top-0 transform translate-y-16 transition-all ease-in-out group-hover:right-2 group-hover:opacity-100">
+        <div className="absolute -right-20 opacity-0 top-0 transform translate-y-8 transition-all ease-in-out group-hover:right-2 group-hover:opacity-100">
           <Button size="xs" variant="dark" className="mb-1">
             <Icon icon={IoMdHeartEmpty} />
           </Button>
