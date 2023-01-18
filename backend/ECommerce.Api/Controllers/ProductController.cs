@@ -14,9 +14,9 @@ namespace ECommerce.Api.Controllers
     public class ProductController : BaseApiController
     {
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll([FromQuery] GetProductListQuery.Query query)
         {
-            var products = await Mediator.Send(new GetProductListQuery.Query());
+            var products = await Mediator.Send(query);
 
             return HandleResult(products);
         }

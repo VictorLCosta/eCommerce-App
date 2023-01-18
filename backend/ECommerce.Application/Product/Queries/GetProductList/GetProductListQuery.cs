@@ -9,6 +9,7 @@ using ECommerce.Application.Common.Interfaces;
 using ECommerce.Application.Common.Mappings;
 using ECommerce.Application.Common.Models;
 using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace ECommerce.Application.Product.Queries.GetProductList
@@ -17,7 +18,10 @@ namespace ECommerce.Application.Product.Queries.GetProductList
     {
         public class Query : IRequest<Result<PaginatedList<ProductBriefDto>>> 
         {
+            [FromQuery(Name = "pageNumber")]
             public int PageNumber { get; init; } = 1;
+
+            [FromQuery(Name = "pageSize")]
             public int PageSize { get; init; } = 6;
         }
 
