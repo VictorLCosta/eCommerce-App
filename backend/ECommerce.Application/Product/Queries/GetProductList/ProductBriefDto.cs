@@ -23,7 +23,7 @@ namespace ECommerce.Application.Product.Queries.GetProductList
                 .CreateMap<ECommerce.Domain.Entities.Product, ProductBriefDto>()
                 .ForMember(x => x.LocalSeller, opt => opt.MapFrom(src => new Random().Next(0, 100) >= 50)) // Interim solution, I need to change later
                 .ForMember(x => x.BranchCity, opt => opt.MapFrom(src => src.Branch.City))
-                .ForMember(x => x.SalesNumber, opt => opt.MapFrom(src => new Random().Next(0, 10000)))
+                .ForMember(x => x.SalesNumber, opt => opt.MapFrom(src => (double)new Random().Next(0, 10000)))
                 .ReverseMap();
         }
     }

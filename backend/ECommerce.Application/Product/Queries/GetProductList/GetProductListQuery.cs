@@ -4,7 +4,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using ECommerce.Application.Common.Interfaces;
+using ECommerce.Application.Common.Mappings;
 using ECommerce.Application.Common.Models;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -13,9 +15,13 @@ namespace ECommerce.Application.Product.Queries.GetProductList
 {
     public class GetProductListQuery
     {
-        public class Query : IRequest<Result<List<ProductBriefDto>>> {}
+        public class Query : IRequest<Result<PaginatedList<ProductBriefDto>>> 
+        {
+            public int PageNumber { get; init; } = 1;
+            public int PageSize { get; init; } = 6;
+        }
 
-        public class Handler : IRequestHandler<Query, Result<List<ProductBriefDto>>>
+        public class Handler : IRequestHandler<Query, Result<PaginatedList<ProductBriefDto>>>
         {
             private readonly IUnitOfWork _uow;
             private readonly IMapper _mapper;
@@ -26,16 +32,15 @@ namespace ECommerce.Application.Product.Queries.GetProductList
                 _mapper = mapper;
             }
 
-            public async Task<Result<List<ProductBriefDto>>> Handle(Query request, CancellationToken cancellationToken)
+            public async Task<Result<PaginatedList<ProductBriefDto>>> Handle(Query request, CancellationToken cancellationToken)
             {
-                var list = await _uow.ProductRepository
+                var products = await _uow.ProductRepository
                     .AsQueryable()
                     .Include(x => x.Branch)
-                    .ToListAsync();
+                    .ProjectTo<ProductBriefDto>(_mapper.ConfigurationProvider)
+                    .PaginatedListAsync(request.PageNumber, request.PageSize);
 
-                var products = _mapper.Map<List<ProductBriefDto>>(list.ToList());
-
-                return Result<List<ProductBriefDto>>.Success(products);
+                return Result<PaginatedList<ProductBriefDto>>.Success(products);
             }
         }
     }

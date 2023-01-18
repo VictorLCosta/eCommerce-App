@@ -2,7 +2,6 @@ using System;
 using System.Linq;
 using System.Reflection;
 using AutoMapper;
-using ECommerce.Application.Common.Mappings;
 
 namespace ECommerce.Application.Common.Mappings
 {
