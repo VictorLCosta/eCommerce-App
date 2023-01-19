@@ -55,13 +55,14 @@ input::placeholder {
 }
 
 ::-webkit-scrollbar-track {
-	background: hsl(0%, 0%, 95%);
+	background: hsl(0, 0%, 95%);
 }
 
 ::-webkit-scrollbar-thumb {
-	background: hsl(0%, 0%, 80%);
+	background: hsl(0, 0%, 80%);
+	border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: hsl(0%, 0%, 70%);
+	background: hsl(0, 0%, 70%);
 }
