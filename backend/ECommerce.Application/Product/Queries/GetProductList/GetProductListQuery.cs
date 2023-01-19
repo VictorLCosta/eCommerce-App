@@ -22,7 +22,7 @@ namespace ECommerce.Application.Product.Queries.GetProductList
             public int PageNumber { get; init; } = 1;
 
             [FromQuery(Name = "pageSize")]
-            public int PageSize { get; init; } = 6;
+            public int PageSize { get; init; } = 8;
         }
 
         public class Handler : IRequestHandler<Query, Result<PaginatedList<ProductBriefDto>>>

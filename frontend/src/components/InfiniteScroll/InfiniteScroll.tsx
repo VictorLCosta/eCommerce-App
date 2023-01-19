@@ -3,14 +3,16 @@ import { useEffect, useRef } from "react";
 
 export type InfiniteScrollProps = {
   children: React.ReactNode;
-  hasNextPage: boolean;
-  loader: React.ReactNode;
+  className?: string;
+  hasNextPage?: boolean;
+  loader?: React.ReactNode;
   loading?: boolean;
   onLoadMore: () => void;
 };
 
 export function InfiniteScroll({
   children,
+  className,
   hasNextPage,
   loader,
   loading,
@@ -20,12 +22,14 @@ export function InfiniteScroll({
   const lastItemRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    if (observer.current) return;
-    observer.current = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting && hasNextPage) {
-        onLoadMore();
-      }
-    });
+    observer.current = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && hasNextPage) {
+          onLoadMore();
+        }
+      },
+      { threshold: 0 },
+    );
 
     if (lastItemRef.current) {
       observer.current.observe(lastItemRef.current);
@@ -33,13 +37,13 @@ export function InfiniteScroll({
 
     return () => {
       if (observer.current) {
-        observer.current.disconnect();
+        observer.current?.disconnect();
       }
     };
   }, [hasNextPage, onLoadMore]);
 
   return (
-    <div>
+    <div className={className}>
       {children}
       <div ref={lastItemRef} />
       {loading && loader}
