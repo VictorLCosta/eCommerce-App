@@ -62,6 +62,7 @@ export default function SelectField({
 
   const optionsClasses = clsx(
     "absolute mt-1 max-h-60 z-30 overflow-auto rounded-sm bg-white py-1 !px-0 shadow-lg focus:outline-none sm:text-sm",
+    "!w-fit",
     sizes[size],
   );
 

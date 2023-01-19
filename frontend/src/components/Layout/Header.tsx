@@ -38,13 +38,13 @@ function TopHeaderActions() {
             name="language"
             options={topHeaderSelectOptions.languages}
             size="lg"
-            className="!w-[10rem]" // TODO: Needs to include computeWidth prop
+            className="!w-[10rem]"
           />
           <SelectField
             name="currency"
             options={topHeaderSelectOptions.currencies}
             size="lg"
-            className="!w-[10rem]" // TODO: Needs to include computeWidth prop
+            className="!w-[10rem]"
           />
         </Form>
       )}

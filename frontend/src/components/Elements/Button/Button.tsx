@@ -1,9 +1,10 @@
 import { clsx } from "clsx";
-import _ from "lodash"; // FIXME: Lodash bundle too heavy
+import invoke from "lodash/invoke";
+import isNil from "lodash/isNil";
 import { createRef } from "react";
 
 import { useKeyOnly } from "@/lib/classNameBuilders";
-import { isNil } from "@/utils/childrenUtils";
+import { isNil as isChildrenNil } from "@/utils/childrenUtils";
 
 import { Icon } from "../Icon";
 import { Spinner } from "../Spinner";
@@ -50,7 +51,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   const ref = createRef<HTMLButtonElement>();
-  const hasChildren = !isNil(props.children);
+  const hasChildren = !isChildrenNil(props.children);
   const classes = clsx(
     "flex justify-center items-center relative min-w-[1em] overflow-hidden disabled:opacity-70 disabled:cursor-normal rounded-sm font-medium focus:outline-none transition ease-in",
     sizes[size],
@@ -63,7 +64,7 @@ export function Button({
   const computeButtonAriaRole = () => {
     const { role } = props;
 
-    if (!_.isNil(role)) return role;
+    if (!isNil(role)) return role;
 
     return "button";
   };
@@ -71,7 +72,7 @@ export function Button({
   const computeTabIndex = () => {
     const { disabled, tabIndex } = props;
 
-    if (!_.isNil(tabIndex)) return tabIndex;
+    if (!isNil(tabIndex)) return tabIndex;
     if (disabled) return -1;
 
     return tabIndex;
@@ -109,7 +110,7 @@ export function Button({
       return;
     }
 
-    _.invoke(props, "onClick", e, props);
+    invoke(props, "onClick", e, props);
   };
 
   return (
