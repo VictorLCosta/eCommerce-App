@@ -10,6 +10,7 @@ using ECommerce.Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using StackExchange.Redis;
 
 namespace ECommerce.Infrastructure
 {
@@ -33,6 +34,11 @@ namespace ECommerce.Infrastructure
             services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
             
             services.AddTransient<IDateTime, DateTimeService>();
+
+            services.AddSingleton<IConnectionMultiplexer>(opt => {
+                var connConfig = ConfigurationOptions.Parse(config.GetConnectionString("Redis"), true);
+                return ConnectionMultiplexer.Connect(connConfig);
+            });
 
             return services;
         }
