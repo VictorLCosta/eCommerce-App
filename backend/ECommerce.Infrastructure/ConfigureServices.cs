@@ -1,8 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using ECommerce.Application.Common.Interfaces;
+using ECommerce.Application.Common.Interfaces.Repositories;
 using ECommerce.Domain.Entities.Identity;
 using ECommerce.Infrastructure.Caching;
 using ECommerce.Infrastructure.Persistence;
@@ -42,6 +39,8 @@ namespace ECommerce.Infrastructure
             });
 
             services.AddTransient<IResponseCacheService, ResponseCacheService>();
+            
+            services.AddTransient<ICartRepository, CartRepository>();
 
             return services;
         }

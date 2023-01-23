@@ -1,8 +1,8 @@
 using System;
 
-namespace ECommerce.Domain.Entities.Basket
+namespace ECommerce.Domain.Entities
 {
-    public class BasketItem
+    public class CartItem
     {
         public Guid Id { get; set; }
         public string ProductName { get; set; }

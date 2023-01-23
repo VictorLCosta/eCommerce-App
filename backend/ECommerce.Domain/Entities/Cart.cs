@@ -2,22 +2,22 @@ using System;
 using System.Collections.Generic;
 using ECommerce.Domain.ValueObjects;
 
-namespace ECommerce.Domain.Entities.Basket
+namespace ECommerce.Domain.Entities
 {
-    public class Basket
+    public class Cart
     {
-        public Basket()
+        public Cart()
         {
             
         }
 
-        public Basket(Guid id)
+        public Cart(Guid id)
         {
             Id = id;
         }
 
         public Guid Id { get; set; }
-        public List<BasketItem> BasketItems { get; set; } = new List<BasketItem>();
+        public List<CartItem> CartItems { get; set; } = new List<CartItem>();
         public Money ShippingPrice { get; set; }
         
         public Guid DeliveryMethodId { get; set; }
