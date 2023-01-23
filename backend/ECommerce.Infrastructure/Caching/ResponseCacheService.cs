@@ -4,15 +4,15 @@ using System.Threading.Tasks;
 using ECommerce.Application.Common.Interfaces;
 using StackExchange.Redis;
 
-namespace ECommerce.Infrastructure.Services
+namespace ECommerce.Infrastructure.Caching
 {
     public class ResponseCacheService : IResponseCacheService
     {
         private readonly IDatabase _database;
 
-        public ResponseCacheService(IConnectionMultiplexer redis)
+        public ResponseCacheService(IConnectionMultiplexer multiplexer)
         {
-            _database = redis.GetDatabase();
+            _database = multiplexer.GetDatabase();
         }
 
         public async Task CacheResponseAsync(string cacheKey, object response, TimeSpan timeToLive)

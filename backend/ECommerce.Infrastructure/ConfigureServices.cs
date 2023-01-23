@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ECommerce.Application.Common.Interfaces;
 using ECommerce.Domain.Entities.Identity;
+using ECommerce.Infrastructure.Caching;
 using ECommerce.Infrastructure.Persistence;
 using ECommerce.Infrastructure.Persistence.Repositories;
 using ECommerce.Infrastructure.Services;
@@ -39,6 +40,8 @@ namespace ECommerce.Infrastructure
                 var connConfig = ConfigurationOptions.Parse(config.GetConnectionString("Redis"), true);
                 return ConnectionMultiplexer.Connect(connConfig);
             });
+
+            services.AddTransient<IResponseCacheService, ResponseCacheService>();
 
             return services;
         }

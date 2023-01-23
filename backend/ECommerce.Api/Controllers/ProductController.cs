@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ECommerce.Api.Filter;
 using ECommerce.Application.Product.Commands.CreateProduct;
 using ECommerce.Application.Product.Commands.DeleteProduct;
 using ECommerce.Application.Product.Commands.UpdateProduct;
@@ -14,6 +15,7 @@ namespace ECommerce.Api.Controllers
     public class ProductController : BaseApiController
     {
         [HttpGet]
+        [Cached(600)]
         public async Task<IActionResult> GetAll([FromQuery] GetProductListQuery.Query query)
         {
             var products = await Mediator.Send(query);
