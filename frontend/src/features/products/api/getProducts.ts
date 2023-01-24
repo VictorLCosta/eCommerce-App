@@ -19,8 +19,10 @@ type UseProductsOptions = {
 
 export const useProducts = ({ pageNumber }: UseProductsOptions) =>
   useInfiniteQuery<ExtractFnReturnType<QueryFnType>>({
+    retry: true,
     queryKey: ["product", pageNumber],
     getNextPageParam: (prevPage) =>
       prevPage.hasNextPage ? prevPage.pageNumber + 1 : undefined,
     queryFn: ({ pageParam = 1 }) => getProducts(pageParam),
+    cacheTime: 600000,
   });

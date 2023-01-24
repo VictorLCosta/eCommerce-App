@@ -7,6 +7,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { Spinner } from "@/components/Elements/Spinner";
 import { ErrorFallback } from "@/components/Error/ErrorFallback";
 import { queryClient } from "@/lib/react-query";
+import { store, StoreContext } from "@/stores";
 
 type AppProviderProps = {
   children: React.ReactNode;
@@ -24,7 +25,9 @@ export default function AppProvider({ children }: AppProviderProps) {
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <HelmetProvider>
           <QueryClientProvider client={queryClient}>
-            <Router>{children}</Router>
+            <StoreContext.Provider value={store}>
+              <Router>{children}</Router>
+            </StoreContext.Provider>
           </QueryClientProvider>
         </HelmetProvider>
       </ErrorBoundary>
