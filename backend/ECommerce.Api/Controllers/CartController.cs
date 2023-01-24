@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using ECommerce.Application.ShoppingCart.Commands.ClearCart;
 using ECommerce.Application.ShoppingCart.Queries.GetCart;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,10 +22,12 @@ namespace ECommerce.Api.Controllers
             throw new NotImplementedException();
         }
 
-        [HttpDelete]
-        public Task<IActionResult> Clear(Guid id)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Clear(Guid id)
         {
-            throw new NotImplementedException();
+            var result = await Mediator.Send(new ClearCartCommand.Command { Id = id });
+
+            return HandleResult(result);
         }
     }
 }
