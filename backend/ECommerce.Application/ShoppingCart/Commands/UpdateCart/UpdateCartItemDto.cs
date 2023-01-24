@@ -3,9 +3,9 @@ using AutoMapper;
 using ECommerce.Application.Common.Mappings;
 using ECommerce.Domain.Entities;
 
-namespace ECommerce.Application.ShoppingCart.Queries.GetCart
+namespace ECommerce.Application.ShoppingCart.Commands.UpdateCart
 {
-    public class CartItemDto : IMapFrom<CartItem>
+    public class UpdateCartItemDto : IMapFrom<CartItem>
     {
         public Guid Id { get; set; }
         public string ProductName { get; set; }
@@ -15,5 +15,10 @@ namespace ECommerce.Application.ShoppingCart.Queries.GetCart
         public string Brand { get; set; }
         public string Type { get; set; }
 
+        public void Mapping(Profile profile) 
+        {
+            profile.CreateMap<CartItem, UpdateCartItemDto>()
+                .ReverseMap();
+        }
     }
 }

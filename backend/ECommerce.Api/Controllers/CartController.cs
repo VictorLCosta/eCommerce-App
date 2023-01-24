@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using ECommerce.Application.ShoppingCart.Commands.ClearCart;
+using ECommerce.Application.ShoppingCart.Commands.UpdateCart;
 using ECommerce.Application.ShoppingCart.Queries.GetCart;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,9 +18,11 @@ namespace ECommerce.Api.Controllers
         }
 
         [HttpPut]
-        public Task<IActionResult> Update()
+        public async Task<IActionResult> Update(UpdateCartDto cart)
         {
-            throw new NotImplementedException();
+            var updatedCart = await Mediator.Send(new UpdateCartCommand.Command { Cart = cart });
+
+            return HandleResult(updatedCart);
         }
 
         [HttpDelete("{id}")]

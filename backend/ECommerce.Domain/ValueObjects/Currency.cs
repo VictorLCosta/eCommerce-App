@@ -12,6 +12,8 @@ namespace ECommerce.Domain.ValueObjects
         public string Name { get; set; }
         public string Symbol { get; set; }
 
+        public Currency() {}
+
         private Currency(string name, string symbol)
         {
             Name = name;
