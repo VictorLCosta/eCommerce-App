@@ -7,7 +7,11 @@ import { Icon } from "@/components/Elements/Icon";
 import { Image } from "@/components/Elements/Image";
 import { NumericStepper } from "@/components/Elements/NumericStepper";
 
+import { useCart } from "../api/getCart";
+
 export function ShoppingCartMenu() {
+  const { data } = useCart({ cartId: "5ae7cdcb-47c4-4e87-b2fb-8c51ecf9efc6" });
+
   return (
     <Menu as="div" className="relative">
       <Menu.Button as={Button} size="xs" variant="basic">
@@ -25,35 +29,38 @@ export function ShoppingCartMenu() {
           className="absolute origin-top-right top-12 right-5 w-[30rem] bg-white shadow-md focus:outline-none"
           static
         >
-          <Menu.Item
-            as="div"
-            className="flex gap-x-4 w-full p-4 border-b-sonic-silver border-b border-solid border-x-0 border-t-0"
-            disabled
-          >
-            <Image src="https://dummyimage.com/400x400/000/fff" size="xs" />
-            <div>
-              <Link
-                to="product"
-                className="text-xl relative overflow-hidden max-h-[calc(2_*_1em_*_1.3)] text-ellipsis"
-              >
-                O Produto mais Top de Todos os Tempos da Era moderna
-              </Link>
+          {data?.cartItems.map((item) => (
+            <Menu.Item
+              key={item.id}
+              as="div"
+              className="flex gap-x-4 w-full p-4 border-b-sonic-silver border-b border-solid border-x-0 border-t-0"
+              disabled
+            >
+              <Image src={item.pictureUrl} size="xs" />
+              <div>
+                <Link
+                  to={`product/${item.id}`}
+                  className="text-xl relative overflow-hidden max-h-[calc(2_*_1em_*_1.3)] text-ellipsis"
+                >
+                  {item.productName}
+                </Link>
 
-              <h3 className="text-xl text-salmon-pink font-semibold mt-2 mb-4">
-                R$ 12.00
-              </h3>
+                <h3 className="text-xl text-salmon-pink font-semibold mt-2 mb-4">
+                  {item.price}
+                </h3>
 
-              <div className="flex justify-between items-center gap-x-2">
-                <NumericStepper initialValue={0} min={0} max={1000} />
-                <span className="text-lg">
-                  Total: <span className="font-semibold">R$ 150,00</span>
-                </span>
+                <div className="flex justify-between items-center gap-x-2">
+                  <NumericStepper initialValue={1} min={0} max={1000} />
+                  <span className="text-lg">
+                    Total: <span className="font-semibold">R$ 150,00</span>
+                  </span>
+                </div>
               </div>
-            </div>
-          </Menu.Item>
+            </Menu.Item>
+          ))}
           <Menu.Item as="div" className="p-4" disabled>
             <h2 className="text-2xl text-eerie-black font-bold mb-5">
-              Total: 12
+              Total: 12.000
             </h2>
             <Button
               content="Go to shopping cart"
