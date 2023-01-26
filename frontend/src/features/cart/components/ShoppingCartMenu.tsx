@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/Elements/Button";
 import { Icon } from "@/components/Elements/Icon";
 import { Image } from "@/components/Elements/Image";
+import { NumericStepper } from "@/components/Elements/NumericStepper";
 
 export function ShoppingCartMenu() {
   return (
@@ -21,7 +22,7 @@ export function ShoppingCartMenu() {
         leaveTo="transform opacity-0 scale-95"
       >
         <Menu.Items
-          className="absolute origin-top-right top-12 right-5 w-96 bg-white shadow-md focus:outline-none"
+          className="absolute origin-top-right top-12 right-5 w-[30rem] bg-white shadow-md focus:outline-none"
           static
         >
           <Menu.Item
@@ -38,13 +39,15 @@ export function ShoppingCartMenu() {
                 O Produto mais Top de Todos os Tempos da Era moderna
               </Link>
 
-              <h3 className="text-lg text-salmon-pink font-semibold my-2">
-                preço
+              <h3 className="text-xl text-salmon-pink font-semibold mt-2 mb-4">
+                R$ 12.00
               </h3>
 
-              <div className="flex justify-between items-center">
-                <input type="number" />
-                <span>Total: R$ 150,00</span>
+              <div className="flex justify-between items-center gap-x-2">
+                <NumericStepper initialValue={0} min={0} max={1000} />
+                <span className="text-lg">
+                  Total: <span className="font-semibold">R$ 150,00</span>
+                </span>
               </div>
             </div>
           </Menu.Item>
