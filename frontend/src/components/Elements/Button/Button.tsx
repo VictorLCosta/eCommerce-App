@@ -17,7 +17,9 @@ const variants = {
     "bg-cultured2 text-sonic-silver enabled:hover:bg-salmon-pink enabled:hover:text-white",
   basic: "bg-transparente text-onyx",
   danger: "bg-red-600 text-white",
-  dark: "bg-white text-sonic-silver border border-solid border-cultured2 enabled:hover:bg-eerie-black enabled:hover:text-white enabled:hover:border-eerie-black",
+  light:
+    "bg-white text-sonic-silver border border-solid border-cultured2 enabled:hover:bg-eerie-black enabled:hover:text-white enabled:hover:border-eerie-black",
+  dark: "bg-eerie-black text-white border border-solid border-cultured2 enabled:hover:bg-onyx enabled:hover:text-white",
 };
 
 const sizes = {

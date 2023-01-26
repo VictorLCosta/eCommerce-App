@@ -4,12 +4,12 @@ import { IoLogoLinkedin } from "react-icons/io";
 import { IoSearchOutline } from "react-icons/io5";
 import {
   MdOutlineFacebook,
-  MdOutlineShoppingCart,
   MdOutlinePersonOutline,
   MdOutlineFavoriteBorder,
 } from "react-icons/md";
 
 import { Button } from "@/components/Elements/Button";
+import { ShoppingCartMenu } from "@/features/cart";
 
 import { Icon } from "../Elements/Icon";
 import SelectField from "../Form/SelectField";
@@ -103,13 +103,11 @@ export function Header() {
 
         <div className="flex gap-x-4 max-sm:hidden">
           <Button size="xs" variant="basic">
-            <Icon icon={MdOutlinePersonOutline} size="md" />
-          </Button>
-          <Button size="xs" variant="basic">
             <Icon icon={MdOutlineFavoriteBorder} size="md" />
           </Button>
+          <ShoppingCartMenu />
           <Button size="xs" variant="basic">
-            <Icon icon={MdOutlineShoppingCart} size="md" />
+            <Icon icon={MdOutlinePersonOutline} size="md" />
           </Button>
         </div>
       </div>
