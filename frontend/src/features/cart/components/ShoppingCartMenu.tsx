@@ -1,4 +1,5 @@
 import { Menu, Transition } from "@headlessui/react";
+import { useEffect } from "react";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { Link } from "react-router-dom";
 
@@ -6,11 +7,17 @@ import { Button } from "@/components/Elements/Button";
 import { Icon } from "@/components/Elements/Icon";
 import { Image } from "@/components/Elements/Image";
 import { NumericStepper } from "@/components/Elements/NumericStepper";
+import { useStore } from "@/stores";
 
 import { useCart } from "../api/getCart";
 
 export function ShoppingCartMenu() {
   const { data } = useCart({ cartId: "5ae7cdcb-47c4-4e87-b2fb-8c51ecf9efc6" });
+  const { cartStore } = useStore();
+
+  useEffect(() => {
+    if (data) cartStore.setCartData(data);
+  }, [cartStore, data]);
 
   return (
     <Menu as="div" className="relative">
@@ -60,7 +67,7 @@ export function ShoppingCartMenu() {
           ))}
           <Menu.Item as="div" className="p-4" disabled>
             <h2 className="text-2xl text-eerie-black font-bold mb-5">
-              Total: 12.000
+              Total: {cartStore.subTotal}
             </h2>
             <Button
               content="Go to shopping cart"

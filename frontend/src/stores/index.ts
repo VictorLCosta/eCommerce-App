@@ -1,8 +1,14 @@
 import { createContext, useContext } from "react";
 
-interface Store {}
+import { CartStore } from "@/features/cart";
 
-export const store: Store = {};
+interface Store {
+  cartStore: CartStore;
+}
+
+export const store: Store = {
+  cartStore: new CartStore(),
+};
 
 export const StoreContext = createContext(store);
 
