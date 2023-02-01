@@ -18,24 +18,48 @@ namespace ECommerce.Infrastructure.Persistence.Repositories
             _database = multiplexer.GetDatabase();
         }
 
-        public async Task<bool> ClearBasketAsync(Guid basketId)
+        public async Task<List<CartItem>> GetCartItems()
         {
-            return await _database.KeyDeleteAsync(basketId.ToString());
+            var serializedCartItems = await _database.HashGetAllAsync("items");
+
+            var a = serializedCartItems.Select(x => x.Value);
+
+            var cartItems = serializedCartItems.Select(x => new CartItem {
+                Id = Guid.Parse(x.Value),
+                ProductName = x.Value,
+                Price = (decimal)x.Value,
+                Quantity = (int)x.Value,
+                PictureUrl = x.Value
+            }).ToList();
+
+            return cartItems;
         }
 
-        public async Task<Cart> GetBasketAsync(Guid basketId)
+        public async Task<CartItem> GetCartItem(Guid id)
         {
-            var data = await _database.StringGetAsync(basketId.ToString());
-            return data.IsNullOrEmpty ? null : JsonSerializer.Deserialize<Cart>(data);
+            var serializedRetrievedCartItem = await _database.HashGetAsync("items", id.ToString());
+            var retrievedCartItem = JsonSerializer.Deserialize<CartItem>(serializedRetrievedCartItem);
+
+            return retrievedCartItem;
         }
 
-        public async Task<Cart> UpdateBasketAsync(Cart basket)
+        public async Task<CartItem> AddToCart(CartItem item)
         {
-            var created = await _database.StringSetAsync(basket.Id.ToString(), JsonSerializer.Serialize(basket), TimeSpan.FromDays(15));
+            var serializedCartItem = JsonSerializer.Serialize(item);
 
-            if (!created) return null;
+            var success = await _database.HashSetAsync("items", item.Id.ToString(), serializedCartItem);
 
-            return await GetBasketAsync(basket.Id);
+            return item;
+        }
+
+        public async Task<bool> RemoveFromCart(Guid id)
+        {
+            return await _database.HashDeleteAsync("items", id.ToString());
+        }
+
+        public async Task<bool> ClearCart()
+        {
+            return await _database.KeyDeleteAsync("items");
         }
     }
 }

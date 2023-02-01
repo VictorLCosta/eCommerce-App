@@ -1,9 +1,8 @@
 using System;
-using AutoMapper;
 using ECommerce.Application.Common.Mappings;
 using ECommerce.Domain.Entities;
 
-namespace ECommerce.Application.ShoppingCart.Queries.GetCart
+namespace ECommerce.Application.ShoppingCart.Queries.GetCartItem
 {
     public class CartItemDto : IMapFrom<CartItem>
     {
@@ -12,8 +11,5 @@ namespace ECommerce.Application.ShoppingCart.Queries.GetCart
         public decimal Price { get; set; }
         public int Quantity { get; set; }
         public string PictureUrl { get; set; }
-        public string Brand { get; set; }
-        public string Type { get; set; }
-
     }
 }

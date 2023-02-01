@@ -1,8 +1,10 @@
 using System;
+using ECommerce.Application.Common.Mappings;
+using ECommerce.Domain.Entities;
 
-namespace ECommerce.Domain.Entities
+namespace ECommerce.Application.ShoppingCart.Queries.GetCartItems
 {
-    public class CartItem
+    public class CartItemDto : IMapFrom<CartItem>
     {
         public Guid Id { get; set; }
         public string ProductName { get; set; }

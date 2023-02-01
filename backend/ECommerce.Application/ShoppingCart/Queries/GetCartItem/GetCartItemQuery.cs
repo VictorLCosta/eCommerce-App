@@ -1,23 +1,23 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
-using ECommerce.Application.Common.Interfaces;
 using ECommerce.Application.Common.Interfaces.Repositories;
 using ECommerce.Application.Common.Models;
-using ECommerce.Domain.Entities;
 using MediatR;
 
-namespace ECommerce.Application.ShoppingCart.Queries.GetCart
+namespace ECommerce.Application.ShoppingCart.Queries.GetCartItem
 {
-    public class GetCartQuery
+    public class GetCartItemQuery
     {
-        public class Query : IRequest<Result<CartDto>>
+        public class Query : IRequest<Result<CartItemDto>>
         {
             public Guid Id { get; set; }
         }
 
-        public class Handler : IRequestHandler<Query, Result<CartDto>>
+        public class Handler : IRequestHandler<Query, Result<CartItemDto>>
         {
             private readonly ICartRepository _cartRepository;
             private readonly IMapper _mapper;
@@ -28,15 +28,12 @@ namespace ECommerce.Application.ShoppingCart.Queries.GetCart
                 _mapper = mapper;
             }
 
-            public async Task<Result<CartDto>> Handle(Query request, CancellationToken cancellationToken)
+            public async Task<Result<CartItemDto>> Handle(Query request, CancellationToken cancellationToken)
             {
-                var cart = await _cartRepository.GetBasketAsync(request.Id);
+                var cartItem = await _cartRepository.GetCartItem(request.Id);
 
-                var result = cart ?? new Cart(Guid.NewGuid());
-
-                return Result<CartDto>.Success(_mapper.Map<CartDto>(result));
+                return Result<CartItemDto>.Success(_mapper.Map<CartItemDto>(cartItem));
             }
         }
-
     }
 }

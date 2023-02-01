@@ -1,34 +1,61 @@
 using System;
 using System.Threading.Tasks;
+using ECommerce.Application.ShoppingCart.Queries.GetCartItems;
 using ECommerce.Application.ShoppingCart.Commands.ClearCart;
-using ECommerce.Application.ShoppingCart.Commands.UpdateCart;
-using ECommerce.Application.ShoppingCart.Queries.GetCart;
 using Microsoft.AspNetCore.Mvc;
+using ECommerce.Application.ShoppingCart.Commands.AddItemToCart;
+using ECommerce.Application.ShoppingCart.Commands.RemoveFromCart;
+using ECommerce.Application.ShoppingCart.Commands.IncreaseCartItemQuantity;
+using ECommerce.Application.ShoppingCart.Commands.DecreaseCartItemQuantity;
 
 namespace ECommerce.Api.Controllers
 {
     public class CartController : BaseApiController
     {
-        [HttpGet("{id}")]
-        public async Task<IActionResult> Get(Guid id)
+        [HttpGet("list")]
+        public async Task<IActionResult> GetCartItems()
         {
-            var cart = await Mediator.Send(new GetCartQuery.Query { Id = id });
+            var result = await Mediator.Send(new GetCartItemsQuery.Query());
 
-            return HandleResult(cart);
+            return HandleResult(result);
         }
 
-        [HttpPut]
-        public async Task<IActionResult> Update(UpdateCartDto cart)
+        [HttpPost("add")]
+        public async Task<IActionResult> AddItemToCart(NewCartItemDto cartItem)
         {
-            var updatedCart = await Mediator.Send(new UpdateCartCommand.Command { Cart = cart });
+            var result = await Mediator.Send(new AddItemToCartCommand.Command { CartItem = cartItem });
 
-            return HandleResult(updatedCart);
+            return HandleResult(result);
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Clear(Guid id)
+        [HttpDelete("delete-item/{id}")]
+        public async Task<IActionResult> DeleteCartItem(Guid id)
         {
-            var result = await Mediator.Send(new ClearCartCommand.Command { Id = id });
+            var result = await Mediator.Send(new RemoveFromCartCommand.Command { Id = id });
+
+            return HandleResult(result);
+        }
+
+        [HttpDelete("clear")]
+        public async Task<IActionResult> ClearCart()
+        {
+            var result = await Mediator.Send(new ClearCartCommand.Command());
+
+            return HandleResult(result);
+        }
+
+        [HttpPut("increase/{id}")]
+        public async Task<IActionResult> IncreaseItemQuantity(Guid id)
+        {
+            var result = await Mediator.Send(new IncreaseCartItemQuantityCommand.Command { Id = id });
+
+            return HandleResult(result);
+        }
+
+        [HttpPut("decrease/{id}")]
+        public async Task<IActionResult> DecreaseItemQuantity(Guid id)
+        {
+            var result = await Mediator.Send(new DecreaseCartItemQuantityCommand.Command { Id = id });
 
             return HandleResult(result);
         }
