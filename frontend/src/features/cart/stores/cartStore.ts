@@ -19,6 +19,8 @@ export class CartStore {
     },
   };
 
+  products = {};
+
   constructor() {
     makeAutoObservable(this);
   }

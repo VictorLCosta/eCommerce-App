@@ -4,6 +4,7 @@ import { IoBagAddOutline, IoEyeOutline } from "react-icons/io5";
 import { Button } from "@/components/Elements/Button";
 import { Icon } from "@/components/Elements/Icon";
 import { Image } from "@/components/Elements/Image";
+import { useStore } from "@/stores";
 
 import type { ProductBriefDto } from "../types";
 
@@ -12,6 +13,10 @@ type ProductCardProps = {
 };
 
 export function ProductCard({ product }: ProductCardProps) {
+  const {
+    cartStore: { addNewCartItem },
+  } = useStore();
+
   return (
     <article className="group relative bg-white overflow-hidden rounded-md shadow-lg">
       <div className="relative">
