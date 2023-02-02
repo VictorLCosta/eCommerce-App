@@ -22,14 +22,9 @@ namespace ECommerce.Infrastructure.Persistence.Repositories
         {
             var serializedCartItems = await _database.HashGetAllAsync("items");
 
-            var a = serializedCartItems.Select(x => x.Value);
-
-            var cartItems = serializedCartItems.Select(x => new CartItem {
-                Id = Guid.Parse(x.Value),
-                ProductName = x.Value,
-                Price = (decimal)x.Value,
-                Quantity = (int)x.Value,
-                PictureUrl = x.Value
+            var cartItems = serializedCartItems.Select(x => {
+                var cartItem = JsonSerializer.Deserialize<CartItem>(x.Value);
+                return cartItem;
             }).ToList();
 
             return cartItems;
