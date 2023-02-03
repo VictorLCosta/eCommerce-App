@@ -35,8 +35,8 @@ export function ProductCard({ product }: ProductCardProps) {
           </Button>
         </div>
       </div>
-      <div className="p-6">
-        <h2 className="text-2xl text-sonic-silver overflow-hidden relative max-h-[calc(2_*_1em_*_1.3)] mb-3 hover:text-eerie-black">
+      <div className="p-6 text-start">
+        <h2 className="text-2xl text-sonic-silver overflow-hidden relative max-h-[calc(2_*_1em_*_1.3)] cursor-pointer mb-3 hover:text-eerie-black">
           {product.name}
         </h2>
         <div>

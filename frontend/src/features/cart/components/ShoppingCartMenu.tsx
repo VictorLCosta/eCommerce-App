@@ -1,6 +1,6 @@
 import { Menu, Transition } from "@headlessui/react";
 import { useEffect, useState } from "react";
-import { IoTrashOutline } from "react-icons/io5";
+import { IoBagRemoveOutline, IoTrashOutline } from "react-icons/io5";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { Link } from "react-router-dom";
 
@@ -13,6 +13,19 @@ import { useDecreaseItemQuantity } from "../api/decreaseItemQuantity";
 import { useDeleteCartItem } from "../api/deleteCartItem";
 import { useCartItems } from "../api/getCartItems";
 import { useIncreaseItemQuantity } from "../api/increaseItemQuantity";
+
+function EmptyCart() {
+  return (
+    <Menu.Item
+      as="div"
+      className="flex flex-col justify-center items-center p-6"
+      disabled
+    >
+      <Icon icon={IoBagRemoveOutline} className="mb-5" size="lg" color="onyx" />
+      <h3 className="text-xl text-onyx">Your shopping cart is empty</h3>
+    </Menu.Item>
+  );
+}
 
 export function ShoppingCartMenu() {
   const { data } = useCartItems({});
@@ -39,6 +52,7 @@ export function ShoppingCartMenu() {
     <Menu as="div" className="relative">
       <Menu.Button as={Button} size="xs" variant="basic">
         <Icon icon={MdOutlineShoppingCart} size="md" color="onyx" />
+        <span className="text-lg font-semibold">{data?.length}</span>
       </Menu.Button>
       <Transition
         enter="transition ease-out duration-100"
@@ -105,21 +119,25 @@ export function ShoppingCartMenu() {
               </div>
             </Menu.Item>
           ))}
-          <Menu.Item as="div" className="p-4" disabled>
-            <h2 className="text-2xl text-eerie-black font-bold mb-5">
-              <span className="mr-2">Total:</span>
-              {totalValue.toLocaleString("pt-BR", {
-                style: "currency",
-                currency: "BRL",
-              })}
-            </h2>
-            <Button
-              content="Go to shopping cart"
-              size="lg"
-              variant="dark"
-              fluid
-            />
-          </Menu.Item>
+          {data?.length === 0 ? (
+            <EmptyCart />
+          ) : (
+            <Menu.Item as="div" className="p-4" disabled>
+              <h2 className="text-2xl text-eerie-black font-bold mb-5">
+                <span className="mr-2">Total:</span>
+                {totalValue.toLocaleString("pt-BR", {
+                  style: "currency",
+                  currency: "BRL",
+                })}
+              </h2>
+              <Button
+                content="Go to shopping cart"
+                size="lg"
+                variant="dark"
+                fluid
+              />
+            </Menu.Item>
+          )}
         </Menu.Items>
       </Transition>
     </Menu>
