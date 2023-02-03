@@ -1,5 +1,6 @@
 import { Menu, Transition } from "@headlessui/react";
 import { useEffect, useState } from "react";
+import { IoTrashOutline } from "react-icons/io5";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { Link } from "react-router-dom";
 
@@ -9,6 +10,7 @@ import { Image } from "@/components/Elements/Image";
 import { NumericStepper } from "@/components/Elements/NumericStepper";
 
 import { useDecreaseItemQuantity } from "../api/decreaseItemQuantity";
+import { useDeleteCartItem } from "../api/deleteCartItem";
 import { useCartItems } from "../api/getCartItems";
 import { useIncreaseItemQuantity } from "../api/increaseItemQuantity";
 
@@ -17,6 +19,8 @@ export function ShoppingCartMenu() {
 
   const increaseItemQuantityMutation = useIncreaseItemQuantity({});
   const decreaseItemQuantityMutation = useDecreaseItemQuantity({});
+
+  const deleteCartItemMutation = useDeleteCartItem({});
 
   const [totalValue, setTotalValue] = useState(0);
 
@@ -64,9 +68,19 @@ export function ShoppingCartMenu() {
                   {item.productName}
                 </Link>
 
-                <h3 className="text-xl text-salmon-pink font-semibold mt-2 mb-4">
-                  {item.price}
-                </h3>
+                <div className="flex justify-between items-center mt-2 mb-4">
+                  <h3 className="text-xl text-salmon-pink font-semibold">
+                    {item.price}
+                  </h3>
+
+                  <Button
+                    size="xs"
+                    variant="light"
+                    onClick={() => deleteCartItemMutation.mutate(item.id)}
+                  >
+                    <Icon icon={IoTrashOutline} size="xs" />
+                  </Button>
+                </div>
 
                 <div className="flex justify-between items-center gap-x-2">
                   <NumericStepper
