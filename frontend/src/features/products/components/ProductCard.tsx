@@ -4,7 +4,7 @@ import { IoBagAddOutline, IoEyeOutline } from "react-icons/io5";
 import { Button } from "@/components/Elements/Button";
 import { Icon } from "@/components/Elements/Icon";
 import { Image } from "@/components/Elements/Image";
-import { useStore } from "@/stores";
+import { useAddItemToCart } from "@/features/cart/api/addItemToCart";
 
 import type { ProductBriefDto } from "../types";
 
@@ -13,9 +13,7 @@ type ProductCardProps = {
 };
 
 export function ProductCard({ product }: ProductCardProps) {
-  const {
-    cartStore: { addNewCartItem },
-  } = useStore();
+  const addItemToCartMutation = useAddItemToCart({});
 
   return (
     <article className="group relative bg-white overflow-hidden rounded-md shadow-lg">
@@ -28,7 +26,11 @@ export function ProductCard({ product }: ProductCardProps) {
           <Button size="xs" variant="light" className="mb-1">
             <Icon icon={IoEyeOutline} />
           </Button>
-          <Button size="xs" variant="light">
+          <Button
+            size="xs"
+            variant="light"
+            onClick={() => addItemToCartMutation.mutate(product)}
+          >
             <Icon icon={IoBagAddOutline} />
           </Button>
         </div>

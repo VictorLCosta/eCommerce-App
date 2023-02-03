@@ -3,22 +3,20 @@ import { useQuery } from "react-query";
 import { axios } from "@/lib/axios";
 import type { ExtractFnReturnType, QueryConfig } from "@/lib/react-query";
 
-import type { Cart } from "../types";
+import type { CartItem } from "../types";
 
-export const getCart = (cartId: string): Promise<Cart> =>
-  axios.get(`/cart/${cartId}`);
+export const getCartItems = (): Promise<CartItem[]> => axios.get(`/cart/list`);
 
-type QueryFnType = typeof getCart;
+type QueryFnType = typeof getCartItems;
 
 type UseCartOptions = {
-  cartId: string;
   config?: QueryConfig<QueryFnType>;
 };
 
-export const useCart = ({ cartId, config }: UseCartOptions) =>
+export const useCartItems = ({ config }: UseCartOptions) =>
   useQuery<ExtractFnReturnType<QueryFnType>>({
     ...config,
-    queryKey: ["cart", cartId],
-    queryFn: () => getCart(cartId),
+    queryKey: ["cart"],
+    queryFn: () => getCartItems(),
     cacheTime: 600000,
   });

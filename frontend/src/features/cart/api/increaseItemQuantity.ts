@@ -1,26 +1,19 @@
 import { useMutation } from "react-query";
 
-import type { ProductBriefDto } from "@/features/products/types";
 import { axios } from "@/lib/axios";
 import type { MutationConfig } from "@/lib/react-query";
 import { queryClient } from "@/lib/react-query";
 
 import type { CartItem } from "../types";
 
-export const addItemToCart = (product: ProductBriefDto): Promise<CartItem> =>
-  axios.post("/cart/add", {
-    id: product.id,
-    productName: product.name,
-    price: product.defaultPrice.amount,
-    quantity: 1,
-    pictureUrl: product.pictureUrl,
-  });
+export const increaseItemQuantity = (id: string): Promise<number> =>
+  axios.put(`/cart/increase/${id}`);
 
-type UseAddItemToCartOptions = {
-  config?: MutationConfig<typeof addItemToCart>;
+type UseIncreaseItemQuantity = {
+  config?: MutationConfig<typeof increaseItemQuantity>;
 };
 
-export const useAddItemToCart = ({ config }: UseAddItemToCartOptions) =>
+export const useIncreaseItemQuantity = ({ config }: UseIncreaseItemQuantity) =>
   useMutation({
     onMutate: async (newCartData) => {
       await queryClient.cancelQueries("cart");
@@ -35,5 +28,5 @@ export const useAddItemToCart = ({ config }: UseAddItemToCartOptions) =>
       queryClient.invalidateQueries("cart");
     },
     ...config,
-    mutationFn: addItemToCart,
+    mutationFn: increaseItemQuantity,
   });
