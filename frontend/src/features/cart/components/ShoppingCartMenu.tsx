@@ -8,21 +8,26 @@ import { Icon } from "@/components/Elements/Icon";
 import { Image } from "@/components/Elements/Image";
 import { NumericStepper } from "@/components/Elements/NumericStepper";
 
+import { useDecreaseItemQuantity } from "../api/decreaseItemQuantity";
 import { useCartItems } from "../api/getCartItems";
 import { useIncreaseItemQuantity } from "../api/increaseItemQuantity";
 
 export function ShoppingCartMenu() {
   const { data } = useCartItems({});
+
   const increaseItemQuantityMutation = useIncreaseItemQuantity({});
+  const decreaseItemQuantityMutation = useDecreaseItemQuantity({});
 
   const [totalValue, setTotalValue] = useState(0);
 
   useEffect(() => {
     if (data)
       setTotalValue(
-        data
-          .filter((x) => x.price)
-          .reduce((partialSum, a) => partialSum + a.price, 0),
+        data.reduce(
+          (total, cartItem) =>
+            total + (cartItem.price || 0) * cartItem.quantity,
+          0,
+        ),
       );
   }, [data]);
 
@@ -64,11 +69,22 @@ export function ShoppingCartMenu() {
                 </h3>
 
                 <div className="flex justify-between items-center gap-x-2">
-                  <NumericStepper initialValue={1} min={0} max={1000} />
+                  <NumericStepper
+                    initialValue={0}
+                    value={item.quantity}
+                    min={0}
+                    max={1000}
+                    decrement={() =>
+                      decreaseItemQuantityMutation.mutate(item.id)
+                    }
+                    increment={() =>
+                      increaseItemQuantityMutation.mutate(item.id)
+                    }
+                  />
                   <span className="text-lg">
                     Total:
                     <span className="font-semibold">
-                      {item.quantity * item.price}
+                      {(item.quantity * item.price).toFixed(2)}
                     </span>
                   </span>
                 </div>
@@ -77,7 +93,11 @@ export function ShoppingCartMenu() {
           ))}
           <Menu.Item as="div" className="p-4" disabled>
             <h2 className="text-2xl text-eerie-black font-bold mb-5">
-              Total: {totalValue}
+              <span className="mr-2">Total:</span>
+              {totalValue.toLocaleString("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+              })}
             </h2>
             <Button
               content="Go to shopping cart"
