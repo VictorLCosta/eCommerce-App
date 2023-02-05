@@ -1,7 +1,7 @@
 import { clsx } from "clsx";
 import invoke from "lodash/invoke";
 import isNil from "lodash/isNil";
-import { createRef } from "react";
+import { forwardRef } from "react";
 
 import { useKeyOnly } from "@/lib/classNameBuilders";
 import { isNil as isChildrenNil } from "@/utils/childrenUtils";
@@ -42,91 +42,99 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   icon?: IconType;
 };
 
-export function Button({
-  className,
-  circular,
-  fluid,
-  loading,
-  size = "md",
-  variant = "primary",
-  icon,
-  ...props
-}: ButtonProps) {
-  const ref = createRef<HTMLButtonElement>();
-  const hasChildren = !isChildrenNil(props.children);
-  const classes = clsx(
-    "flex justify-center items-center relative min-w-[1em] overflow-hidden disabled:opacity-70 disabled:cursor-normal rounded-sm font-medium focus:outline-none transition ease-in",
-    sizes[size],
-    variants[variant],
-    className,
-    useKeyOnly(fluid, "!w-full"),
-    useKeyOnly(circular, "!rounded-full"),
-  );
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    {
+      className,
+      circular,
+      fluid,
+      loading,
+      size = "md",
+      variant = "primary",
+      icon,
+      ...props
+    },
+    ref,
+  ) => {
+    const hasChildren = !isChildrenNil(props.children);
+    const classes = clsx(
+      "flex justify-center items-center relative min-w-[1em] overflow-hidden disabled:opacity-70 disabled:cursor-normal rounded-sm font-medium focus:outline-none transition ease-in",
+      sizes[size],
+      variants[variant],
+      className,
+      useKeyOnly(fluid, "!w-full"),
+      useKeyOnly(circular, "!rounded-full"),
+    );
 
-  const computeButtonAriaRole = () => {
-    const { role } = props;
+    const computeButtonAriaRole = () => {
+      const { role } = props;
 
-    if (!isNil(role)) return role;
+      if (!isNil(role)) return role;
 
-    return "button";
-  };
+      return "button";
+    };
 
-  const computeTabIndex = () => {
-    const { disabled, tabIndex } = props;
+    const computeTabIndex = () => {
+      const { disabled, tabIndex } = props;
 
-    if (!isNil(tabIndex)) return tabIndex;
-    if (disabled) return -1;
+      if (!isNil(tabIndex)) return tabIndex;
+      if (disabled) return -1;
 
-    return tabIndex;
-  };
+      return tabIndex;
+    };
 
-  function computeContent() {
-    const { children, content } = props;
+    function computeContent() {
+      const { children, content } = props;
 
-    const baseContent = hasChildren ? children : content;
+      const baseContent = hasChildren ? children : content;
 
-    if (icon && !baseContent) return <Icon icon={icon} />;
+      if (icon && !baseContent) return <Icon icon={icon} />;
 
-    if (icon && baseContent)
-      return (
-        <>
-          <Icon icon={icon} />
-          <span className="mx-2">{baseContent}</span>
-        </>
-      );
+      if (icon && baseContent)
+        return (
+          <>
+            <Icon icon={icon} />
+            <span className="mx-2">{baseContent}</span>
+          </>
+        );
 
-    return baseContent;
-  }
-
-  const loadingContainer = (
-    <div className="absolute flex items-center justify-center top-0 w-full h-full cursor-normal bg-inherit">
-      <Spinner size="lg" />
-    </div>
-  );
-
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    const { disabled } = props;
-
-    if (disabled || loading) {
-      e.preventDefault();
-      return;
+      return baseContent;
     }
 
-    invoke(props, "onClick", e, props);
-  };
+    const loadingContainer = (
+      <div className="absolute flex items-center justify-center top-0 w-full h-full cursor-normal bg-inherit">
+        <Spinner size="lg" />
+      </div>
+    );
 
-  return (
-    <button
-      ref={ref}
-      className={classes}
-      disabled={props.disabled || loading}
-      role={computeButtonAriaRole()}
-      type={props.type === "submit" ? "submit" : "button"}
-      tabIndex={computeTabIndex()}
-      onClick={handleClick}
-    >
-      {loading && loadingContainer}
-      {computeContent()}
-    </button>
-  );
-}
+    const handleClick = (
+      e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    ) => {
+      const { disabled } = props;
+
+      if (disabled || loading) {
+        e.preventDefault();
+        return;
+      }
+
+      invoke(props, "onClick", e, props);
+    };
+
+    return (
+      <button
+        ref={ref}
+        className={classes}
+        disabled={props.disabled || loading}
+        role={computeButtonAriaRole()}
+        type={props.type === "submit" ? "submit" : "button"}
+        tabIndex={computeTabIndex()}
+        onClick={handleClick}
+      >
+        {loading && loadingContainer}
+        {computeContent()}
+      </button>
+    );
+  },
+);
+
+Button.displayName = "Button";
