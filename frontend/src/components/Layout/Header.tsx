@@ -1,7 +1,6 @@
 import { Form, Formik } from "formik";
 import { AiOutlineInstagram, AiOutlineTwitter } from "react-icons/ai";
 import { IoLogoLinkedin } from "react-icons/io";
-import { IoSearchOutline } from "react-icons/io5";
 import {
   MdOutlineFacebook,
   MdOutlinePersonOutline,
@@ -10,10 +9,10 @@ import {
 
 import { Button } from "@/components/Elements/Button";
 import { ShoppingCartMenu } from "@/features/cart";
+import { SearchBar } from "@/features/search";
 
 import { Icon } from "../Elements/Icon";
 import SelectField from "../Form/SelectField";
-import TextField from "../Form/TextField";
 
 const topHeaderSelectOptions = {
   languages: [
@@ -52,26 +51,6 @@ function TopHeaderActions() {
   );
 }
 
-function SearchContainer() {
-  return (
-    <Formik
-      initialValues={{ search: "" }}
-      onSubmit={(values) => console.log(values)}
-    >
-      {() => (
-        <Form className="w-full sm:w-3/6">
-          <TextField
-            name="search"
-            className="rounded-md"
-            endIcon={IoSearchOutline}
-            fluid
-          />
-        </Form>
-      )}
-    </Formik>
-  );
-}
-
 export function Header() {
   return (
     <header className="sticky top-0 w-full z-20 bg-white shadow-3">
@@ -99,7 +78,7 @@ export function Header() {
           Aware
         </h1>
 
-        <SearchContainer />
+        <SearchBar />
 
         <div className="flex gap-x-4 max-sm:hidden">
           <Button size="xs" variant="basic">
