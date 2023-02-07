@@ -8,6 +8,7 @@ using ECommerce.Application.Product.Commands.DeleteProduct;
 using ECommerce.Application.Product.Commands.UpdateProduct;
 using ECommerce.Application.Product.Queries.GetProduct;
 using ECommerce.Application.Product.Queries.GetProductList;
+using ECommerce.Application.Product.Queries.SearchProducts;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerce.Api.Controllers
@@ -53,6 +54,15 @@ namespace ECommerce.Api.Controllers
             var product = await Mediator.Send(new DeleteProductCommand.Command { Id = id });
 
             return HandleResult(product);
+        }
+
+        [HttpGet("search")]
+        [Cached(120)]
+        public async Task<IActionResult> Search(string query)
+        {
+            var results = await Mediator.Send(new SearchProductsQuery.Query { SearchQuery = query });
+
+            return HandleResult(results);
         }
     }
 }
