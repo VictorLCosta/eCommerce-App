@@ -6,7 +6,14 @@
         "Description": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\n\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
         "PictureUrl": "http://dummyimage.com/600x400.png/5fa2dd/ffffff",
         "BranchId": "b5c093dc-5d0d-4d2c-bfd6-a29bf0dd0549",
-        "TypeId": "f93c7155-fd4c-4d92-95d5-7435c89d1d6a"
+        "TypeId": "f93c7155-fd4c-4d92-95d5-7435c89d1d6a",
+        "DefaultPrice": {
+            "Amount": 309.90,
+            "Currency": {
+                "Name": "BRL",
+                "Symbol": "R$"
+            }
+        }
     },
     {
         "Id": "8c3f22a0-ebfa-43e2-8a0f-d9b98cac3dfa",
@@ -15,7 +22,14 @@
         "Description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.\n\nPhasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",
         "PictureUrl": "http://dummyimage.com/600x400.png/ff4444/ffffff",
         "BranchId": "b5c093dc-5d0d-4d2c-bfd6-a29bf0dd0549",
-        "TypeId": "f93c7155-fd4c-4d92-95d5-7435c89d1d6a"
+        "TypeId": "f93c7155-fd4c-4d92-95d5-7435c89d1d6a",
+        "DefaultPrice": {
+            "Amount": 250.00,
+            "Currency": {
+                "Name": "BRL",
+                "Symbol": "R$"
+            }
+        }
     },
     {
         "Id": "19ec35ad-f762-46dd-879f-e2dd7cec10ae",
@@ -24,7 +38,14 @@
         "Description": "Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.\n\nQuisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
         "PictureUrl": "http://dummyimage.com/600x400.png/ff4444/ffffff",
         "BranchId": "82e29cd2-b5b4-4bf5-99a5-e204006014cd",
-        "TypeId": "e13fd4d5-2441-4c24-ad0e-e2fb99017e4b"
+        "TypeId": "e13fd4d5-2441-4c24-ad0e-e2fb99017e4b",
+        "DefaultPrice": {
+            "Amount": 139.90,
+            "Currency": {
+                "Name": "BRL",
+                "Symbol": "R$"
+            }
+        }
     },
     {
         "Id": "d669d8c8-ce57-4c6a-872d-011292f65320",
@@ -33,7 +54,14 @@
         "Description": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
         "PictureUrl": "http://dummyimage.com/600x400.png/cc0000/ffffff",
         "BranchId": "82e29cd2-b5b4-4bf5-99a5-e204006014cd",
-        "TypeId": "e13fd4d5-2441-4c24-ad0e-e2fb99017e4b"
+        "TypeId": "e13fd4d5-2441-4c24-ad0e-e2fb99017e4b",
+        "DefaultPrice": {
+            "Amount": 104.49,
+            "Currency": {
+                "Name": "BRL",
+                "Symbol": "R$"
+            }
+        }
     },
     {
         "Id": "f1e5d3c9-d54d-4d56-9d9f-2135741e223f",
@@ -42,7 +70,14 @@
         "Description": "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
         "PictureUrl": "http://dummyimage.com/600x400.png/cc0000/ffffff",
         "BranchId": "82e29cd2-b5b4-4bf5-99a5-e204006014cd",
-        "TypeId": "fcba7405-d001-49fc-a4fb-78ae3d850380"
+        "TypeId": "fcba7405-d001-49fc-a4fb-78ae3d850380",
+        "DefaultPrice": {
+            "Amount": 129.00,
+            "Currency": {
+                "Name": "BRL",
+                "Symbol": "R$"
+            }
+        }
     },
     {
         "Id": "3b0e954a-b6f2-4ef8-b70a-2b7dde5e1347",
@@ -51,7 +86,14 @@
         "Description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
         "PictureUrl": "http://dummyimage.com/600x400.png/5fa2dd/ffffff",
         "BranchId": "82e29cd2-b5b4-4bf5-99a5-e204006014cd",
-        "TypeId": "fcba7405-d001-49fc-a4fb-78ae3d850380"
+        "TypeId": "fcba7405-d001-49fc-a4fb-78ae3d850380",
+        "DefaultPrice": {
+            "Amount": 67.49,
+            "Currency": {
+                "Name": "BRL",
+                "Symbol": "R$"
+            }
+        }
     },
     {
         "Id": "ac100b5e-789a-4e6b-911b-569f2656253c",
@@ -60,7 +102,14 @@
         "Description": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.\n\nIn hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",
         "PictureUrl": "http://dummyimage.com/600x400.png/dddddd/000000",
         "BranchId": "77157fd6-a2b7-42ea-9551-6ec46188b01b",
-        "TypeId": "c41933eb-a07f-44e5-9767-2b0ca1c87ee2"
+        "TypeId": "c41933eb-a07f-44e5-9767-2b0ca1c87ee2",
+        "DefaultPrice": {
+            "Amount": 749.99,
+            "Currency": {
+                "Name": "BRL",
+                "Symbol": "R$"
+            }
+        }
     },
     {
         "Id": "529c4a56-562e-4603-a8b8-3ae409e0ce38",
@@ -69,7 +118,14 @@
         "Description": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.\n\nInteger ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
         "PictureUrl": "http://dummyimage.com/600x400.png/cc0000/ffffff",
         "BranchId": "77157fd6-a2b7-42ea-9551-6ec46188b01b",
-        "TypeId": "c41933eb-a07f-44e5-9767-2b0ca1c87ee2"
+        "TypeId": "c41933eb-a07f-44e5-9767-2b0ca1c87ee2",
+        "DefaultPrice": {
+            "Amount": 659.99,
+            "Currency": {
+                "Name": "BRL",
+                "Symbol": "R$"
+            }
+        }
     },
     {
         "Id": "d5c3bb6b-e36a-46ac-ae86-9cbd80149045",
@@ -78,7 +134,14 @@
         "Description": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\n\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\n\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
         "PictureUrl": "http://dummyimage.com/600x400.png/5fa2dd/ffffff",
         "BranchId": "77157fd6-a2b7-42ea-9551-6ec46188b01b",
-        "TypeId": "c41933eb-a07f-44e5-9767-2b0ca1c87ee2"
+        "TypeId": "c41933eb-a07f-44e5-9767-2b0ca1c87ee2",
+        "DefaultPrice": {
+            "Amount": 624.00,
+            "Currency": {
+                "Name": "BRL",
+                "Symbol": "R$"
+            }
+        }
     },
     {
         "Id": "1b84bf0d-5516-4661-8211-387c32486bb3",
@@ -87,7 +150,14 @@
         "Description": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.\n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
         "PictureUrl": "http://dummyimage.com/600x400.png/dddddd/000000",
         "BranchId": "77157fd6-a2b7-42ea-9551-6ec46188b01b",
-        "TypeId": "c41933eb-a07f-44e5-9767-2b0ca1c87ee2"
+        "TypeId": "c41933eb-a07f-44e5-9767-2b0ca1c87ee2",
+        "DefaultPrice": {
+            "Amount": 46.00,
+            "Currency": {
+                "Name": "BRL",
+                "Symbol": "R$"
+            }
+        }
     },
     {
         "Id": "84653aba-9fd0-414e-8327-2a2f7ad57dc2",
@@ -96,7 +166,14 @@
         "Description": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\n\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
         "PictureUrl": "http://dummyimage.com/600x400.png/ff4444/ffffff",
         "BranchId": "77157fd6-a2b7-42ea-9551-6ec46188b01b",
-        "TypeId": "c41933eb-a07f-44e5-9767-2b0ca1c87ee2"
+        "TypeId": "c41933eb-a07f-44e5-9767-2b0ca1c87ee2",
+        "DefaultPrice": {
+            "Amount": 159.89,
+            "Currency": {
+                "Name": "BRL",
+                "Symbol": "R$"
+            }
+        }
     },
     {
         "Id": "67ce3791-edfb-403a-b3d2-b61d7fcc9f44",
@@ -105,7 +182,14 @@
         "Description": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
         "PictureUrl": "http://dummyimage.com/600x400.png/5fa2dd/ffffff",
         "BranchId": "534a6638-0b50-4973-a001-d2830217fa55",
-        "TypeId": "ad16ad30-68a5-4143-a71c-8f2a9b81436b"
+        "TypeId": "ad16ad30-68a5-4143-a71c-8f2a9b81436b",
+        "DefaultPrice": {
+            "Amount": 19.99,
+            "Currency": {
+                "Name": "BRL",
+                "Symbol": "R$"
+            }
+        }
     },
     {
         "Id": "61468cd0-2b50-44df-a426-677385af803b",
@@ -114,7 +198,14 @@
         "Description": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.\n\nMauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.\n\nNullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
         "PictureUrl": "http://dummyimage.com/600x400.png/cc0000/ffffff",
         "BranchId": "534a6638-0b50-4973-a001-d2830217fa55",
-        "TypeId": "ad16ad30-68a5-4143-a71c-8f2a9b81436b"
+        "TypeId": "ad16ad30-68a5-4143-a71c-8f2a9b81436b",
+        "DefaultPrice": {
+            "Amount": 53.95,
+            "Currency": {
+                "Name": "BRL",
+                "Symbol": "R$"
+            }
+        }
     },
     {
         "Id": "42f3d3ea-c4d1-4fea-bbbb-c5fc7152118d",
@@ -123,7 +214,14 @@
         "Description": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\n\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
         "PictureUrl": "http://dummyimage.com/600x400.png/ff4444/ffffff",
         "BranchId": "534a6638-0b50-4973-a001-d2830217fa55",
-        "TypeId": "fcba7405-d001-49fc-a4fb-78ae3d850380"
+        "TypeId": "fcba7405-d001-49fc-a4fb-78ae3d850380",
+        "DefaultPrice": {
+            "Amount": 23.95,
+            "Currency": {
+                "Name": "BRL",
+                "Symbol": "R$"
+            }
+        }
     },
     {
         "Id": "a1bb6522-6d66-4803-9318-fa10d051842c",
@@ -132,7 +230,14 @@
         "Description": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\n\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\n\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
         "PictureUrl": "http://dummyimage.com/600x400.png/cc0000/ffffff",
         "BranchId": "534a6638-0b50-4973-a001-d2830217fa55",
-        "TypeId": "fcba7405-d001-49fc-a4fb-78ae3d850380"
+        "TypeId": "fcba7405-d001-49fc-a4fb-78ae3d850380",
+        "DefaultPrice": {
+            "Amount": 299.98,
+            "Currency": {
+                "Name": "BRL",
+                "Symbol": "R$"
+            }
+        }
     },
     {
         "Id": "9b62c609-3b54-4626-ad7f-41b9baede73b",
@@ -141,7 +246,14 @@
         "Description": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
         "PictureUrl": "http://dummyimage.com/600x400.png/ff4444/ffffff",
         "BranchId": "82e29cd2-b5b4-4bf5-99a5-e204006014cd",
-        "TypeId": "fcba7405-d001-49fc-a4fb-78ae3d850380"
+        "TypeId": "fcba7405-d001-49fc-a4fb-78ae3d850380",
+        "DefaultPrice": {
+            "Amount": 72.99,
+            "Currency": {
+                "Name": "BRL",
+                "Symbol": "R$"
+            }
+        }
     },
     {
         "Id": "6deee07a-3721-4c54-b79f-3cba95e4fcf4",
@@ -150,7 +262,14 @@
         "Description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
         "PictureUrl": "http://dummyimage.com/600x400.png/ff4444/ffffff",
         "BranchId": "82e29cd2-b5b4-4bf5-99a5-e204006014cd",
-        "TypeId": "fcba7405-d001-49fc-a4fb-78ae3d850380"
+        "TypeId": "fcba7405-d001-49fc-a4fb-78ae3d850380",
+        "DefaultPrice": {
+            "Amount": 54.90,
+            "Currency": {
+                "Name": "BRL",
+                "Symbol": "R$"
+            }
+        }
     },
     {
         "Id": "afb1182f-4135-4e95-a6ec-e7f46fb37e43",
@@ -159,7 +278,14 @@
         "Description": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\n\nSed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
         "PictureUrl": "http://dummyimage.com/600x400.png/ff4444/ffffff",
         "BranchId": "b5c093dc-5d0d-4d2c-bfd6-a29bf0dd0549",
-        "TypeId": "f93c7155-fd4c-4d92-95d5-7435c89d1d6a"
+        "TypeId": "f93c7155-fd4c-4d92-95d5-7435c89d1d6a",
+        "DefaultPrice": {
+            "Amount": 229.99,
+            "Currency": {
+                "Name": "BRL",
+                "Symbol": "R$"
+            }
+        }
     },
     {
         "Id": "9b97eda2-b9cb-4045-ac91-c0592394aad0",
@@ -168,7 +294,14 @@
         "Description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
         "PictureUrl": "http://dummyimage.com/600x400.png/cc0000/ffffff",
         "BranchId": "a78a2eb3-047f-4487-93f8-3aa556ca5e04",
-        "TypeId": "3cd4fc98-35dc-4dd0-8b85-3701eb1c2428"
+        "TypeId": "3cd4fc98-35dc-4dd0-8b85-3701eb1c2428",
+        "DefaultPrice": {
+            "Amount": 37.90,
+            "Currency": {
+                "Name": "BRL",
+                "Symbol": "R$"
+            }
+        }
     },
     {
         "Id": "b35eb967-d78c-4671-a017-79c9d3ea4ad1",
@@ -177,6 +310,13 @@
         "Description": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\n\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.\n\nMauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
         "PictureUrl": "http://dummyimage.com/600x400.png/ff4444/ffffff",
         "BranchId": "a78a2eb3-047f-4487-93f8-3aa556ca5e04",
-        "TypeId": "3cd4fc98-35dc-4dd0-8b85-3701eb1c2428"
+        "TypeId": "3cd4fc98-35dc-4dd0-8b85-3701eb1c2428",
+        "DefaultPrice": {
+            "Amount": 250.00,
+            "Currency": {
+                "Name": "BRL",
+                "Symbol": "R$"
+            }
+        }
     }
 ]
