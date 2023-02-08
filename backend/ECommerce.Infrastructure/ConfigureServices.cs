@@ -2,6 +2,7 @@ using ECommerce.Application.Common.Interfaces;
 using ECommerce.Application.Common.Interfaces.Repositories;
 using ECommerce.Domain.Entities.Identity;
 using ECommerce.Infrastructure.Caching;
+using ECommerce.Infrastructure.Identity;
 using ECommerce.Infrastructure.Persistence;
 using ECommerce.Infrastructure.Persistence.Repositories;
 using ECommerce.Infrastructure.Services;
@@ -32,6 +33,7 @@ namespace ECommerce.Infrastructure
             services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
             
             services.AddTransient<IDateTime, DateTimeService>();
+            services.AddTransient<IIdentityService, IdentityService>();
 
             services.AddSingleton<IConnectionMultiplexer>(opt => {
                 var connConfig = ConfigurationOptions.Parse(config.GetConnectionString("Redis"), true);
