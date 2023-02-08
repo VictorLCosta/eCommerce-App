@@ -1,8 +1,7 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using ECommerce.Api.Filter;
+using ECommerce.Api.Services;
+using ECommerce.Application.Common.Interfaces;
 using ECommerce.Application.Product.Commands.CreateProduct;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
@@ -51,6 +50,9 @@ namespace ECommerce.Api
                         .WithOrigins("http://localhost:5173");
                 })
             );
+
+            services.AddHttpContextAccessor();
+            services.AddSingleton<ICurrentUserService, CurrentUserService>();
 
             return services;
         }
