@@ -16,12 +16,12 @@ namespace ECommerce.Application.Common.Behaviours
         private readonly IIdentityService _identityService;
 
         public PerformanceBehaviour(
-            Stopwatch timer, 
             ILogger<TRequest> logger, 
             ICurrentUserService currentUserService, 
             IIdentityService identityService)
         {
-            _timer = timer;
+            _timer = new Stopwatch();
+            
             _logger = logger;
             _currentUserService = currentUserService;
             _identityService = identityService;
