@@ -21,6 +21,7 @@ namespace ECommerce.Application
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>));
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(PerformanceBehaviour<,>));
 
             return services;
         }
