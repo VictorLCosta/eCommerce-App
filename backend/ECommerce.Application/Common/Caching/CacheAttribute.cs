@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,13 +8,20 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ECommerce.Api.Filter
+namespace ECommerce.Application.Common.Caching
 {
-    [AttributeUsage(AttributeTargets.Method)]
-    public class CachedAttribute : Attribute, IAsyncActionFilter
+    /// <summary>
+    /// Specifies the request this attribute is applied to will have its value cached for a certain time interval
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
+    public class CacheAttribute : Attribute, IAsyncActionFilter
     {
         private readonly int _timeToLiveSeconds;
-        public CachedAttribute(int timeToLiveSeconds)
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CacheAttribute"/> class. 
+        /// </summary>
+        public CacheAttribute(int timeToLiveSeconds)
         {
             _timeToLiveSeconds = timeToLiveSeconds;
         }
@@ -41,12 +47,13 @@ namespace ECommerce.Api.Filter
                 return;
             }
 
-            var executedContext = await next(); // move to controller
+            var executedContext = await next();
 
             if (executedContext.Result is OkObjectResult okObjectResult)
             {
                 await cacheService.CacheResponseAsync(cacheKey, okObjectResult.Value, TimeSpan.FromSeconds(_timeToLiveSeconds));
             }
+            
         }
 
         private string GenerateCacheKeyFromRequest(HttpRequest request)

@@ -1,8 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using ECommerce.Api.Filter;
+using ECommerce.Application.Common.Caching;
 using ECommerce.Application.Product.Commands.CreateProduct;
 using ECommerce.Application.Product.Commands.DeleteProduct;
 using ECommerce.Application.Product.Commands.UpdateProduct;
@@ -16,7 +14,7 @@ namespace ECommerce.Api.Controllers
     public class ProductController : BaseApiController
     {
         [HttpGet]
-        [Cached(600)]
+        [Cache(600)]
         public async Task<IActionResult> GetAll([FromQuery] GetProductListQuery.Query query)
         {
             var products = await Mediator.Send(query);
@@ -57,7 +55,7 @@ namespace ECommerce.Api.Controllers
         }
 
         [HttpGet("search")]
-        [Cached(120)]
+        [Cache(120)]
         public async Task<IActionResult> Search(string query)
         {
             var results = await Mediator.Send(new SearchProductsQuery.Query { SearchQuery = query });

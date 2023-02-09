@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 using ECommerce.Application.Common.Behaviours;
 using ECommerce.Application.Product.Queries.GetProductList;
 using FluentValidation;
