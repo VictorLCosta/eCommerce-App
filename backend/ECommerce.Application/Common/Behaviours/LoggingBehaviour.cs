@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
+using ECommerce.Application.Common.Interfaces;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
@@ -13,9 +14,17 @@ namespace ECommerce.Application.Common.Behaviours
         where TRequest : MediatR.IRequest<TResponse>
     {
         private readonly ILogger<LoggingBehaviour<TRequest, TResponse>> _logger;
-        public LoggingBehaviour(ILogger<LoggingBehaviour<TRequest, TResponse>> logger)
+        private readonly ICurrentUserService _currentUserService;
+        private readonly IIdentityService _identityService;
+
+        public LoggingBehaviour(
+            ILogger<LoggingBehaviour<TRequest, TResponse>> logger, 
+            ICurrentUserService currentUserService, 
+            IIdentityService identityService)
         {
             _logger = logger;
+            _currentUserService = currentUserService;
+            _identityService = identityService;
         }
 
         public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate<TResponse> next)
@@ -31,8 +40,16 @@ namespace ECommerce.Application.Common.Behaviours
             }
 
             var response = await next();
+
+            var userId = _currentUserService.UserId ?? string.Empty;
+            string userName = string.Empty;
+
+            if (!string.IsNullOrEmpty(userId))
+            {
+                userName = await _identityService.GetUserNameAsync(userId);
+            }
             
-            _logger.LogInformation($"Handled {typeof(TResponse).Name}");
+            _logger.LogInformation($"Handled Request: {typeof(TResponse).Name} {userId} {userName} {request}");
             return response;
         }
     }

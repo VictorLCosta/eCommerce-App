@@ -6,6 +6,7 @@ using ECommerce.Infrastructure.Identity;
 using ECommerce.Infrastructure.Persistence;
 using ECommerce.Infrastructure.Persistence.Repositories;
 using ECommerce.Infrastructure.Services;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -26,8 +27,15 @@ namespace ECommerce.Infrastructure
             services.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<ApplicationDbContext>());
 
             services
-                .AddIdentityCore<AppUser>()
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddIdentityCore<AppUser>(opt => {
+                    opt.Password.RequireUppercase = true;
+                    opt.Password.RequiredLength = 12;
+                    opt.Password.RequireUppercase = true;
+                    opt.Password.RequireDigit = true;
+                    opt.Password.RequireNonAlphanumeric = true;
+                })
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
 
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient(typeof(IRepository<>), typeof(Repository<>));

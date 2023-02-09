@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 using ECommerce.Domain.Entities;
+using ECommerce.Domain.Entities.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
@@ -16,6 +17,19 @@ namespace ECommerce.Infrastructure.Persistence
         {
             try
             {
+                if(!await context.Users.AnyAsync())
+                {
+                    var usersData = File.ReadAllText("../Ecommerce.Infrastructure/Persistence/SeedData/users.json");
+
+                    var users = JsonSerializer.Deserialize<List<AppUser>>(usersData);
+
+                    foreach (var user in users)
+                    {
+                        await context.Users.AddAsync(user);
+                    }
+
+                    await context.SaveChangesAsync();
+                }
                 if(!await context.ProductBranches.AnyAsync())
                 {
                     var branchesData = File.ReadAllText("../Ecommerce.Infrastructure/Persistence/SeedData/branches.json");

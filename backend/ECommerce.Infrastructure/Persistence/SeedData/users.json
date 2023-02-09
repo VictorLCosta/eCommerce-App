@@ -1,0 +1,50 @@
+[
+    {
+        "UserName": "user1",
+        "Email": "user1@example.com",
+        "NormalizedEmail": "USER1@EXAMPLE.COM",
+        "NormalizedUserName": "USER1",
+        "DisplayName": "User One",
+        "ProfilePictureUrl": "https://randomuser.me/api/portraits/men/1.jpg",
+        "PasswordHash": "fbb49e1d169f85c2566e5f5e5e2dc7f58ddb0c67e3f3a8a3d3e3a086c9e0fc3f",
+        "Address": {
+            "Street": "Maple Street",
+            "Number": "123",
+            "City": "Seattle",
+            "State": "Washington",
+            "ZipCode": "98101"
+        }
+    },
+    {
+        "UserName": "user2",
+        "Email": "user2@example.com",
+        "NormalizedEmail": "USER2@EXAMPLE.COM",
+        "NormalizedUserName": "USER2",
+        "DisplayName": "User Two",
+        "ProfilePictureUrl": "https://randomuser.me/api/portraits/women/1.jpg",
+        "PasswordHash": "fbb49e1d169f85c2566e5f5e5e2dc7f58ddb0c67e3f3a8a3d3e3a086c9e0fc3f",
+        "Address": {
+            "Street": "Oak Avenue",
+            "Number": "456",
+            "City": "San Francisco",
+            "State": "California",
+            "ZipCode": "94107"
+        }
+    },
+    {
+        "UserName": "user3",
+        "Email": "user3@example.com",
+        "NormalizedEmail": "USER3@EXAMPLE.COM",
+        "NormalizedUserName": "USER3",
+        "DisplayName": "User Three",
+        "ProfilePictureUrl": "https://randomuser.me/api/portraits/men/2.jpg",
+        "PasswordHash": "fbb49e1d169f85c2566e5f5e5e2dc7f58ddb0c67e3f3a8a3d3e3a086c9e0fc3f",
+        "Address": {
+            "Street": "Pine Boulevard",
+            "Number": "789",
+            "City": "New York",
+            "State": "New York",
+            "ZipCode": "10001"
+        }
+    }
+]

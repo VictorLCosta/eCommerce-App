@@ -1,12 +1,15 @@
 using System;
+using System.Text;
 using ECommerce.Api.Filter;
 using ECommerce.Api.Services;
 using ECommerce.Application.Common.Interfaces;
 using ECommerce.Application.Product.Commands.CreateProduct;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
 namespace ECommerce.Api
@@ -53,6 +56,28 @@ namespace ECommerce.Api
 
             services.AddHttpContextAccessor();
             services.AddSingleton<ICurrentUserService, CurrentUserService>();
+
+            var key = Encoding.UTF8.GetBytes(config["Jwt:Key"]);
+
+            services.AddAuthentication(opt => {
+                opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(opt => {
+                opt.RequireHttpsMetadata = false;
+                opt.SaveToken = true;
+                opt.TokenValidationParameters = new TokenValidationParameters {
+                    ValidateLifetime= true,
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = config["Jwt:Issuer"],
+                    ValidAudience = config["Jwt:Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                };
+            });
+
+            services.AddTransient<ITokenService, TokenService>();
 
             return services;
         }

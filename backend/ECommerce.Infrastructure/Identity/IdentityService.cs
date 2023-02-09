@@ -37,6 +37,13 @@ namespace ECommerce.Infrastructure.Identity
             return (result.ToApplicationResult(), user.Id);
         }
 
+        public async Task<AppUser> GetUserAsync(string email)
+        {
+            var user = await _userManager.Users.FirstOrDefaultAsync(x => x.Email == email || x.UserName == email);
+
+            return user;
+        }
+
         public async Task<string> GetUserNameAsync(string userId)
         {
             var user = await _userManager.Users.FirstOrDefaultAsync(x => x.Id == userId);
@@ -63,6 +70,11 @@ namespace ECommerce.Infrastructure.Identity
             var result = await _userManager.DeleteAsync(user);
 
             return result.ToApplicationResult();
+        }
+
+        public async Task<bool> CheckPasswordAsync(AppUser user, string password)
+        {
+            return await _userManager.CheckPasswordAsync(user, password);
         }
     }
 }
