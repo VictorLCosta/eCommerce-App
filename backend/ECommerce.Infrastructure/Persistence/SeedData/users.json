@@ -6,7 +6,6 @@
         "NormalizedUserName": "USER1",
         "DisplayName": "User One",
         "ProfilePictureUrl": "https://randomuser.me/api/portraits/men/1.jpg",
-        "PasswordHash": "fbb49e1d169f85c2566e5f5e5e2dc7f58ddb0c67e3f3a8a3d3e3a086c9e0fc3f",
         "Address": {
             "Street": "Maple Street",
             "Number": "123",
@@ -22,7 +21,6 @@
         "NormalizedUserName": "USER2",
         "DisplayName": "User Two",
         "ProfilePictureUrl": "https://randomuser.me/api/portraits/women/1.jpg",
-        "PasswordHash": "fbb49e1d169f85c2566e5f5e5e2dc7f58ddb0c67e3f3a8a3d3e3a086c9e0fc3f",
         "Address": {
             "Street": "Oak Avenue",
             "Number": "456",
@@ -38,7 +36,6 @@
         "NormalizedUserName": "USER3",
         "DisplayName": "User Three",
         "ProfilePictureUrl": "https://randomuser.me/api/portraits/men/2.jpg",
-        "PasswordHash": "fbb49e1d169f85c2566e5f5e5e2dc7f58ddb0c67e3f3a8a3d3e3a086c9e0fc3f",
         "Address": {
             "Street": "Pine Boulevard",
             "Number": "789",

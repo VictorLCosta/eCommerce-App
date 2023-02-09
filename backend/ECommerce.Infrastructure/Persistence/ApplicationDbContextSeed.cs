@@ -6,6 +6,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using ECommerce.Domain.Entities;
 using ECommerce.Domain.Entities.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
@@ -13,7 +14,7 @@ namespace ECommerce.Infrastructure.Persistence
 {
     public class ApplicationDbContextSeed
     {
-        public static async Task SeedAsync(ApplicationDbContext context, ILoggerFactory loggerFactory)
+        public static async Task SeedAsync(ApplicationDbContext context, UserManager<AppUser> userManager, ILoggerFactory loggerFactory)
         {
             try
             {
@@ -25,7 +26,7 @@ namespace ECommerce.Infrastructure.Persistence
 
                     foreach (var user in users)
                     {
-                        await context.Users.AddAsync(user);
+                        await userManager.CreateAsync(user, "T0n1car7Malajohnson@");
                     }
 
                     await context.SaveChangesAsync();
