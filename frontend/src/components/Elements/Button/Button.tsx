@@ -20,6 +20,7 @@ const variants = {
   light:
     "bg-white text-sonic-silver border border-solid border-cultured2 enabled:hover:bg-eerie-black enabled:hover:text-white enabled:hover:border-eerie-black",
   dark: "bg-eerie-black text-white border border-solid border-cultured2 enabled:hover:bg-onyx enabled:hover:text-white",
+  "basic-white": "bg-transparent text-white",
 };
 
 const sizes = {

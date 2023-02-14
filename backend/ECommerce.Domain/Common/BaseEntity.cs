@@ -8,7 +8,7 @@ namespace ECommerce.Domain.Common
         [Key]
         public Guid Id { get; set; }
 
-        public BaseEntity()
+        protected BaseEntity()
         {
             Id = Guid.NewGuid();
             CreatedAt = DateTime.UtcNow;
@@ -18,8 +18,8 @@ namespace ECommerce.Domain.Common
 
         public DateTime? CreatedAt 
         { 
-            get { return _createdAt; } 
-            set { _createdAt = value == null ? DateTime.UtcNow : value; } 
+            get => _createdAt;
+            set => _createdAt = value ?? DateTime.UtcNow;
         }
 
         public DateTime? UpdatedAt { get; set; }

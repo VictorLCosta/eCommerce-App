@@ -1,8 +1,18 @@
 import { createContext, useContext } from "react";
 
-interface Store {}
+import { AuthStore } from "@/features/auth";
 
-export const store: Store = {};
+import { ModalStore } from "./modalStore";
+
+interface Store {
+  authStore: AuthStore;
+  modalStore: ModalStore;
+}
+
+export const store: Store = {
+  authStore: new AuthStore(),
+  modalStore: new ModalStore(),
+};
 
 export const StoreContext = createContext(store);
 

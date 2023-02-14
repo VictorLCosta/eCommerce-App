@@ -28,9 +28,9 @@ namespace ECommerce.Application.Product.Queries.SearchProducts
 
             public async Task<Result<List<SearchResultDto>>> Handle(Query request, CancellationToken cancellationToken)
             {
-                if (String.IsNullOrWhiteSpace(request.SearchQuery)) 
+                if (string.IsNullOrWhiteSpace(request.SearchQuery)) 
                 {
-                    return Result<List<SearchResultDto>>.Success(new ());
+                    return Result<List<SearchResultDto>>.Success(new List<SearchResultDto>());
                 }
 
                 var searchQuery = request
@@ -49,7 +49,7 @@ namespace ECommerce.Application.Product.Queries.SearchProducts
                         Url = $"/product/{x.Id}"
                     })
                     .Take(6)
-                    .ToListAsync();
+                    .ToListAsync(cancellationToken: cancellationToken);
 
                 return Result<List<SearchResultDto>>.Success(results);
 

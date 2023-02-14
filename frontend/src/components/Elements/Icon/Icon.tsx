@@ -15,6 +15,7 @@ const colors = {
   onyx: "text-onyx",
   dark: "text-onyx-eerie-black",
   silver: "text-sonic-silver",
+  white: "text-white",
 };
 
 export type IconProps = {

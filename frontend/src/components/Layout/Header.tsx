@@ -8,8 +8,10 @@ import {
 } from "react-icons/md";
 
 import { Button } from "@/components/Elements/Button";
+import { LoginModal } from "@/features/auth/components/LoginModal";
 import { ShoppingCartMenu } from "@/features/cart";
 import { SearchBar } from "@/features/search";
+import { useStore } from "@/stores";
 
 import { Icon } from "../Elements/Icon";
 import SelectField from "../Form/SelectField";
@@ -52,6 +54,10 @@ function TopHeaderActions() {
 }
 
 export function Header() {
+  const {
+    modalStore: { openModal },
+  } = useStore();
+
   return (
     <header className="sticky top-0 w-full z-20 bg-white shadow-3">
       <div className="hidden justify-between items-center border-t-transparent border-x-transparent border-b border-solid border-b-cultured2 py-3 px-[7%] sm:flex">
@@ -85,7 +91,11 @@ export function Header() {
             <Icon icon={MdOutlineFavoriteBorder} size="md" />
           </Button>
           <ShoppingCartMenu />
-          <Button size="xs" variant="basic">
+          <Button
+            size="xs"
+            variant="basic"
+            onClick={() => openModal(<LoginModal />)}
+          >
             <Icon icon={MdOutlinePersonOutline} size="md" />
           </Button>
         </div>

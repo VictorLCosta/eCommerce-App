@@ -40,10 +40,10 @@ export function ProductCard({ product }: ProductCardProps) {
           {product.name}
         </h2>
         <div>
-          <span className="mr-1 font-bold">
+          <span className="mr-1 font-semibold">
             {product.defaultPrice?.currency?.symbol}
           </span>
-          <span className="text-eerie-black text-2xl font-bold">
+          <span className="text-eerie-black text-2xl font-semibold">
             {product.defaultPrice?.amount}
           </span>
         </div>

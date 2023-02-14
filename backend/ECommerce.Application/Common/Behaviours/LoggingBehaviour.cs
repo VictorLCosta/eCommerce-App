@@ -42,7 +42,7 @@ namespace ECommerce.Application.Common.Behaviours
             var response = await next();
 
             var userId = _currentUserService.UserId ?? string.Empty;
-            string userName = string.Empty;
+        string userName = string.Empty;
 
             if (!string.IsNullOrEmpty(userId))
             {

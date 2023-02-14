@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { clsx } from "clsx";
 import { useField } from "formik";
-import _ from "lodash";
+import isNil from "lodash/isNil";
 import { createRef } from "react";
 
 import { useKeyOnly } from "@/lib/classNameBuilders";
@@ -45,7 +45,7 @@ export default function TextField({
   ...props
 }: TextFieldProps) {
   const [field, meta] = useField(props);
-  const hasError = !_.isNil(meta.error);
+  const hasError = !isNil(meta.error);
 
   const inputRef = createRef<HTMLInputElement>();
 
