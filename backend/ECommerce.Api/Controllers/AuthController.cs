@@ -31,10 +31,12 @@ namespace ECommerce.Api.Controllers
 
             var user = await _identityService.GetUserByIdAsync(currentUserId);
 
-            if (user != null) return Ok(new UserDto { 
+            if (user != null) return Ok(new AuthUser { 
+                Id = user.Id,
+                Email = user.Email,
                 DisplayName = user.DisplayName,
+                UserName = user.UserName,
                 PictureUrl = user.ProfilePictureUrl,
-                UserName = user.UserName
             });
 
             return NotFound("User not found");
@@ -54,12 +56,16 @@ namespace ECommerce.Api.Controllers
             {
                 var token = _tokenService.GenerateJwtToken(user);
 
-                return Ok(new UserDto
+                return Ok(new UserResponseDto
                 {
-                    DisplayName = user.DisplayName,
-                    PictureUrl = user.ProfilePictureUrl,
                     Token = token,
-                    UserName = user.UserName
+                    AuthUser = new AuthUser {
+                        Id = user.Id,
+                        Email = user.Email,
+                        DisplayName = user.DisplayName,
+                        UserName = user.UserName,
+                        PictureUrl = user.ProfilePictureUrl,
+                    }
                 });
             }
 
