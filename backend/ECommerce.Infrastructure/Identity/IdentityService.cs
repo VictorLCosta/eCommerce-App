@@ -44,6 +44,13 @@ namespace ECommerce.Infrastructure.Identity
             return user;
         }
 
+        public async Task<AppUser> GetUserByIdAsync(string id)
+        {
+            var user = await _userManager.Users.FirstOrDefaultAsync(x => x.Id == id);
+
+            return user;
+        }
+
         public async Task<string> GetUserNameAsync(string userId)
         {
             var user = await _userManager.Users.FirstOrDefaultAsync(x => x.Id == userId);

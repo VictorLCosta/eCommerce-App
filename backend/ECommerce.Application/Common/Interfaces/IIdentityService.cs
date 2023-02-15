@@ -7,6 +7,7 @@ namespace ECommerce.Application.Common.Interfaces
     public interface IIdentityService
     {
         Task<AppUser> GetUserAsync(string email);
+        Task<AppUser> GetUserByIdAsync(string id);
 
         Task<string> GetUserNameAsync(string userId);
 

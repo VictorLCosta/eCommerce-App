@@ -10,13 +10,34 @@ namespace ECommerce.Api.Controllers
     [Route("api/[controller]")]
     public class AuthController : ControllerBase
     {
+        private readonly ICurrentUserService _currentUserService;
         private readonly IIdentityService _identityService;
         private readonly ITokenService _tokenService;
 
-        public AuthController(IIdentityService identityService, ITokenService tokenService)
+        public AuthController(
+            ICurrentUserService currentUserService, 
+            IIdentityService identityService, 
+            ITokenService tokenService)
         {
+            _currentUserService = currentUserService;
             _identityService = identityService;
             _tokenService = tokenService;
+        }
+
+        [HttpGet("me")]
+        public async Task<IActionResult> Me()
+        {
+            var currentUserId = _currentUserService.UserId;
+
+            var user = await _identityService.GetUserByIdAsync(currentUserId);
+
+            if (user != null) return Ok(new UserDto { 
+                DisplayName = user.DisplayName,
+                PictureUrl = user.ProfilePictureUrl,
+                UserName = user.UserName
+            });
+
+            return NotFound("User not found");
         }
 
         [AllowAnonymous]
