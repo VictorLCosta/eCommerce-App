@@ -7,9 +7,11 @@ using ECommerce.Application.ShoppingCart.Commands.AddItemToCart;
 using ECommerce.Application.ShoppingCart.Commands.RemoveFromCart;
 using ECommerce.Application.ShoppingCart.Commands.IncreaseCartItemQuantity;
 using ECommerce.Application.ShoppingCart.Commands.DecreaseCartItemQuantity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ECommerce.Api.Controllers
 {
+    [Authorize]
     public class CartController : BaseApiController
     {
         [HttpGet("list")]
