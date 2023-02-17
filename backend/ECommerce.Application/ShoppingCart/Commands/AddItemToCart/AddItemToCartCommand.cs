@@ -1,9 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
+using ECommerce.Application.Common.Interfaces;
 using ECommerce.Application.Common.Interfaces.Repositories;
 using ECommerce.Application.Common.Models;
 using ECommerce.Domain.Entities;

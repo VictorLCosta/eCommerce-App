@@ -1,10 +1,13 @@
+import { observer } from "mobx-react-lite";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { IoBagAddOutline, IoEyeOutline } from "react-icons/io5";
 
 import { Button } from "@/components/Elements/Button";
 import { Icon } from "@/components/Elements/Icon";
 import { Image } from "@/components/Elements/Image";
+import { LoginModal } from "@/features/auth/components/LoginModal";
 import { useAddItemToCart } from "@/features/cart/api/addItemToCart";
+import { useStore } from "@/stores";
 
 import type { ProductBriefDto } from "../types";
 
@@ -12,8 +15,21 @@ type ProductCardProps = {
   product: ProductBriefDto;
 };
 
-export function ProductCard({ product }: ProductCardProps) {
+export const ProductCard = observer(({ product }: ProductCardProps) => {
   const addItemToCartMutation = useAddItemToCart({});
+
+  const {
+    authStore: { isLoggedIn },
+    modalStore: { openModal },
+  } = useStore();
+
+  function handleAddItemToCart(productDto: ProductBriefDto) {
+    if (isLoggedIn) {
+      addItemToCartMutation.mutate(productDto);
+    } else {
+      openModal(<LoginModal />);
+    }
+  }
 
   return (
     <article className="group relative bg-white overflow-hidden rounded-md shadow-lg">
@@ -29,7 +45,7 @@ export function ProductCard({ product }: ProductCardProps) {
           <Button
             size="xs"
             variant="light"
-            onClick={() => addItemToCartMutation.mutate(product)}
+            onClick={() => handleAddItemToCart(product)}
           >
             <Icon icon={IoBagAddOutline} />
           </Button>
@@ -50,4 +66,4 @@ export function ProductCard({ product }: ProductCardProps) {
       </div>
     </article>
   );
-}
+});
