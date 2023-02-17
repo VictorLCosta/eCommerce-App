@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using ECommerce.Domain.Common;
 using ECommerce.Domain.ValueObjects;
 
@@ -17,6 +18,8 @@ namespace ECommerce.Domain.Entities
 
         public Guid TypeId { get; set; }
         public ProductType Type { get; set; }
+
+        public IEnumerable<UserFavorite> UserFavorites { get; set; }
         
     }
 }

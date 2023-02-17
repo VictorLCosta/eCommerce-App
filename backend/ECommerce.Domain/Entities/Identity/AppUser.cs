@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Identity;
 
 namespace ECommerce.Domain.Entities.Identity
@@ -7,5 +8,7 @@ namespace ECommerce.Domain.Entities.Identity
         public string DisplayName { get; set; }
         public string ProfilePictureUrl { get; set; }
         public Address Address { get; set; }
+
+        public IEnumerable<UserFavorite> UserFavorites { get; set; }
     }
 }

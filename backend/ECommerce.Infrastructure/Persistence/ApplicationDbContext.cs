@@ -27,6 +27,7 @@ namespace ECommerce.Infrastructure.Persistence
         public DbSet<SalesOrder> SalesOrders => Set<SalesOrder>();
         public DbSet<DeliveryMethod> DeliveryMethods => Set<DeliveryMethod>();
         public DbSet<SalesOrderItem> SalesOrderItems => Set<SalesOrderItem>();
+        public DbSet<UserFavorite> UserFavorites => Set<UserFavorite>();
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
