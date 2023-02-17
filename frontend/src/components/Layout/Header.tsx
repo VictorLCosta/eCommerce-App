@@ -1,4 +1,5 @@
 import { Form, Formik } from "formik";
+import { observer } from "mobx-react-lite";
 import { AiOutlineInstagram, AiOutlineTwitter } from "react-icons/ai";
 import { IoLogoLinkedin } from "react-icons/io";
 import {
@@ -14,6 +15,7 @@ import { SearchBar } from "@/features/search";
 import { useStore } from "@/stores";
 
 import { Icon } from "../Elements/Icon";
+import { Image } from "../Elements/Image";
 import SelectField from "../Form/SelectField";
 
 const topHeaderSelectOptions = {
@@ -53,9 +55,10 @@ function TopHeaderActions() {
   );
 }
 
-export function Header() {
+export const Header = observer(() => {
   const {
     modalStore: { openModal },
+    authStore: { isLoggedIn, currentAuthUser },
   } = useStore();
 
   return (
@@ -86,20 +89,24 @@ export function Header() {
 
         <SearchBar />
 
-        <div className="flex gap-x-4 max-sm:hidden">
+        <div className="flex items-center gap-x-4 max-sm:hidden">
           <Button size="xs" variant="basic">
             <Icon icon={MdOutlineFavoriteBorder} size="md" />
           </Button>
           <ShoppingCartMenu />
-          <Button
-            size="xs"
-            variant="basic"
-            onClick={() => openModal(<LoginModal />)}
-          >
-            <Icon icon={MdOutlinePersonOutline} size="md" />
-          </Button>
+          {isLoggedIn ? (
+            <Image src={currentAuthUser?.pictureUrl} avatar />
+          ) : (
+            <Button
+              size="xs"
+              variant="basic"
+              onClick={() => openModal(<LoginModal />)}
+            >
+              <Icon icon={MdOutlinePersonOutline} size="md" />
+            </Button>
+          )}
         </div>
       </div>
     </header>
   );
-}
+});

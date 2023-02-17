@@ -3,6 +3,7 @@ import { makeAutoObservable, reaction } from "mobx";
 
 import cookies from "@/utils/cookies";
 
+import { getUser } from "../api/getUser";
 import { loginWithEmailAndPassword } from "../api/login";
 
 import type { LoginDTO } from "../api/login";
@@ -30,6 +31,16 @@ export class AuthStore {
     );
   }
 
+  get isLoggedIn() {
+    return !!this.currentAuthUser;
+  }
+
+  getCurrentUser = async () => {
+    const user = await getUser();
+
+    this.setCurrentAuthUser(user);
+  };
+
   login = async (loginDto: LoginDTO) => {
     this.isLogging = true;
 
@@ -38,9 +49,17 @@ export class AuthStore {
       password: loginDto.password,
     });
 
-    this.setCurrentAuthUser(userResponse);
+    this.setCurrentAuthUser(userResponse.user);
+    this.setToken(userResponse.token);
+
+    cookies.set("jwt", userResponse.token);
 
     this.isLogging = false;
+  };
+
+  logout = () => {
+    this.token = undefined;
+    this.currentAuthUser = null;
   };
 
   setToken = (token: string | undefined) => {
@@ -49,7 +68,5 @@ export class AuthStore {
 
   setCurrentAuthUser = (user: AuthUser) => {
     this.currentAuthUser = user;
-
-    this.setToken(user.token);
   };
 }
