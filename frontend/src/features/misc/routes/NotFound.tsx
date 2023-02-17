@@ -8,8 +8,8 @@ const css = `
 
 export function NotFound() {
   return (
-    <section className="h-screen w-screen flex justify-center items-center">
-      <div>
+    <section className="h-screen w-screen flex justify-center items-center flex-col gap-7 lg:flex-row">
+      <div className="px-8 lg:px-0">
         <div className="text-6xl font-dark font-bold mb-6">404</div>
         <p className="text-2xl md:text-4xl font-light leading-normal mb-3">
           Sorry we couldn&apos;t find this page.

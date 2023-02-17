@@ -1,10 +1,12 @@
 import { Transition } from "@headlessui/react";
-import { useState } from "react";
+import { observer } from "mobx-react-lite";
 import { AiOutlineInstagram, AiOutlineTwitter } from "react-icons/ai";
 import { IoLogoLinkedin } from "react-icons/io";
 import { IoChevronDown } from "react-icons/io5";
 import { MdClose, MdOutlineFacebook } from "react-icons/md";
 import { TiArrowSortedDown } from "react-icons/ti";
+
+import { useStore } from "@/stores";
 
 import { Button } from "../Elements/Button";
 import { ExpandableMenu } from "../Elements/ExpandableMenu";
@@ -18,14 +20,21 @@ function MenuItem({ label }: { label: string }) {
   );
 }
 
-export function DesktopMenu() {
-  const [active, setActive] = useState(false);
+export const DesktopMenu = observer(() => {
+  const {
+    layoutStore: { desktopMenuIsOpen, setDesktopMenuIsOpen, setOverlayIsShown },
+  } = useStore();
+
+  function handleCloseDesktopMenu() {
+    setDesktopMenuIsOpen(false);
+    setOverlayIsShown(false);
+  }
 
   return (
     <Transition
       as="nav"
       className="block fixed top-0 left-0 z-[60] h-screen max-w-sm w-full py-6 px-4 overflow-hidden bg-white"
-      show={active}
+      show={desktopMenuIsOpen}
       enter="duration-75 transition-all ease-in-out"
       enterFrom="w-0"
       enterTo="w-80"
@@ -38,7 +47,7 @@ export function DesktopMenu() {
         <Button
           icon={MdClose}
           variant="basic"
-          onClick={() => setActive(false)}
+          onClick={() => handleCloseDesktopMenu()}
         />
       </div>
 
@@ -169,4 +178,4 @@ export function DesktopMenu() {
       </div>
     </Transition>
   );
-}
+});

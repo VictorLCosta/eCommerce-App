@@ -4,7 +4,7 @@ import { Fragment } from "react";
 
 import { useStore } from "@/stores";
 
-export default observer(function ModalContainer() {
+export const ModalContainer = observer(() => {
   const {
     modalStore: { modal, closeModal },
   } = useStore();

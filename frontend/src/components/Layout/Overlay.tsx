@@ -1,18 +1,39 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 
-import clsx from "clsx";
-import { useState } from "react";
+import { Transition } from "@headlessui/react";
+import { observer } from "mobx-react-lite";
+import { Fragment } from "react";
 
-import { useKeyOnly } from "@/lib/classNameBuilders";
+import { useStore } from "@/stores";
 
-export function Overlay() {
-  const [active, setActive] = useState(true);
+export const Overlay = observer(() => {
+  const {
+    layoutStore: { overlayIsShown, setDesktopMenuIsOpen, setOverlayIsShown },
+  } = useStore();
 
-  const classes = clsx(
-    "fixed top-0 left-0 w-full h-screen z-50 pointer-events-none",
-    useKeyOnly(active, "bg-black/60 !pointer-events-auto"),
+  function handleClick() {
+    setDesktopMenuIsOpen(false);
+    setOverlayIsShown(false);
+  }
+
+  return (
+    <Transition
+      as={Fragment}
+      appear
+      show={overlayIsShown}
+      enter="ease-out duration-300"
+      enterFrom="opacity-0"
+      enterTo="opacity-100"
+      leave="ease-in duration-200"
+      leaveFrom="opacity-100"
+      leaveTo="opacity-0"
+    >
+      <div
+        className="fixed inset-0 bg-black bg-opacity-50 z-50"
+        aria-hidden="true"
+        onClick={() => handleClick()}
+      />
+    </Transition>
   );
-
-  return <div className={classes} onClick={() => setActive(!active)} />;
-}
+});

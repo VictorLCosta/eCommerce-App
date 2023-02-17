@@ -6,7 +6,8 @@ import { useStore } from "@/stores";
 import { DesktopMenu } from "./DesktopMenu";
 import { Header } from "./Header";
 import { MobileBottomMenu } from "./MobileBottomMenu";
-import ModalContainer from "./ModalContainer";
+import { ModalContainer } from "./ModalContainer";
+import { Overlay } from "./Overlay";
 
 type MainLayoutProps = {
   children: React.ReactNode;
@@ -28,6 +29,7 @@ export const MainLayout = observer(({ children }: MainLayoutProps) => {
       <Header />
       <ModalContainer />
       <DesktopMenu />
+      <Overlay />
       <MobileBottomMenu />
       <main className="my-7 mx-12 sm:mx-36">{children}</main>
     </div>
