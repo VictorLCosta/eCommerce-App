@@ -19,7 +19,7 @@ namespace ECommerce.Domain.Entities
         public Guid TypeId { get; set; }
         public ProductType Type { get; set; }
 
-        public IEnumerable<UserFavorite> UserFavorites { get; set; }
+        public IEnumerable<UserLike> UserLikes { get; set; }
         
     }
 }

@@ -9,6 +9,6 @@ namespace ECommerce.Domain.Entities.Identity
         public string ProfilePictureUrl { get; set; }
         public Address Address { get; set; }
 
-        public IEnumerable<UserFavorite> UserFavorites { get; set; }
+        public IEnumerable<UserLike> UserLikes { get; set; }
     }
 }

@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -8,9 +7,9 @@ using ECommerce.Application.Common.Models;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace ECommerce.Application.Favorite.Commands.UnfavoriteProduct
+namespace ECommerce.Application.Like.Commands.UnlikeProduct
 {
-    public class UnfavoriteProductCommand
+    public class UnlikeProductCommand
     {
         public class Command : IRequest<Result<Unit>> 
         {

@@ -8,9 +8,9 @@ using ECommerce.Application.Common.Models;
 using ECommerce.Domain.Entities;
 using MediatR;
 
-namespace ECommerce.Application.Favorite.Commands.FavoriteProduct
+namespace ECommerce.Application.Like.Commands.LikeProduct
 {
-    public class FavoriteProductCommand
+    public class LikeProductCommand
     {
         public class Command : IRequest<Result<Unit>> 
         {
@@ -34,7 +34,7 @@ namespace ECommerce.Application.Favorite.Commands.FavoriteProduct
 
                 if (product == null) return Result<Unit>.Failure("Product not found");
 
-                await _unitOfWork.UserFavoriteRepository.AddAsync(new UserFavorite {
+                await _unitOfWork.UserFavoriteRepository.AddAsync(new UserLike {
                     ProductId = product.Id,
                     UserId = _currentUserService.UserId,
                 });

@@ -4,7 +4,7 @@ using ECommerce.Domain.Entities.Identity;
 
 namespace ECommerce.Domain.Entities
 {
-    public class UserFavorite : BaseEntity
+    public class UserLike : BaseEntity
     {
         public string UserId { get; set; }
         public Guid ProductId { get; set; }

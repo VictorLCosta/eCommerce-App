@@ -3,9 +3,9 @@ using ECommerce.Domain.Entities;
 
 namespace ECommerce.Infrastructure.Persistence.Repositories
 {
-    public class UserFavoriteRepository : Repository<UserFavorite>, IUserFavoriteRepository
+    public class UserLikeRepository : Repository<UserLike>, IUserLikeRepository
     {
-        public UserFavoriteRepository(ApplicationDbContext context) 
+        public UserLikeRepository(ApplicationDbContext context) 
             : base(context)
         {
         }
