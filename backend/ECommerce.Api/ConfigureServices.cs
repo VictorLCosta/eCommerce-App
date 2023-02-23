@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Text;
 using ECommerce.Api.Filter;
 using ECommerce.Api.Services;
@@ -42,6 +43,28 @@ namespace ECommerce.Api
 
             services.AddSwaggerGen(opt => {
                 opt.SwaggerDoc("v1", new OpenApiInfo { Title = "Api", Version = "v1" });
+
+                opt.AddSecurityDefinition("JWT", new OpenApiSecurityScheme {
+                    Type = SecuritySchemeType.ApiKey,
+                    BearerFormat = "JWT",
+                    Name = "Authorization",
+                    Scheme = "bearer",
+                    In = ParameterLocation.Header,
+                    Description = "Type into the textbox: Bearer {your JWT token}."
+                });
+
+                opt.AddSecurityRequirement(new OpenApiSecurityRequirement {
+                    { 
+                        new OpenApiSecurityScheme {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        new string[] {}
+                    }
+                });
             });
 
             services.AddCors(opt => 
