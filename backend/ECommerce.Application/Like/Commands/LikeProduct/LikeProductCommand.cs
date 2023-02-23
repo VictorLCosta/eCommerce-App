@@ -34,7 +34,7 @@ namespace ECommerce.Application.Like.Commands.LikeProduct
 
                 if (product == null) return Result<Unit>.Failure("Product not found");
 
-                await _unitOfWork.UserFavoriteRepository.AddAsync(new UserLike {
+                await _unitOfWork.UserLikeRepository.AddAsync(new UserLike {
                     ProductId = product.Id,
                     UserId = _currentUserService.UserId,
                 });

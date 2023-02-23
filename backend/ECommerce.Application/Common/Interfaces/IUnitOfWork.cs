@@ -10,7 +10,7 @@ namespace ECommerce.Application.Common.Interfaces
     {
         IProductRepository ProductRepository { get; }
         IProductBranchRepository ProductBranchRepository { get; }
-        IUserLikeRepository UserFavoriteRepository { get; }
+        IUserLikeRepository UserLikeRepository { get; }
 
         Task<bool> Complete();
     }

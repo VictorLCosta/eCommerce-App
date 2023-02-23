@@ -32,14 +32,14 @@ namespace ECommerce.Application.Like.Commands.UnlikeProduct
                 var userId = _currentUserService.UserId;
 
                 var userFavoriteId = await _unitOfWork
-                    .UserFavoriteRepository
+                    .UserLikeRepository
                     .AsQueryable(x => x.ProductId == request.ProductId && x.UserId == userId)
                     .Select(x => x.Id)
                     .FirstOrDefaultAsync(cancellationToken);
 
                 if (userFavoriteId == Guid.Empty) return Result<Unit>.Failure("User like not found");
 
-                await _unitOfWork.UserFavoriteRepository.DeleteAsync(userFavoriteId);
+                await _unitOfWork.UserLikeRepository.DeleteAsync(userFavoriteId);
 
                 return Result<Unit>.Success(Unit.Value);
             }
