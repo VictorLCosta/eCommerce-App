@@ -1,5 +1,4 @@
 import { observer } from "mobx-react-lite";
-import { IoMdHeartEmpty } from "react-icons/io";
 import { IoBagAddOutline, IoEyeOutline } from "react-icons/io5";
 
 import { Button } from "@/components/Elements/Button";
@@ -7,6 +6,7 @@ import { Icon } from "@/components/Elements/Icon";
 import { Image } from "@/components/Elements/Image";
 import { LoginModal } from "@/features/auth/components/LoginModal";
 import { useAddItemToCart } from "@/features/cart/api/addItemToCart";
+import { LikeButton } from "@/features/like";
 import { useStore } from "@/stores";
 
 import type { ProductBriefDto } from "../types";
@@ -36,12 +36,12 @@ export const ProductCard = observer(({ product }: ProductCardProps) => {
       <div className="relative">
         <Image src={product.pictureUrl} fluid />
         <div className="absolute -right-20 opacity-0 top-0 transform translate-y-8 transition-all ease-in-out group-hover:right-2 group-hover:opacity-100">
-          <Button size="xs" variant="light" className="mb-1">
-            <Icon icon={IoMdHeartEmpty} />
-          </Button>
+          <LikeButton productId={product.id} />
+
           <Button size="xs" variant="light" className="mb-1">
             <Icon icon={IoEyeOutline} />
           </Button>
+
           <Button
             size="xs"
             variant="light"
