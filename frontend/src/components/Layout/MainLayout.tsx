@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useStore } from "@/stores";
 
 import { DesktopMenu } from "./DesktopMenu";
+import { Footer } from "./Footer";
 import { Header } from "./Header";
 import { MobileBottomMenu } from "./MobileBottomMenu";
 import { ModalContainer } from "./ModalContainer";
@@ -32,6 +33,7 @@ export const MainLayout = observer(({ children }: MainLayoutProps) => {
       <Overlay />
       <MobileBottomMenu />
       <main className="my-7 mx-12 sm:mx-36">{children}</main>
+      <Footer />
     </div>
   );
 });

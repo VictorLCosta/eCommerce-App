@@ -16,6 +16,7 @@ module.exports = {
         "sonic-silver": "hsl(0, 0%, 47%)",
         onyx: "hsl(0, 0%, 27%)",
         "salmon-pink": "hsl(353, 100%, 78%)",
+        "spanish-gray": "hsl(0, 0%, 60%)",
         "eerie-black": "hsl(214, 10%, 13%)",
         "black-08": "hsla(0, 0%, 0%, 0.06)",
         "black-12": "hsl(0, 0%, 12%)",
