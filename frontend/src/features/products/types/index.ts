@@ -18,4 +18,5 @@ export type ProductBriefDto = {
   branchCity: string;
   salesNumber: number;
   defaultPrice: Money;
+  isLikedByTheUser: boolean;
 } & BaseEntity;

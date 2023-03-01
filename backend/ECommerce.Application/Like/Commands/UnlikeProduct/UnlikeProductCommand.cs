@@ -41,7 +41,9 @@ namespace ECommerce.Application.Like.Commands.UnlikeProduct
 
                 await _unitOfWork.UserLikeRepository.DeleteAsync(userFavoriteId);
 
-                return Result<Unit>.Success(Unit.Value);
+                var result = await _unitOfWork.Complete();
+
+                return result ? Result<Unit>.Success(Unit.Value) : Result<Unit>.Failure("Error in unlike product");
             }
         }
     }

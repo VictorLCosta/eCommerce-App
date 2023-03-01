@@ -11,7 +11,7 @@ namespace ECommerce.Api.Controllers
     public class LikeController : BaseApiController
     {   
         [HttpPost("{productId}/like")]
-        public async Task<IActionResult> Favorite(Guid productId) 
+        public async Task<IActionResult> Like(Guid productId) 
         {
             var result = await Mediator.Send(new LikeProductCommand.Command { ProductId = productId });
 
@@ -19,7 +19,7 @@ namespace ECommerce.Api.Controllers
         }
 
         [HttpDelete("{productId}/unlike")]
-        public async Task<IActionResult> Unfavorite(Guid productId) 
+        public async Task<IActionResult> Unlike(Guid productId) 
         {
             var result = await Mediator.Send(new UnlikeProductCommand.Command { ProductId = productId });
 

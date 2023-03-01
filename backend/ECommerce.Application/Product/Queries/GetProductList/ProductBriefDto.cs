@@ -1,5 +1,4 @@
 using System;
-using System.Text.Json.Serialization;
 using AutoMapper;
 using ECommerce.Application.Common.Mappings;
 using ECommerce.Domain.ValueObjects;
@@ -16,6 +15,8 @@ namespace ECommerce.Application.Product.Queries.GetProductList
         public double SalesNumber { get; set; }
 
         public Money DefaultPrice { get; set; }
+
+        public bool IsLikedByTheUser { get; set; }
 
         public void Mapping(Profile profile)
         {

@@ -29,20 +29,35 @@ namespace ECommerce.Application.Product.Queries.GetProductList
         {
             private readonly IUnitOfWork _uow;
             private readonly IMapper _mapper;
+            private readonly ICurrentUserService _currentUserService;
 
-            public Handler(IUnitOfWork uow, IMapper mapper)
+            public Handler(IUnitOfWork uow, IMapper mapper, ICurrentUserService currentUserService)
             {
                 _uow = uow;
                 _mapper = mapper;
+                _currentUserService = currentUserService;
             }
 
             public async Task<Result<PaginatedList<ProductBriefDto>>> Handle(Query request, CancellationToken cancellationToken)
             {
+                var userId = _currentUserService.UserId;
+
                 var products = await _uow.ProductRepository
                     .AsQueryable()
                     .Include(x => x.Branch)
                     .ProjectTo<ProductBriefDto>(_mapper.ConfigurationProvider)
                     .PaginatedListAsync(request.PageNumber, request.PageSize);
+
+                if (String.IsNullOrWhiteSpace(userId)) 
+                    return Result<PaginatedList<ProductBriefDto>>.Success(products);
+
+                foreach (var product in products.Items)
+                {
+                    product.IsLikedByTheUser = await _uow
+                        .UserLikeRepository
+                        .AsQueryable()
+                        .AnyAsync(x => x.ProductId == product.Id && x.UserId == userId);
+                }
 
                 return Result<PaginatedList<ProductBriefDto>>.Success(products);
             }

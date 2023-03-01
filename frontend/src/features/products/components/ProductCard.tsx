@@ -36,7 +36,7 @@ export const ProductCard = observer(({ product }: ProductCardProps) => {
       <div className="relative">
         <Image src={product.pictureUrl} fluid />
         <div className="absolute -right-20 opacity-0 top-0 transform translate-y-8 transition-all ease-in-out group-hover:right-2 group-hover:opacity-100">
-          <LikeButton productId={product.id} />
+          <LikeButton liked={product.isLikedByTheUser} productId={product.id} />
 
           <Button size="xs" variant="light" className="mb-1">
             <Icon icon={IoEyeOutline} />

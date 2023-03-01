@@ -39,7 +39,9 @@ namespace ECommerce.Application.Like.Commands.LikeProduct
                     UserId = _currentUserService.UserId,
                 });
 
-                return Result<Unit>.Success(Unit.Value);
+                var result = await _unitOfWork.Complete();
+
+                return result ? Result<Unit>.Success(Unit.Value) : Result<Unit>.Failure("Error in liking product");
             }
         }
     }
