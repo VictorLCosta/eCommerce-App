@@ -32,6 +32,6 @@ export const publicRoutes: RouteObject[] = [
   {
     path: "/",
     element: <App />,
-    children: [{ index: true, element: <ProductsRoutes /> }],
+    children: [{ path: "/products/*", element: <ProductsRoutes /> }],
   },
 ];

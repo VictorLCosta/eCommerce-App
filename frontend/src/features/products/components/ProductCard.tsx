@@ -1,5 +1,6 @@
 import { observer } from "mobx-react-lite";
 import { IoBagAddOutline, IoEyeOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 import { Button } from "@/components/Elements/Button";
 import { Icon } from "@/components/Elements/Icon";
@@ -38,9 +39,11 @@ export const ProductCard = observer(({ product }: ProductCardProps) => {
         <div className="absolute -right-20 opacity-0 top-0 transform translate-y-8 transition-all ease-in-out group-hover:right-2 group-hover:opacity-100">
           <LikeButton liked={product.isLikedByTheUser} productId={product.id} />
 
-          <Button size="xs" variant="light" className="mb-1">
-            <Icon icon={IoEyeOutline} />
-          </Button>
+          <Link to={`${product.id}`}>
+            <Button size="xs" variant="light" className="mb-1">
+              <Icon icon={IoEyeOutline} />
+            </Button>
+          </Link>
 
           <Button
             size="xs"
@@ -52,9 +55,11 @@ export const ProductCard = observer(({ product }: ProductCardProps) => {
         </div>
       </div>
       <div className="p-6 text-start">
-        <h2 className="text-2xl text-sonic-silver overflow-hidden relative max-h-[calc(2_*_1em_*_1.3)] cursor-pointer mb-3 hover:text-eerie-black">
-          {product.name}
-        </h2>
+        <Link to={`/${product.id}`}>
+          <h2 className="text-2xl text-sonic-silver overflow-hidden relative max-h-[calc(2_*_1em_*_1.3)] cursor-pointer mb-3 hover:text-eerie-black">
+            {product.name}
+          </h2>
+        </Link>
         <div>
           <span className="mr-1 font-semibold">
             {product.defaultPrice?.currency?.symbol}

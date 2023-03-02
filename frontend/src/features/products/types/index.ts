@@ -1,6 +1,6 @@
 import type { BaseEntity, Money } from "@/types";
 
-export type Product = {
+export type ProductDto = {
   name: string;
   code: string;
   description: string;

@@ -2,9 +2,11 @@
 
 import { useRoutes } from "react-router-dom";
 
-import { NotFound } from "@/features/misc";
+import { lazyImport } from "@/utils/lazyImport";
 
 import { publicRoutes } from "./public";
+
+const { NotFound } = lazyImport(() => import("@/features/misc"), "NotFound");
 
 export function AppRoutes() {
   const commonRoutes = [{ path: "*", element: <NotFound /> }];
