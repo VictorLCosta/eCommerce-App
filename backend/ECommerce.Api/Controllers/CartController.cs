@@ -22,10 +22,10 @@ namespace ECommerce.Api.Controllers
             return HandleResult(result);
         }
 
-        [HttpPost("add")]
-        public async Task<IActionResult> AddItemToCart(NewCartItemDto cartItem)
+        [HttpPost("add/{productId}")]
+        public async Task<IActionResult> AddItemToCart(Guid productId)
         {
-            var result = await Mediator.Send(new AddItemToCartCommand.Command { CartItem = cartItem });
+            var result = await Mediator.Send(new AddItemToCartCommand.Command { ProductId = productId });
 
             return HandleResult(result);
         }

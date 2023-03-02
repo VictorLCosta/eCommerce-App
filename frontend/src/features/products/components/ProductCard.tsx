@@ -24,9 +24,9 @@ export const ProductCard = observer(({ product }: ProductCardProps) => {
     modalStore: { openModal },
   } = useStore();
 
-  function handleAddItemToCart(productDto: ProductBriefDto) {
+  function handleAddItemToCart(productId: string) {
     if (isLoggedIn) {
-      addItemToCartMutation.mutate(productDto);
+      addItemToCartMutation.mutate(productId);
     } else {
       openModal(<LoginModal />);
     }
@@ -48,7 +48,7 @@ export const ProductCard = observer(({ product }: ProductCardProps) => {
           <Button
             size="xs"
             variant="light"
-            onClick={() => handleAddItemToCart(product)}
+            onClick={() => handleAddItemToCart(product.id)}
           >
             <Icon icon={IoBagAddOutline} />
           </Button>

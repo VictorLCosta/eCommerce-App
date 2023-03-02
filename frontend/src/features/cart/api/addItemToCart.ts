@@ -7,14 +7,8 @@ import { queryClient } from "@/lib/react-query";
 
 import type { CartItem } from "../types";
 
-export const addItemToCart = (product: ProductBriefDto): Promise<CartItem> =>
-  axios.post("/cart/add", {
-    id: product.id,
-    productName: product.name,
-    price: product.defaultPrice.amount,
-    quantity: 1,
-    pictureUrl: product.pictureUrl,
-  });
+export const addItemToCart = (productId: string): Promise<CartItem> =>
+  axios.post(`/cart/add/${productId}`);
 
 type UseAddItemToCartOptions = {
   config?: MutationConfig<typeof addItemToCart>;
@@ -22,10 +16,14 @@ type UseAddItemToCartOptions = {
 
 export const useAddItemToCart = ({ config }: UseAddItemToCartOptions) =>
   useMutation({
-    onMutate: async (newCartData) => {
+    onMutate: async (productId) => {
       await queryClient.cancelQueries("cart");
 
       const oldCartData = queryClient.getQueryData<CartItem[]>("cart");
+
+      const newCartData = queryClient
+        .getQueryData<ProductBriefDto[]>("product")
+        ?.find((x) => x.id === productId);
 
       queryClient.setQueryData("cart", [oldCartData || newCartData]);
 
