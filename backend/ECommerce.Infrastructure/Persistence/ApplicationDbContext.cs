@@ -28,6 +28,7 @@ namespace ECommerce.Infrastructure.Persistence
         public DbSet<DeliveryMethod> DeliveryMethods => Set<DeliveryMethod>();
         public DbSet<SalesOrderItem> SalesOrderItems => Set<SalesOrderItem>();
         public DbSet<UserLike> UserLikes => Set<UserLike>();
+        public DbSet<Image> Images => Set<Image>();
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

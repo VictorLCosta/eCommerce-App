@@ -11,6 +11,7 @@ namespace ECommerce.Application.Common.Interfaces
         IProductRepository ProductRepository { get; }
         IProductBranchRepository ProductBranchRepository { get; }
         IUserLikeRepository UserLikeRepository { get; }
+        IImageRepository ImageRepository { get; }
 
         Task<bool> Complete();
     }

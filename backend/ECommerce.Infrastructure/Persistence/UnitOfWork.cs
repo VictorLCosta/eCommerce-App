@@ -22,6 +22,7 @@ namespace ECommerce.Infrastructure.Persistence
         public IProductRepository ProductRepository => new ProductRepository(_context);
         public IProductBranchRepository ProductBranchRepository => new ProductBranchRepository(_context);
         public IUserLikeRepository UserLikeRepository => new UserLikeRepository(_context);
+        public IImageRepository ImageRepository => new ImageRepository(_context);
 
         #endregion
 
