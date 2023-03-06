@@ -1,3 +1,4 @@
+using System;
 using ECommerce.Domain.Common;
 
 namespace ECommerce.Domain.Entities
@@ -9,5 +10,8 @@ namespace ECommerce.Domain.Entities
         public string Type { get; set; }
 
         public bool IsMain { get; set; }
+
+        public Guid ProductId { get; set; }
+        public Product Product { get; set; }
     }
 }

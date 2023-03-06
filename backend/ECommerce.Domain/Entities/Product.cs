@@ -20,6 +20,8 @@ namespace ECommerce.Domain.Entities
         public ProductType Type { get; set; }
 
         public IEnumerable<UserLike> UserLikes { get; set; }
+
+        public IEnumerable<Image> Images { get; set; }
         
     }
 }
