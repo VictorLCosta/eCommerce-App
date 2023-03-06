@@ -3,6 +3,7 @@ using ECommerce.Application.Common.Interfaces.Repositories;
 using ECommerce.Domain.Entities.Identity;
 using ECommerce.Infrastructure.Caching;
 using ECommerce.Infrastructure.Identity;
+using ECommerce.Infrastructure.Images;
 using ECommerce.Infrastructure.Persistence;
 using ECommerce.Infrastructure.Persistence.Repositories;
 using ECommerce.Infrastructure.Services;
@@ -51,6 +52,9 @@ namespace ECommerce.Infrastructure
             services.AddTransient<IResponseCacheService, ResponseCacheService>();
             
             services.AddTransient<ICartRepository, CartRepository>();
+
+            services.Configure<CloudinarySettings>(config.GetSection("Cloudinary"));
+            services.AddTransient<IImageService, ImageService>();
 
             return services;
         }
