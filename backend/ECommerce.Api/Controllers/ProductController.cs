@@ -5,6 +5,7 @@ using ECommerce.Application.Product.Commands.CreateProduct;
 using ECommerce.Application.Product.Commands.DeleteProduct;
 using ECommerce.Application.Product.Commands.UpdateProduct;
 using ECommerce.Application.Product.Queries.GetProduct;
+using ECommerce.Application.Product.Queries.GetProductImageList;
 using ECommerce.Application.Product.Queries.GetProductList;
 using ECommerce.Application.Product.Queries.SearchProducts;
 using Microsoft.AspNetCore.Mvc;
@@ -60,6 +61,14 @@ namespace ECommerce.Api.Controllers
             var results = await Mediator.Send(new SearchProductsQuery.Query { SearchQuery = query });
 
             return HandleResult(results);
+        }
+
+        [HttpGet("product-images/{productId}")]
+        public async Task<IActionResult> GetProductImageList(Guid productId)
+        {
+            var result = await Mediator.Send(new GetProductImageListQuery.Query { ProductId = productId });
+
+            return HandleResult(result);
         }
     }
 }

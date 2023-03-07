@@ -20,3 +20,9 @@ export type ProductBriefDto = {
   defaultPrice: Money;
   isLikedByTheUser: boolean;
 } & BaseEntity;
+
+export type ImageDto = {
+  name: string;
+  url: string;
+  isMain: boolean;
+} & BaseEntity;

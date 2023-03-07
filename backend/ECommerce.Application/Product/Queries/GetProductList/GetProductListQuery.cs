@@ -45,6 +45,7 @@ namespace ECommerce.Application.Product.Queries.GetProductList
                 var products = await _uow.ProductRepository
                     .AsQueryable()
                     .Include(x => x.Branch)
+                    .Include(x => x.Images)
                     .ProjectTo<ProductBriefDto>(_mapper.ConfigurationProvider)
                     .PaginatedListAsync(request.PageNumber, request.PageSize);
 
