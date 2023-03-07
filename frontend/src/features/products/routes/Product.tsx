@@ -4,6 +4,7 @@ import { Button } from "@/components/Elements/Button";
 import { Head } from "@/components/Head";
 
 import { useProduct } from "../api/getProduct";
+import { ProductImageGallery } from "../components/ProductImageGallery";
 
 export function Product() {
   const { productId } = useParams<{ productId: string }>();
@@ -16,7 +17,9 @@ export function Product() {
     <>
       <Head title={data.name} />
       <div className="flex flex-col md:flex-row">
-        <div className="bg-red-500 md:flex-1">primeiro</div>
+        <div className="bg-red-500 md:flex-1">
+          <ProductImageGallery productId={data.id} />
+        </div>
 
         <div className="bg-blue-500 md:flex-1">
           <h2 className="mb-2 leading-tight tracking-tight font-bold text-eerie-black text-2xl md:text-3xl">
