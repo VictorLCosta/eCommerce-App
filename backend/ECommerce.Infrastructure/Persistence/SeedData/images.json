@@ -1,0 +1,482 @@
+[
+  {
+    "Id": "08c1779a-66cb-4e71-b7a2-0f8b26d78e92",
+    "Name": "Gato preto",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Gato+preto",
+    "Type": "jpeg",
+    "IsMain": true,
+    "ProductId": "5c75d7aa-b615-405b-bd0c-6c6263c5cdb7"
+  },
+  {
+    "Id": "1dcb66ed-28f9-4559-b7a8-17a5d7f5693c",
+    "Name": "Cachorro dourado",
+    "Url": "https://dummyimage.com/600x400/ffcc00/000&text=Cachorro+dourado",
+    "Type": "png",
+    "IsMain": false,
+    "ProductId": "5c75d7aa-b615-405b-bd0c-6c6263c5cdb7"
+  },
+  {
+    "Id": "4bfc6058-4d4d-4db2-9e11-9c1e13bfe035",
+    "Name": "Paisagem com árvores",
+    "Url": "https://dummyimage.com/600x400/33cc33/fff&text=Paisagem+com+%C3%A1rvores",
+    "Type": "jpeg",
+    "IsMain": false,
+    "ProductId": "5c75d7aa-b615-405b-bd0c-6c6263c5cdb7"
+  },
+  {
+    "Id": "5b5f5b5d-fb95-4229-9f2c-7e834a03f2a7",
+    "Name": "Urso polar",
+    "Url": "https://dummyimage.com/600x400/ffffff/000&text=Urso+polar",
+    "Type": "gif",
+    "IsMain": true,
+    "ProductId": "8c3f22a0-ebfa-43e2-8a0f-d9b98cac3dfa"
+  },
+  {
+    "Id": "8e065bf3-f0cc-4c3a-8d45-869bea562aa6",
+    "Name": "Cachoeira",
+    "Url": "https://dummyimage.com/600x400/3399ff/fff&text=Cachoeira",
+    "Type": "jpeg",
+    "IsMain": false,
+    "ProductId": "8c3f22a0-ebfa-43e2-8a0f-d9b98cac3dfa"
+  },
+  {
+    "Id": "908a6f57-7e35-4b29-9e45-13a116c6d9d6",
+    "Name": "Flor amarela",
+    "Url": "https://dummyimage.com/600x400/ffff66/000&text=Flor+amarela",
+    "Type": "png",
+    "IsMain": false,
+    "ProductId": "8c3f22a0-ebfa-43e2-8a0f-d9b98cac3dfa"
+  },
+  {
+    "Id": "9ce07347-5f29-4f5c-8d6f-0371aafeebf9",
+    "Name": "Borboleta",
+    "Url": "https://dummyimage.com/600x400/ffff66/000&text=Borboleta",
+    "Type": "png",
+    "IsMain": false,
+    "ProductId": "19ec35ad-f762-46dd-879f-e2dd7cec10ae"
+  },
+  {
+    "Id": "4cf4422d-87d8-4f02-aa1f-052b7a31c8d9",
+    "Name": "Imagem 1",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+1",
+    "Type": "jpeg",
+    "IsMain": true,
+    "ProductId": "19ec35ad-f762-46dd-879f-e2dd7cec10ae"
+  },
+  {
+    "Id": "fe9d2b7a-5d5b-4325-af60-ec51ebf7b6a5",
+    "Name": "Imagem 2",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+2",
+    "Type": "png",
+    "IsMain": false,
+    "ProductId": "19ec35ad-f762-46dd-879f-e2dd7cec10ae"
+  },
+  {
+    "Id": "1a17b711-96fb-43d9-9a94-77e0de40a634",
+    "Name": "Imagem 3",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+3",
+    "Type": "gif",
+    "IsMain": true,
+    "ProductId": "d669d8c8-ce57-4c6a-872d-011292f65320"
+  },
+  {
+    "Id": "e0876937-3452-4f85-bdec-12d73a82c614",
+    "Name": "Imagem 4",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+4",
+    "Type": "jpeg",
+    "IsMain": false,
+    "ProductId": "d669d8c8-ce57-4c6a-872d-011292f65320"
+  },
+  {
+    "Id": "22c7fc43-c97d-4c90-aa0a-5b5df5a5c198",
+    "Name": "Imagem 5",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+5",
+    "Type": "png",
+    "IsMain": false,
+    "ProductId": "d669d8c8-ce57-4c6a-872d-011292f65320"
+  },
+  {
+    "Id": "c5f9ca21-c232-447c-b62b-7d5e1a78ec23",
+    "Name": "Imagem 6",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+6",
+    "Type": "jpeg",
+    "IsMain": true,
+    "ProductId": "f1e5d3c9-d54d-4d56-9d9f-2135741e223f"
+  },
+  {
+    "Id": "6f0b09c7-8b0c-42a3-874e-f338d01b6cb9",
+    "Name": "Imagem 8",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+8",
+    "Type": "jpeg",
+    "IsMain": false,
+    "ProductId": "f1e5d3c9-d54d-4d56-9d9f-2135741e223f"
+  },
+  {
+    "Id": "183e33d9-193e-4b9c-bde9-5d8130ec78db",
+    "Name": "Imagem 9",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+9",
+    "Type": "jpeg",
+    "IsMain": false,
+    "ProductId": "f1e5d3c9-d54d-4d56-9d9f-2135741e223f"
+  },
+  {
+    "Id": "c28b5e94-ae6d-47e5-8a5f-8135c5e672a3",
+    "Name": "Imagem 11",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+11",
+    "Type": "jpeg",
+    "IsMain": true,
+    "ProductId": "3b0e954a-b6f2-4ef8-b70a-2b7dde5e1347"
+  },
+  {
+    "Id": "4f43d3d8-7de3-4063-bc1b-00598d8f7f48",
+    "Name": "Imagem 12",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+12",
+    "Type": "png",
+    "IsMain": false,
+    "ProductId": "3b0e954a-b6f2-4ef8-b70a-2b7dde5e1347"
+  },
+  {
+    "Id": "97be2d27-0a72-4172-8e03-f7e86cb0ed6c",
+    "Name": "Imagem 13",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+13",
+    "Type": "gif",
+    "IsMain": false,
+    "ProductId": "3b0e954a-b6f2-4ef8-b70a-2b7dde5e1347"
+  },
+  {
+    "Id": "90ef160c-6e0b-44f9-9791-0f7cfa4ab68f",
+    "Name": "Imagem 14",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+14",
+    "Type": "jpeg",
+    "IsMain": true,
+    "ProductId": "ac100b5e-789a-4e6b-911b-569f2656253c"
+  },
+  {
+    "Id": "3e3e92c7-34d3-4e7a-8a04-66071cb3052f",
+    "Name": "Imagem 15",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+15",
+    "Type": "png",
+    "IsMain": false,
+    "ProductId": "ac100b5e-789a-4e6b-911b-569f2656253c"
+  },
+  {
+    "Id": "9a2c942a-285c-4c10-908e-01c7b1a3b57f",
+    "Name": "Imagem 16",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+15",
+    "Type": "png",
+    "IsMain": false,
+    "ProductId": "ac100b5e-789a-4e6b-911b-569f2656253c"
+  },
+  {
+    "Id": "ae5b5ecf-0eb9-4947-8c3f-7077c2d202d1",
+    "Name": "Imagem 17",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+17",
+    "Type": "png",
+    "IsMain": true,
+    "ProductId": "529c4a56-562e-4603-a8b8-3ae409e0ce38"
+  },
+  {
+    "Id": "2a2d1b8e-b62c-44e2-9d2a-9e8f5450500c",
+    "Name": "Imagem 18",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+18",
+    "Type": "gif",
+    "IsMain": false,
+    "ProductId": "529c4a56-562e-4603-a8b8-3ae409e0ce38"
+  },
+  {
+    "Id": "b4c4fa38-9024-4f62-8af8-c2bfe94d87b2",
+    "Name": "Imagem 19",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+19",
+    "Type": "jpeg",
+    "IsMain": false,
+    "ProductId": "529c4a56-562e-4603-a8b8-3ae409e0ce38"
+  },
+  {
+    "Id": "023a9680-9cd6-44b7-9e95-ecf9916e7d6a",
+    "Name": "Imagem 20",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+20",
+    "Type": "png",
+    "IsMain": true,
+    "ProductId": "d5c3bb6b-e36a-46ac-ae86-9cbd80149045"
+  },
+  {
+    "Id": "89d0f97e-941c-4ab8-8f79-17dfda4632e5",
+    "Name": "Imagem 21",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+21",
+    "Type": "jpeg",
+    "IsMain": true,
+    "ProductId": "1b84bf0d-5516-4661-8211-387c32486bb3"
+  },
+  {
+    "Id": "26f3b3cc-7cf5-4f5b-a791-85761c526b09",
+    "Name": "Imagem 22",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+22",
+    "Type": "png",
+    "IsMain": false,
+    "ProductId": "1b84bf0d-5516-4661-8211-387c32486bb3"
+  },
+  {
+    "Id": "9a7cfdb4-767f-4e04-9191-0e3bc3f9865e",
+    "Name": "Imagem 23",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+23",
+    "Type": "gif",
+    "IsMain": false,
+    "ProductId": "1b84bf0d-5516-4661-8211-387c32486bb3"
+  },
+  {
+    "Id": "b446be87-8d36-4c17-9a53-08167d8a6e6a",
+    "Name": "Imagem 24",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+24",
+    "Type": "jpeg",
+    "IsMain": true,
+    "ProductId": "84653aba-9fd0-414e-8327-2a2f7ad57dc2"
+  },
+  {
+    "Id": "8a32c2b4-7b4f-4d4f-9a67-09bda8da7529",
+    "Name": "Imagem 25",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+25",
+    "Type": "png",
+    "IsMain": false,
+    "ProductId": "84653aba-9fd0-414e-8327-2a2f7ad57dc2"
+  },
+  {
+    "Id": "ed087eb7-f2dc-4ad5-b007-d5b4e83759d7",
+    "Name": "Imagem 26",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+26",
+    "Type": "png",
+    "IsMain": false,
+    "ProductId": "84653aba-9fd0-414e-8327-2a2f7ad57dc2"
+  },
+  {
+    "Id": "b6b5d6d5-1396-4aaf-bcdd-0cb6d5ce6e98",
+    "Name": "Imagem 27",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+27",
+    "Type": "png",
+    "IsMain": true,
+    "ProductId": "67ce3791-edfb-403a-b3d2-b61d7fcc9f44"
+  },
+  {
+    "Id": "16cc9a7e-9b4b-4de4-bfea-f3b7ce4a4f4a",
+    "Name": "Imagem 28",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+28",
+    "Type": "gif",
+    "IsMain": false,
+    "ProductId": "67ce3791-edfb-403a-b3d2-b61d7fcc9f44"
+  },
+  {
+    "Id": "f76619c7-ef25-42cd-9d8e-90008686d58c",
+    "Name": "Imagem 29",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+29",
+    "Type": "jpeg",
+    "IsMain": false,
+    "ProductId": "67ce3791-edfb-403a-b3d2-b61d7fcc9f44"
+  },
+  {
+    "Id": "d768bdf0-69e6-49c8-80b2-0f1c72e08a8a",
+    "Name": "Imagem 30",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+30",
+    "Type": "png",
+    "IsMain": true,
+    "ProductId": "61468cd0-2b50-44df-a426-677385af803b"
+  },
+  {
+    "Id": "be25c69c-30aa-42af-9146-52633b085270",
+    "Name": "Imagem 31",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+31",
+    "Type": "jpeg",
+    "IsMain": false,
+    "ProductId": "61468cd0-2b50-44df-a426-677385af803b"
+  },
+  {
+    "Id": "015c3a8a-816e-4527-b9d2-2c8f5b22d25b",
+    "Name": "Imagem 32",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+32",
+    "Type": "png",
+    "IsMain": false,
+    "ProductId": "61468cd0-2b50-44df-a426-677385af803b"
+  },
+  {
+    "Id": "1b2d5d55-5c69-452d-8d38-52a4975e5e5c",
+    "Name": "Imagem 33",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+33",
+    "Type": "gif",
+    "IsMain": true,
+    "ProductId": "42f3d3ea-c4d1-4fea-bbbb-c5fc7152118d"
+  },
+  {
+    "Id": "4c3e35d8-f390-472a-a6fd-2c2bb4ad77e4",
+    "Name": "Imagem 34",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+34",
+    "Type": "jpeg",
+    "IsMain": false,
+    "ProductId": "42f3d3ea-c4d1-4fea-bbbb-c5fc7152118d"
+  },
+  {
+    "Id": "e74d84d8-9a50-40c9-8dcb-3a20d3e67c92",
+    "Name": "Imagem 35",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+35",
+    "Type": "png",
+    "IsMain": false,
+    "ProductId": "42f3d3ea-c4d1-4fea-bbbb-c5fc7152118d"
+  },
+  {
+    "Id": "8d7357d5-bf16-4d47-a36c-72c7f509feab",
+    "Name": "Imagem 36",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+36",
+    "Type": "jpeg",
+    "IsMain": true,
+    "ProductId": "a1bb6522-6d66-4803-9318-fa10d051842c"
+  },
+  {
+    "Id": "cbab935a-05cc-4d37-9a46-773a1861e71c",
+    "Name": "Imagem 37",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+37",
+    "Type": "png",
+    "IsMain": false,
+    "ProductId": "a1bb6522-6d66-4803-9318-fa10d051842c"
+  },
+  {
+    "Id": "2f98ef62-b7f2-42af-b94e-5141c6b1d6ec",
+    "Name": "Imagem 38",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+38",
+    "Type": "gif",
+    "IsMain": false,
+    "ProductId": "a1bb6522-6d66-4803-9318-fa10d051842c"
+  },
+  {
+    "Id": "a4e3e4d4-6d70-4c23-87c3-8a51da3a17f2",
+    "Name": "Imagem 39",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+39",
+    "Type": "jpeg",
+    "IsMain": true,
+    "ProductId": "9b62c609-3b54-4626-ad7f-41b9baede73b"
+  },
+  {
+    "Id": "cfe0e7a9-9d5f-43c6-9e6f-8a292b14ce7f",
+    "Name": "Imagem 40",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+40",
+    "Type": "png",
+    "IsMain": false,
+    "ProductId": "9b62c609-3b54-4626-ad7f-41b9baede73b"
+  },
+  {
+    "Id": "1d8b1f98-13f2-4d0c-b9a6-b33c6dbd3f1e",
+    "Name": "Imagem 41",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+41",
+    "Type": "jpeg",
+    "IsMain": false,
+    "ProductId": "9b62c609-3b54-4626-ad7f-41b9baede73b"
+  },
+  {
+    "Id": "f130d207-1b03-47b7-9186-cadeb27a399d",
+    "Name": "Imagem 42",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+42",
+    "Type": "png",
+    "IsMain": true,
+    "ProductId": "6deee07a-3721-4c54-b79f-3cba95e4fcf4"
+  },
+  {
+    "Id": "bda7c3d2-47f4-4b8e-b7c4-3a5e0d5c5e0f",
+    "Name": "Imagem 43",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+43",
+    "Type": "gif",
+    "IsMain": false,
+    "ProductId": "6deee07a-3721-4c54-b79f-3cba95e4fcf4"
+  },
+  {
+    "Id": "dc8e39bb-9191-4656-b1b6-b58de6a72c6d",
+    "Name": "Imagem 44",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+44",
+    "Type": "jpeg",
+    "IsMain": false,
+    "ProductId": "6deee07a-3721-4c54-b79f-3cba95e4fcf4"
+  },
+  {
+    "Id": "b7e0dcec-c0b7-4178-a7b3-82f3b7e53923",
+    "Name": "Imagem 45",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+45",
+    "Type": "png",
+    "IsMain": true,
+    "ProductId": "afb1182f-4135-4e95-a6ec-e7f46fb37e43"
+  },
+  {
+    "Id": "6f5b3ec3-b6f5-4c5a-9f72-2c9cf48e7cb8",
+    "Name": "Imagem 46",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+46",
+    "Type": "jpeg",
+    "IsMain": false,
+    "ProductId": "afb1182f-4135-4e95-a6ec-e7f46fb37e43"
+  },
+  {
+    "Id": "03131ec8-cf24-4f18-9dd2-7cf2c23e243d",
+    "Name": "Imagem 47",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+47",
+    "Type": "png",
+    "IsMain": false,
+    "ProductId": "afb1182f-4135-4e95-a6ec-e7f46fb37e43"
+  },
+  {
+    "Id": "37708b5f-2d9f-4b15-a01f-cb61d64c6aa5",
+    "Name": "Imagem 48",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+48",
+    "Type": "gif",
+    "IsMain": true,
+    "ProductId": "9b97eda2-b9cb-4045-ac91-c0592394aad0"
+  },
+  {
+    "Id": "19f611ef-05f4-4b8d-9df9-4c038a07b044",
+    "Name": "Imagem 49",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+49",
+    "Type": "jpeg",
+    "IsMain": false,
+    "ProductId": "9b97eda2-b9cb-4045-ac91-c0592394aad0"
+  },
+  {
+    "Id": "7ee48a08-8d7b-4411-912f-02d02df5bc5c",
+    "Name": "Imagem 50",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+50",
+    "Type": "png",
+    "IsMain": false,
+    "ProductId": "9b97eda2-b9cb-4045-ac91-c0592394aad0"
+  },
+  {
+    "Id": "9eb9a5b5-f5b5-4dc5-8ca5-cd6a7c6efc11",
+    "Name": "Imagem 51",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+51",
+    "Type": "jpeg",
+    "IsMain": true,
+    "ProductId": "b35eb967-d78c-4671-a017-79c9d3ea4ad1"
+  },
+  {
+    "Id": "e76fb1b9-9c8e-482a-93b2-3412670bb8f8",
+    "Name": "Imagem 52",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+52",
+    "Type": "png",
+    "IsMain": false,
+    "ProductId": "b35eb967-d78c-4671-a017-79c9d3ea4ad1"
+  },
+  {
+    "Id": "6a8c6152-2d5d-49a7-a998-bac9c5db5b5c",
+    "Name": "Imagem 53",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+53",
+    "Type": "gif",
+    "IsMain": false,
+    "ProductId": "b35eb967-d78c-4671-a017-79c9d3ea4ad1"
+  },
+  {
+    "Id": "6b338c6e-4c4b-4d21-aed4-37c01b3196b4",
+    "Name": "Imagem 54",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+54",
+    "Type": "jpeg",
+    "IsMain": false,
+    "ProductId": "d5c3bb6b-e36a-46ac-ae86-9cbd80149045"
+  },
+  {
+    "Id": "a3d54fb8-2049-43a5-a7c1-2b8a74c861db",
+    "Name": "Imagem 55",
+    "Url": "https://dummyimage.com/600x400/000/fff&text=Imagem+55",
+    "Type": "png",
+    "IsMain": false,
+    "ProductId": "d5c3bb6b-e36a-46ac-ae86-9cbd80149045"
+  }
+]

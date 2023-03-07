@@ -71,6 +71,19 @@ namespace ECommerce.Infrastructure.Persistence
 
                     await context.SaveChangesAsync();
                 }
+                if(!await context.Images.AnyAsync())
+                {
+                    var imagesData = File.ReadAllText("../Ecommerce.Infrastructure/Persistence/SeedData/images.json");
+
+                    var images = JsonSerializer.Deserialize<List<Image>>(imagesData);
+
+                    foreach (var item in images)
+                    {
+                        await context.Images.AddAsync(item);
+                    }
+
+                    await context.SaveChangesAsync();
+                }
             }
             catch (System.Exception e)
             {
