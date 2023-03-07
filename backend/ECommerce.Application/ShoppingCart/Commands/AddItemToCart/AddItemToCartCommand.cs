@@ -1,3 +1,4 @@
+using System.Linq;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -7,6 +8,7 @@ using ECommerce.Application.Common.Interfaces.Repositories;
 using ECommerce.Application.Common.Models;
 using ECommerce.Domain.Entities;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace ECommerce.Application.ShoppingCart.Commands.AddItemToCart
 {
@@ -32,7 +34,11 @@ namespace ECommerce.Application.ShoppingCart.Commands.AddItemToCart
 
             public async Task<Result<NewCartItemDto>> Handle(Command request, CancellationToken cancellationToken)
             {
-                var product = await _unitOfWork.ProductRepository.Get(request.ProductId);
+                var product = await _unitOfWork
+                    .ProductRepository
+                    .AsQueryable(x => x.Id == request.ProductId)
+                    .Include(x => x.Images)
+                    .FirstOrDefaultAsync();
 
                 if (product == null) return Result<NewCartItemDto>.Failure("Product not found");
 
@@ -42,7 +48,7 @@ namespace ECommerce.Application.ShoppingCart.Commands.AddItemToCart
                     ProductName = product.Name,
                     Price = product.DefaultPrice.Amount,
                     Quantity = 1,
-                    PictureUrl = product.PictureUrl
+                    PictureUrl = product.Images.FirstOrDefault(x => x.IsMain).Url
                 };
 
                 var savedCartItem = await _cartRepository.AddToCart(cartItem);

@@ -6,6 +6,7 @@ namespace ECommerce.Domain.Entities
     public class Image : BaseEntity
     {
         public string Name { get; set; }
+        public string PublicId { get; set; }
         public string Url { get; set; }
         public string Type { get; set; }
 

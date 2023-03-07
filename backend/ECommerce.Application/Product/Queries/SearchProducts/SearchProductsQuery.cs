@@ -41,10 +41,11 @@ namespace ECommerce.Application.Product.Queries.SearchProducts
                 var results = await _uow
                     .ProductRepository
                     .AsQueryable(x => x.Name.ToLower().Contains(searchQuery) || x.Branch.Name.ToLower().Contains(searchQuery))
+                    .Include(x => x.Images)
                     .Select(x => new SearchResultDto {
                         Id = Guid.NewGuid(),
                         BrandName = x.Branch.Name,
-                        PictureUrl = x.PictureUrl,
+                        PictureUrl = x.Images.FirstOrDefault(i => i.IsMain).Url,
                         ProductName = x.Name,
                         Url = $"/product/{x.Id}"
                     })
