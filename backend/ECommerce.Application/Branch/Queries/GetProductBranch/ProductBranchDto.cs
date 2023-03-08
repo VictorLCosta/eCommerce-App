@@ -1,7 +1,7 @@
 using ECommerce.Application.Common.Mappings;
 using ECommerce.Domain.Entities;
 
-namespace ECommerce.Application.Branch.Queries
+namespace ECommerce.Application.Branch.Queries.GetProductBranch
 {
     public class ProductBranchDto : IMapFrom<ProductBranch>
     {

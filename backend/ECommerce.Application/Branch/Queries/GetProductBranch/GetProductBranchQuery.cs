@@ -8,7 +8,7 @@ using ECommerce.Application.Common.Interfaces;
 using ECommerce.Application.Common.Models;
 using MediatR;
 
-namespace ECommerce.Application.Branch.Queries
+namespace ECommerce.Application.Branch.Queries.GetProductBranch
 {
     public class GetProductBranchQuery
     {

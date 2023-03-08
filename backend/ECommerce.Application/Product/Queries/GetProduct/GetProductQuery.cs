@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using ECommerce.Application.Common.Interfaces;
 using ECommerce.Application.Common.Models;
 using MediatR;
@@ -36,9 +37,10 @@ namespace ECommerce.Application.Product.Queries.GetProduct
                     .AsQueryable(x => x.Id == request.Id)
                     .Include(x => x.Branch)
                     .Include(x => x.Type)
+                    .ProjectTo<ProductDto>(_mapper.ConfigurationProvider)
                     .FirstOrDefaultAsync();
 
-                return Result<ProductDto>.Success(_mapper.Map<ProductDto>(product));
+                return Result<ProductDto>.Success(product);
             }
         }
     }
