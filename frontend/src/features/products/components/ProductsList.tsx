@@ -21,7 +21,7 @@ export function ProductsList() {
 
   return (
     <InfiniteScroll
-      className="grid grid-cols-1 gap-x-4 gap-y-5 md:grid-cols-3 sm:grid-cols-2 lg:grid-cols-4"
+      className="grid grid-cols-1 gap-x-4 gap-y-5 sm:grid-cols-2 lg:grid-cols-4"
       hasNextPage={hasNextPage}
       loader={<LoadingComponent />}
       loading={isFetchingNextPage}

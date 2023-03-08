@@ -32,7 +32,7 @@ export const MainLayout = observer(({ children }: MainLayoutProps) => {
       <DesktopMenu />
       <Overlay />
       <MobileBottomMenu />
-      <main className="my-7 mx-12 sm:mx-36">{children}</main>
+      <main className="my-7 mx-12 sm:mx-16">{children}</main>
       <Footer />
     </div>
   );

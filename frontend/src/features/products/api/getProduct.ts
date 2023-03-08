@@ -5,13 +5,13 @@ import type { ExtractFnReturnType, QueryConfig } from "@/lib/react-query";
 
 import type { ProductDto } from "../types";
 
-export const getProduct = (productId: string): Promise<ProductDto> =>
+export const getProduct = (productId?: string): Promise<ProductDto> =>
   axios.get(`/product/${productId}`);
 
 type QueryFnType = typeof getProduct;
 
 type UseProductOptions = {
-  productId: string;
+  productId?: string;
   config?: QueryConfig<QueryFnType>;
 };
 

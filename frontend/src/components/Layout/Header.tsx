@@ -63,7 +63,7 @@ export const Header = observer(() => {
 
   return (
     <header className="sticky top-0 w-full z-20 bg-white shadow-3">
-      <div className="hidden justify-between items-center border-t-transparent border-x-transparent border-b border-solid border-b-cultured2 py-3 px-[7%] sm:flex">
+      <div className="hidden justify-between items-center border-t-transparent border-x-transparent border-b border-solid border-b-cultured2 py-3 px-[3%] sm:flex">
         <ul className="flex gap-x-3">
           <li>
             <Button icon={MdOutlineFacebook} size="xs" variant="secondary" />
@@ -82,7 +82,7 @@ export const Header = observer(() => {
         <TopHeaderActions />
       </div>
 
-      <div className="flex justify-between items-center flex-col py-10 px-[7%] sm:flex-row">
+      <div className="flex justify-between items-center flex-col py-10 px-[6%] md:px-[3%] sm:flex-row">
         <h1 className="text-7xl text-eerie-black font-semibold mb-8 sm:mb-0">
           Aware
         </h1>

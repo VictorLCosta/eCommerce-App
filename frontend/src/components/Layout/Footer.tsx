@@ -1,12 +1,16 @@
+import { AiOutlineTwitter, AiOutlineInstagram } from "react-icons/ai";
 import {
   IoCallOutline,
   IoLocationOutline,
+  IoLogoLinkedin,
   IoMailOutline,
 } from "react-icons/io5";
+import { MdOutlineFacebook } from "react-icons/md";
 
 import payment from "@/assets/payment.png";
 import { Icon } from "@/components/Elements/Icon";
 
+import { Button } from "../Elements/Button";
 import { Image } from "../Elements/Image";
 
 function NavTitle({ title }: { title: string }) {
@@ -105,8 +109,8 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="flex justify-between px-16 pb-8 mb-8 border-b border-solid border-onyx border-x-transparent border-t-transparent">
-        <ul className="mb-5">
+      <div className="flex justify-between md:flex-wrap md:gap-y-12 md:gap-x-5 flex-col md:flex-row px-16 pb-8 mb-8 border-b border-solid border-onyx border-x-transparent border-t-transparent">
+        <ul className="mb-5 md:flex-grow min-w-[calc(33.33%_-_15px)] w-[calc(33.33%_-_15px)] lg:w-[calc(20%_-_16px)] lg:min-w-[calc(20%_-_16px)]">
           <li className="py-1">
             <NavTitle title="Popular Categories" />
           </li>
@@ -152,7 +156,7 @@ export function Footer() {
           </li>
         </ul>
 
-        <ul className="mb-5">
+        <ul className="mb-5 md:flex-grow min-w-[calc(33.33%_-_15px)] w-[calc(33.33%_-_15px)] lg:w-[calc(20%_-_16px)] lg:min-w-[calc(20%_-_16px)]">
           <li className="py-1">
             <NavTitle title="Products" />
           </li>
@@ -198,7 +202,7 @@ export function Footer() {
           </li>
         </ul>
 
-        <ul className="mb-5">
+        <ul className="mb-5 md:flex-grow min-w-[calc(33.33%_-_15px)] w-[calc(33.33%_-_15px)] lg:w-[calc(20%_-_16px)] lg:min-w-[calc(20%_-_16px)]">
           <li className="py-1">
             <NavTitle title="Our Company" />
           </li>
@@ -244,7 +248,7 @@ export function Footer() {
           </li>
         </ul>
 
-        <ul className="mb-5">
+        <ul className="mb-5 md:flex-grow min-w-[calc(33.33%_-_15px)] w-[calc(33.33%_-_15px)] lg:w-[calc(20%_-_16px)] lg:min-w-[calc(20%_-_16px)]">
           <li className="py-1">
             <NavTitle title="Services" />
           </li>
@@ -290,7 +294,7 @@ export function Footer() {
           </li>
         </ul>
 
-        <ul>
+        <ul className="md:flex-grow min-w-[calc(33.33%_-_15px)] w-[calc(33.33%_-_15px)] lg:w-[calc(20%_-_16px)] lg:min-w-[calc(20%_-_16px)]">
           <li className="py-1">
             <NavTitle title="Contact" />
           </li>
@@ -320,6 +324,28 @@ export function Footer() {
             >
               example@gmail.com
             </a>
+          </li>
+        </ul>
+
+        <ul className="mt-5 flex-grow min-w-[calc(33.33%_-_15px)] w-[calc(33.33%_-_15px)] lg:w-[calc(20%_-_16px)] lg:min-w-[calc(20%_-_16px)] lg:hidden">
+          <li className="py-1">
+            <NavTitle title="Follow Us" />
+          </li>
+          <li>
+            <ul className="flex gap-x-2">
+              <li>
+                <Button icon={MdOutlineFacebook} size="xs" variant="basic" />
+              </li>
+              <li>
+                <Button icon={AiOutlineTwitter} size="xs" variant="basic" />
+              </li>
+              <li>
+                <Button icon={AiOutlineInstagram} size="xs" variant="basic" />
+              </li>
+              <li>
+                <Button icon={IoLogoLinkedin} size="xs" variant="basic" />
+              </li>
+            </ul>
           </li>
         </ul>
       </div>
