@@ -7,6 +7,7 @@ import { useAddItemToCart } from "@/features/cart/api/addItemToCart";
 import { useStore } from "@/stores";
 
 import { useProduct } from "../api/getProduct";
+import { ProductBranchInfo } from "../components/ProductBranchInfo";
 import { ProductImageGallery } from "../components/ProductImageGallery";
 
 export function Product() {
@@ -43,11 +44,11 @@ export function Product() {
             {data.name}
           </h2>
 
-          <div className="flex justify-start gap-x-5 text-xl">
-            <div className="flex-auto border-solid border-blue-900 border-r border-t-0 border-l-0 border-b-0">
+          <div className="flex justify-start items-center gap-x-5 text-xl">
+            <div className="flex-auto border-solid border-spanish-gray border-r border-t-0 border-l-0 border-b-0">
               Rating
             </div>
-            <div className="flex-auto border-solid border-blue-900 border-r border-t-0 border-l-0 border-b-0">
+            <div className="flex-auto border-solid border-spanish-gray border-r border-t-0 border-l-0 border-b-0">
               158 Reviews
             </div>
             <div className="flex-auto">649 Sold</div>
@@ -82,9 +83,7 @@ export function Product() {
         </div>
       </div>
 
-      <div className="bg-white rounded-[3px] w-full px-3 py-5 mb-3 shadow-4">
-        {data.branchName}
-      </div>
+      <ProductBranchInfo branchId={data.branchId} />
 
       <div className="bg-white rounded-[3px] w-full px-3 py-5 shadow-4">
         <h3 className="text-eerie-black text-3xl font-medium mb-4">

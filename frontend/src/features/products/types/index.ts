@@ -21,6 +21,13 @@ export type ProductBriefDto = {
   isLikedByTheUser: boolean;
 } & BaseEntity;
 
+export type ProductBranchBriefInfoDto = {
+  pictureUrl: string;
+  name: string;
+  reviewsCount: number;
+  productsCount: number;
+} & BaseEntity;
+
 export type ImageDto = {
   name: string;
   url: string;
