@@ -29,9 +29,8 @@ namespace ECommerce.Infrastructure.Persistence
         public async Task<bool> Complete()
             => await _context.SaveChangesAsync() > 0;
 
-        public void Dispose()
-        {
-            _context.Dispose();
-        }
+        public async ValueTask DisposeAsync()
+            => await _context.DisposeAsync();
+        
     }
 }

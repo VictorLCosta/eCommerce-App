@@ -9,19 +9,18 @@ using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
-namespace ECommerce.Api
+namespace Microsoft.Extensions.DependencyInjection
 {
     public static class ConfigureServices
     {
-        public static IServiceCollection AddWebDependencies(this IServiceCollection services, IConfiguration config)
+        public static IServiceCollection AddWebServices(this IServiceCollection services, IConfiguration config)
         {
             var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 
-            if (env == "Development") 
+            if (env == "Development")
             {
                 services.AddHealthChecks()
                     .AddSqlite(config.GetConnectionString("DefaultConnection"));
@@ -35,16 +34,19 @@ namespace ECommerce.Api
             services.Configure<ApiBehaviorOptions>(options =>
                 options.SuppressModelStateInvalidFilter = true);
 
-            services.AddControllers(opt => 
+            services.AddControllers(opt =>
                 opt.Filters.Add<ValidationErrorFilter>()
-            ).AddFluentValidation(config => {
+            ).AddFluentValidation(config =>
+            {
                 config.RegisterValidatorsFromAssemblyContaining<CreateProductCommand>();
             });
 
-            services.AddSwaggerGen(opt => {
+            services.AddSwaggerGen(opt =>
+            {
                 opt.SwaggerDoc("v1", new OpenApiInfo { Title = "Api", Version = "v1" });
 
-                opt.AddSecurityDefinition("JWT", new OpenApiSecurityScheme {
+                opt.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
                     Type = SecuritySchemeType.ApiKey,
                     BearerFormat = "JWT",
                     Name = "Authorization",
@@ -54,7 +56,7 @@ namespace ECommerce.Api
                 });
 
                 opt.AddSecurityRequirement(new OpenApiSecurityRequirement {
-                    { 
+                    {
                         new OpenApiSecurityScheme {
                             Reference = new OpenApiReference
                             {
@@ -67,8 +69,9 @@ namespace ECommerce.Api
                 });
             });
 
-            services.AddCors(opt => 
-                opt.AddDefaultPolicy(policy => {
+            services.AddCors(opt =>
+                opt.AddDefaultPolicy(policy =>
+                {
                     policy
                         .AllowAnyMethod()
                         .AllowAnyHeader()
@@ -82,15 +85,18 @@ namespace ECommerce.Api
 
             var key = Encoding.UTF8.GetBytes(config["Jwt:Key"]);
 
-            services.AddAuthentication(opt => {
+            services.AddAuthentication(opt =>
+            {
                 opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             })
-            .AddJwtBearer(opt => {
+            .AddJwtBearer(opt =>
+            {
                 opt.RequireHttpsMetadata = false;
                 opt.SaveToken = true;
-                opt.TokenValidationParameters = new TokenValidationParameters {
-                    ValidateLifetime= true,
+                opt.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateLifetime = true,
                     ValidateIssuer = true,
                     ValidateAudience = true,
                     ValidateIssuerSigningKey = true,

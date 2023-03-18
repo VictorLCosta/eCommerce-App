@@ -6,7 +6,7 @@ using ECommerce.Application.Common.Interfaces.Repositories;
 
 namespace ECommerce.Application.Common.Interfaces
 {
-    public interface IUnitOfWork : IDisposable
+    public interface IUnitOfWork : IAsyncDisposable
     {
         IProductRepository ProductRepository { get; }
         IProductBranchRepository ProductBranchRepository { get; }

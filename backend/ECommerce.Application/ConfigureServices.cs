@@ -4,13 +4,12 @@ using ECommerce.Application.Product.Queries.GetProductList;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 
-namespace ECommerce.Application
+namespace Microsoft.Extensions.DependencyInjection
 {
     public static class ConfigureServices
     {
-        public static IServiceCollection AddApplicationDependencies(this IServiceCollection services, IConfiguration config)
+        public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddMediatR(typeof(GetProductListQuery.Handler).Assembly);
